@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5y886tdja0cd"]
+
+[ext_resource type="Script" uid="uid://dcdwvy3jff0ow" path="res://scripts/game_manager.gd" id="1_p57ef"]
+[ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/Background.png" id="2_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://b0awq37t4vt34" path="res://assets/Bookshelve.png" id="3_gee14"]
+[ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/Wizard.png" id="4_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dbmln6jfoerjj" path="res://scenes/cauldron.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dorceqagmrdh5" path="res://scenes/buttons/familiar1_upgrade.tscn" id="6_p57ef"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p57ef")
+
+[node name="BackgroundGroup" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(448, 400)
+scale = Vector2(12.1887, 10.1612)
+texture = ExtResource("2_u5sy4")
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundGroup/Background"]
+offset_left = -130.613
+offset_top = -172.421
+offset_right = 1861.39
+offset_bottom = 979.579
+scale = Vector2(0.131268, 0.285664)
+color = Color(0, 0, 0, 0.164706)
+
+[node name="Bookshelve" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(315, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve2" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(491, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve3" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(667, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve4" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(-213, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve5" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(-37.0001, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve6" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(139, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve7" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(571, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve8" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(747, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Bookshelve9" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(923, 259)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("3_gee14")
+
+[node name="Wizard" type="Sprite2D" parent="BackgroundGroup"]
+position = Vector2(571, 283)
+scale = Vector2(7.65625, 7.65625)
+texture = ExtResource("4_0tnpc")
+
+[node name="Mana" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 411.0
+offset_right = 203.0
+offset_bottom = 453.0
+theme_override_font_sizes/font_size = 30
+text = "Mana: 10"
+
+[node name="MPS" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 21.0
+offset_top = 462.0
+offset_right = 117.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 30
+text = "MPS: 1"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(656, 384)
+scale = Vector2(3.98186, 2.66567)
+
+[node name="MPSTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="Cauldron" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(281, 293)
+
+[node name="Familiar1Upgrade" parent="." instance=ExtResource("6_p57ef")]
+position = Vector2(770, 159)
