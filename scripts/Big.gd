@@ -135,18 +135,18 @@ static var options = {
 	"default_mantissa": 1.0,
 	"default_exponent": 0,
 	"dynamic_decimals": false, 
-	"dynamic_numbers": 4, 
-	"small_decimals": 2, 
-	"thousand_decimals": 2, 
-	"big_decimals": 2, 
+	"dynamic_numbers": 5, 
+	"small_decimals": 1, 
+	"thousand_decimals": 3, 
+	"big_decimals": 3, 
 	"scientific_decimals": 2, 
 	"logarithmic_decimals": 2, 
 	"maximum_trailing_zeroes": 3,
-	"thousand_separator": ",", 
-	"decimal_separator": ".", 
-	"suffix_separator": "", 
+	"thousand_separator": ".", 
+	"decimal_separator": ",", 
+	"suffix_separator": " ", 
 	"reading_separator": "", 
-	"thousand_name": "thousand"
+	"thousand_name": ""
 }
 
 ## Maximum Big Number Mantissa
@@ -779,7 +779,7 @@ func toFloat() -> float:
 	return snappedf(float(str(mantissa) + "e" + str(exponent)),0.01)
 
 
-func toPrefix(no_decimals_on_small_values = false, use_thousand_symbol=true, force_decimals=true, scientic_prefix=false) -> String:
+func toPrefix(no_decimals_on_small_values = true, use_thousand_symbol=false, force_decimals=true, scientic_prefix=false) -> String:
 	var number: float = mantissa
 	if not scientic_prefix:
 		var hundreds = 1

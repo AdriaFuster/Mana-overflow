@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/MagicMacros/plugin.cfg", "res://addons/a
 folder_colors={
 "res://addons/": "gray",
 "res://assets/": "red",
+"res://resources/": "yellow",
 "res://scripts/": "purple"
 }
 

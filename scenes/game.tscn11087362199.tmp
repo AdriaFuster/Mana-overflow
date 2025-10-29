@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5y886tdja0cd"]
+[gd_scene load_steps=7 format=3 uid="uid://b5y886tdja0cd"]
 
 [ext_resource type="Script" uid="uid://dcdwvy3jff0ow" path="res://scripts/game_manager.gd" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/Background.png" id="2_u5sy4"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/Wizard.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://dbmln6jfoerjj" path="res://scenes/cauldron.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://dorceqagmrdh5" path="res://scenes/buttons/familiar1_upgrade.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://brn2sb0w74tcq" path="res://scenes/buttons/familiar2_upgrade.tscn" id="7_u5sy4"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -72,6 +71,3 @@ text = "MPS: 1"
 
 [node name="Familiar1Upgrade" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(182, 39)
-
-[node name="Familiar2Upgrade" parent="." instance=ExtResource("7_u5sy4")]
-position = Vector2(183, 74)

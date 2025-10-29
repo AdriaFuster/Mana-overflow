@@ -1,18 +1,17 @@
 extends Node
 
-
-var mana: float = 0
-var mps: float = 370
+var mana = Big.new(0)
+var mps = Big.new(0)
 var mps_timer: float = 1
 
 #UPGRADES
 var upgrades: Dictionary = {}
 
-func get_upgrade_amount(upgrade_name: String) -> int:
-	if upgrades.has(upgrade_name):
-		return upgrades[upgrade_name]
+func get_upgrade_amount(upgrade: Upgrade) -> int:
+	if upgrades.has(upgrade):
+		return upgrades[upgrade]
 	return 0
 
-func add_upgrade(upgrade_name: String, amount: int = 1):
-	upgrades[upgrade_name] = get_upgrade_amount(upgrade_name) + amount
+func add_upgrade(upgrade: Upgrade, amount: int = 1):
+	upgrades[upgrade] = get_upgrade_amount(upgrade) + amount
 	

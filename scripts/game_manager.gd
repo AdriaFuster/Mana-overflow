@@ -6,33 +6,37 @@ extends Control
 
 func _ready() -> void:
 	GameEvents.add_mana.connect(_on_add_mana)
-	GameEvents.add_mps.connect(_on_add_mps)
 	GameEvents.deduce_mana.connect(_on_deduced_mana)
+	GameEvents.calculate_mps.connect(_on_calculate_mps)
 	
 	GameTick.tick.connect(_on_tick)	
+	
 
 func _process(delta: float) -> void:
-	Stats.mana += Stats.mps * delta
+	var amount = Stats.mps.multiply(delta)
+	Stats.mana.plusEquals(amount)
 	
 
 func _display_values():
-	var mana_d: String = str(Stats.mana).substr(0, 5)
+	mana_label.text = "Mana = " + Stats.mana.toAmericanName(true)
+	mps_label.text = "MPS = " + Stats.mps.toAmericanName()
 	
-	mana_label.text = "Mana = " + str(int(mana_d))
-	mps_label.text = "MPS = " + str(int(Stats.mps))
-
+	
 func _on_tick():
 	_display_values()	
 	
 	
 func _on_add_mana(mana_add: float):
-	Stats.mana += mana_add
-
-func _on_add_mps(mps_add: float):
-	Stats.mps += mps_add
+	Stats.mana.plusEquals(mana_add)
 	
 func _on_deduced_mana(mana_deduced: float):
-	Stats.mana -= mana_deduced
+	Stats.mana.minusEquals(mana_deduced)
+	print(Stats.mana.toAmericanName())
 	
+func _on_calculate_mps() -> void:
+	var total_mps: float = 0
 	
+	for u:Upgrade in Stats.upgrades:
+		total_mps += u.upgrade_res.mps * Stats.get_upgrade_amount(u)	
 	
+	Stats.mps = Big.new(total_mps)

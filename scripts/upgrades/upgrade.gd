@@ -1,13 +1,12 @@
 extends Node2D
 class_name Upgrade
 
-@export var upgrade_name: String
-@export var cost: int = 10
-@export var mps_upgrade: int = 1
+@export var upgrade_res: UpgradeResource
 @onready var upgrade: UpgradeAnimations = %TextureButton
 @onready var cost_label: Label = %CostLabel
 @onready var amount_label: Label = %AmountLabel
 
+const MULTIPLIER_RATE: float = 1.15
 
 func _ready() -> void:
 	upgrade.pressed.connect(_on_pressed)
@@ -15,7 +14,7 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	if (Stats.mana < cost):
+	if (Stats.mana.isLessThan(upgrade_res.cost)):
 		upgrade.disabled = true
 		upgrade.modulate.a = .6
 	else: 
@@ -24,11 +23,26 @@ func _process(_delta: float) -> void:
 
 
 func _setup():
-	cost_label.text = str(cost)
-	_update_upgrade_amount()
+	cost_label.text = str(upgrade_res.cost)
+	_update_amount_label()
 	
-func _update_upgrade_amount() ->void :
-	amount_label.text = "Amount:"+ str(Stats.get_upgrade_amount(upgrade_name))
+func _update_amount_label() ->void :
+	amount_label.text = "Amount:"+ str(Stats.get_upgrade_amount(self))
+
+func _update_cost_label() -> void:
+	cost_label.text = str(upgrade_res.cost)
+	
+	
+func _increase_cost() -> void:
+	upgrade_res.cost *= MULTIPLIER_RATE
+	
 
 func _on_pressed():
-	pass
+	Stats.add_upgrade(self)	
+	GameEvents.deduce_mana.emit(upgrade_res.cost)
+	GameEvents.calculate_mps.emit()
+	
+	_increase_cost()
+	
+	_update_amount_label()
+	_update_cost_label()

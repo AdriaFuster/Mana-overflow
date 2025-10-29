@@ -29,6 +29,9 @@ func change_tick_rate(new_tick: float):
 	
 func _on_timeout():
 	tick.emit()
+	var random_offset: float = randf_range(0.01, 0.015) 
+	var new_tick_interval = tick_interval+random_offset
+	_timer.wait_time = new_tick_interval
 	
 
 	
