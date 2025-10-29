@@ -2,24 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dk54fer0prtr7" path="res://assets/sprites/Cauldron.png" id="1_8jqlm"]
 [ext_resource type="Script" uid="uid://cmekwn4bp2ik0" path="res://scripts/cauldron.gd" id="2_l3ke8"]
-[ext_resource type="Script" uid="uid://x81y23lhnyu8" path="res://scripts/cauldron_animations.gd" id="3_l3ke8"]
+[ext_resource type="Script" uid="uid://x81y23lhnyu8" path="res://scripts/animations/cauldron_animations.gd" id="3_l3ke8"]
 [ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="4_au12p"]
-
-[sub_resource type="Animation" id="Animation_au12p"]
-resource_name = "hover"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
 
 [sub_resource type="Animation" id="Animation_7mkqr"]
 length = 0.001
@@ -31,22 +15,6 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_re3ld"]
-resource_name = "exit"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.06),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
@@ -66,6 +34,38 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.5, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_re3ld"]
+resource_name = "exit"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_au12p"]
+resource_name = "hover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
 }
 
 [sub_resource type="Animation" id="Animation_5yblu"]
@@ -98,13 +98,21 @@ script = ExtResource("2_l3ke8")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
-offset_left = 1.0
-offset_right = 196.0
-offset_bottom = 183.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("1_8jqlm")
 stretch_mode = 4
 script = ExtResource("3_l3ke8")
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
 libraries = {

@@ -19,16 +19,24 @@ config/icon="res://icon.svg"
 
 GameEvents="*res://scripts/global_scripts/game_events.gd"
 Stats="*res://scripts/global_scripts/stats.gd"
+GameTick="*res://scripts/global_scripts/game_tick.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/scale=1.3
+window/size/always_on_top=true
+window/stretch/mode="viewport"
+window/stretch/scale=6.0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MagicMacros/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
 "res://assets/": "red",
 "res://scripts/": "purple"
 }
