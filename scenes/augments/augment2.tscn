@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://brn2sb0w74tcq"]
+[gd_scene load_steps=11 format=3 uid="uid://b6vogarh0ybse"]
 
-[ext_resource type="Script" uid="uid://b843e3kysa2ku" path="res://scripts/upgrades/upgrade.gd" id="1_xu3pf"]
-[ext_resource type="Resource" uid="uid://crgjubh85icnb" path="res://resources/upgrades/familiar2_upgrade.tres" id="2_xu3pf"]
-[ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="3_hmfv5"]
-[ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="4_ggmj3"]
-[ext_resource type="Script" uid="uid://cacjd5sdv7lpp" path="res://scripts/animations/upgrade_animations.gd" id="5_21pbb"]
-[ext_resource type="Texture2D" uid="uid://16v7a8u13258" path="res://assets/sprites/familiars/Familiar1_icon.png" id="6_aru87"]
-[ext_resource type="FontFile" uid="uid://cwspk20ov43rw" path="res://assets/fonts/PrStart.ttf" id="7_kmwpa"]
+[ext_resource type="Script" uid="uid://c7n5h5gu7d6sd" path="res://scripts/augments/augment2.gd" id="1_l8mkp"]
+[ext_resource type="Resource" uid="uid://cei5q2oee4h2" path="res://resources/augment/augment2.tres" id="2_enmep"]
+[ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="3_x0ygl"]
+[ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="4_jngs0"]
+[ext_resource type="Script" uid="uid://cacjd5sdv7lpp" path="res://scripts/animations/upgrade_animations.gd" id="5_l2trb"]
+[ext_resource type="Texture2D" uid="uid://16v7a8u13258" path="res://assets/sprites/familiars/Familiar1_icon.png" id="6_5mkwq"]
+[ext_resource type="FontFile" uid="uid://cwspk20ov43rw" path="res://assets/fonts/PrStart.ttf" id="7_qsusi"]
 
 [sub_resource type="Animation" id="Animation_wxwnq"]
 length = 0.001
@@ -45,13 +45,13 @@ _data = {
 &"click": SubResource("Animation_8v8n1")
 }
 
-[node name="Familiar2Upgrade" type="Node2D"]
-script = ExtResource("1_xu3pf")
-upgrade_res = ExtResource("2_xu3pf")
+[node name="Augment2" type="Node2D"]
+script = ExtResource("1_l8mkp")
+augment_res = ExtResource("2_enmep")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("3_hmfv5")
+stream = ExtResource("3_x0ygl")
 pitch_scale = 0.56
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -59,17 +59,17 @@ unique_name_in_owner = true
 offset_right = 53.0
 offset_bottom = 20.0
 scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("4_ggmj3")
-script = ExtResource("5_21pbb")
+texture_normal = ExtResource("4_jngs0")
+script = ExtResource("5_l2trb")
 
 [node name="TextureRect" type="TextureRect" parent="TextureButton"]
-self_modulate = Color(0.67451, 0.956863, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 4.54545
 offset_top = 4.54545
 offset_right = 13.5455
 offset_bottom = 13.5454
-texture = ExtResource("6_aru87")
+texture = ExtResource("6_5mkwq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
 libraries = {
@@ -83,7 +83,7 @@ offset_left = 20.0
 offset_top = 9.0
 offset_right = 44.0
 offset_bottom = 17.0
-theme_override_fonts/font = ExtResource("7_kmwpa")
+theme_override_fonts/font = ExtResource("7_qsusi")
 theme_override_font_sizes/font_size = 8
 text = "100"
 
@@ -95,4 +95,14 @@ offset_right = 81.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 8
 text = "Amount:0"
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -2.0
+offset_top = 37.0
+offset_right = 92.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 8
+text = "<description>"
 autowrap_mode = 2

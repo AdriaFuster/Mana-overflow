@@ -1,10 +1,11 @@
 extends Node
 class_name GameTimer
 
-@export var tick_interval: float = 1.0/20
+@export var tick_interval: float = 1
 
 var _timer: Timer
 signal tick
+var _n_tick: int = 1
 
 func _ready():
 	_timer = Timer.new()
@@ -16,6 +17,8 @@ func _ready():
 	_timer.autostart = true
 	
 	add_child(_timer)
+	
+	_tick()
 
 func resume() -> void:
 	_timer.start()
@@ -28,10 +31,11 @@ func change_tick_rate(new_tick: float):
 	_timer.wait_time = tick_interval
 	
 func _on_timeout():
-	tick.emit()
-	var random_offset: float = randf_range(0.01, 0.015) 
-	var new_tick_interval = tick_interval+random_offset
-	_timer.wait_time = new_tick_interval
-	
+	_tick()
+
+func _tick() -> void:
+	print(_n_tick)
+	_n_tick += 1
+	tick.emit()	
 
 	

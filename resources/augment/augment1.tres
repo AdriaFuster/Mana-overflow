@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" load_steps=2 format=3 uid="uid://cgxuatixw5hnt"]
+
+[ext_resource type="Script" uid="uid://bs4wvc1dnw488" path="res://resources/augment/augment_resource.gd" id="1_pbctt"]
+
+[resource]
+script = ExtResource("1_pbctt")
+name = "upgrade1"
+description = "20% mps for the next tick if no cauldron cick for 10 s"
+tick_rate = 10.0
+tick_duration = 1.0
+permanent = false
+type = 0
+metadata/_custom_type_script = "uid://bs4wvc1dnw488"

@@ -5,6 +5,8 @@ class_name Upgrade
 @onready var upgrade: UpgradeAnimations = %TextureButton
 @onready var cost_label: Label = %CostLabel
 @onready var amount_label: Label = %AmountLabel
+@onready var description_label: Label = %Description
+
 
 const MULTIPLIER_RATE: float = 1.15
 
@@ -24,6 +26,7 @@ func _process(_delta: float) -> void:
 
 func _setup():
 	cost_label.text = str(upgrade_res.cost)
+	description_label.text = str(upgrade_res.description)
 	_update_amount_label()
 	
 func _update_amount_label() ->void :

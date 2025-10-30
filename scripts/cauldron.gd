@@ -9,4 +9,5 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	GameEvents.add_mana.emit(cauldron_unit)
+	GameEvents.cauldron_click.emit()
 	cauldron.cauldron_click_anim()

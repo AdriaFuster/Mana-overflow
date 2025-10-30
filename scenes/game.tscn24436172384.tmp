@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/Background.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b0awq37t4vt34" path="res://assets/Bookshelve.png" id="3_gee14"]
 [ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/Wizard.png" id="4_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://c6vt48gpkjsoo" path="res://scenes/augments/augment1.tscn" id="5_gee14"]
+[ext_resource type="PackedScene" uid="uid://c6vt48gpkjsoo" path="res://scenes/buttons/upgrade1.tscn" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://dbmln6jfoerjj" path="res://scenes/cauldron.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://b6vogarh0ybse" path="res://scenes/augments/augment2.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://b6vogarh0ybse" path="res://scenes/buttons/upgrade2.tscn" id="7_u5sy4"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -71,7 +71,8 @@ position = Vector2(160, 90)
 position = Vector2(75, 96)
 
 [node name="Upgrade1" parent="." instance=ExtResource("5_gee14")]
-position = Vector2(199, 24)
+position = Vector2(185, 25)
+efect_increment = null
 
 [node name="Upgrade2" parent="." instance=ExtResource("7_u5sy4")]
-position = Vector2(129, 106)
+position = Vector2(184, 83)

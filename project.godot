@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameTick="*res://scripts/global_scripts/game_tick.gd"
 GameEvents="*res://scripts/global_scripts/game_events.gd"
 Stats="*res://scripts/global_scripts/stats.gd"
-GameTick="*res://scripts/global_scripts/game_tick.gd"
+GameManager="*res://scripts/global_scripts/game_manager.gd"
 
 [display]
 

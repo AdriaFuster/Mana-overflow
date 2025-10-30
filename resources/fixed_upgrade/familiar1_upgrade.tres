@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="UpgradeResource" load_steps=2 format=3 uid="uid://q451sw4hdkxd"]
 
-[ext_resource type="Script" uid="uid://bs4wvc1dnw488" path="res://resources/upgrades/upgrade_resource.gd" id="1_s8i4o"]
+[ext_resource type="Script" uid="uid://bs4wvc1dnw488" path="res://resources/augment/augment_resource.gd" id="1_s8i4o"]
 
 [resource]
 script = ExtResource("1_s8i4o")
 name = "upgrade1"
-cost = 10
+cost = 20
 mps = 0.4
 tick_rate = 0.4
+type = 0
 metadata/_custom_type_script = "uid://bs4wvc1dnw488"

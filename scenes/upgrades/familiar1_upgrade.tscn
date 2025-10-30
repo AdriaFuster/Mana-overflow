@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://dorceqagmrdh5"]
+
+[ext_resource type="Script" uid="uid://b843e3kysa2ku" path="res://scripts/augments/augment.gd" id="1_wxwnq"]
+[ext_resource type="Resource" uid="uid://q451sw4hdkxd" path="res://resources/fixed_upgrade/familiar1_upgrade.tres" id="2_pahos"]
+[ext_resource type="Script" uid="uid://cacjd5sdv7lpp" path="res://scripts/animations/upgrade_animations.gd" id="3_8v8n1"]
+[ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="3_wxwnq"]
+[ext_resource type="Texture2D" uid="uid://16v7a8u13258" path="res://assets/sprites/familiars/Familiar1_icon.png" id="4_8v8n1"]
+[ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="4_pahos"]
+[ext_resource type="FontFile" uid="uid://cwspk20ov43rw" path="res://assets/fonts/PrStart.ttf" id="6_wxwnq"]
+
+[sub_resource type="Animation" id="Animation_wxwnq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_8v8n1"]
+resource_name = "click"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pahos"]
+_data = {
+&"RESET": SubResource("Animation_wxwnq"),
+&"click": SubResource("Animation_8v8n1")
+}
+
+[node name="Familiar1Upgrade" type="Node2D"]
+script = ExtResource("1_wxwnq")
+upgrade_res = ExtResource("2_pahos")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_pahos")
+pitch_scale = 0.56
+
+[node name="TextureButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_right = 53.0
+offset_bottom = 20.0
+scale = Vector2(1.1, 1.1)
+texture_normal = ExtResource("3_wxwnq")
+script = ExtResource("3_8v8n1")
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton"]
+layout_mode = 0
+offset_left = 4.54545
+offset_top = 5.45455
+offset_right = 13.5455
+offset_bottom = 14.4545
+texture = ExtResource("4_8v8n1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_pahos")
+}
+
+[node name="CostLabel" type="Label" parent="TextureButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 9.0
+offset_right = 44.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("6_wxwnq")
+theme_override_font_sizes/font_size = 8
+text = "100"
+
+[node name="AmountLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -3.0
+offset_top = 23.0
+offset_right = 81.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 8
+text = "Amount:0"
+autowrap_mode = 2

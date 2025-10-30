@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" load_steps=2 format=3 uid="uid://cei5q2oee4h2"]
+
+[ext_resource type="Script" uid="uid://bs4wvc1dnw488" path="res://resources/augment/augment_resource.gd" id="1_bhewu"]
+
+[resource]
+script = ExtResource("1_bhewu")
+name = "upgrade2"
+description = "10% MPS"
+tick_rate = 0.0
+tick_duration = 0.0
+permanent = true
+type = 0
+metadata/_custom_type_script = "uid://bs4wvc1dnw488"
