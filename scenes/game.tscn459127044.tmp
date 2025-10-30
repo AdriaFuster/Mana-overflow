@@ -70,38 +70,27 @@ position = Vector2(160, 90)
 [node name="Cauldron" parent="." instance=ExtResource("5_iywne")]
 position = Vector2(75, 96)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_left = 245.0
-offset_top = 8.0
-offset_right = 318.0
-offset_bottom = 172.0
+[node name="Upgrade1" parent="." instance=ExtResource("5_gee14")]
+offset_left = 199.0
+offset_top = 24.0
+offset_right = 199.0
+offset_bottom = 24.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Upgrade2" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(129, 106)
 
-[node name="Augment1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.153
+anchor_top = 0.001
+anchor_right = 0.173
+anchor_bottom = 0.171
+offset_left = -0.76001
+offset_top = -0.08
+offset_right = 0.839996
+offset_bottom = 0.319992
 
-[node name="Augment2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("7_u5sy4")]
+[node name="ColorRect" type="ColorRect" parent="GridContainer"]
 layout_mode = 2
-
-[node name="Augment3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("7_u5sy4")]
-layout_mode = 2
-
-[node name="Augment4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
+color = Color(0, 0, 0.698039, 1)
