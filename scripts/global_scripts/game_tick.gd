@@ -1,5 +1,4 @@
 extends Node
-class_name GameTimer
 
 @export var tick_interval: float = 1
 

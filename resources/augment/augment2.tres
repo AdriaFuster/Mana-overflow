@@ -1,13 +1,16 @@
-[gd_resource type="Resource" script_class="UpgradeResource" load_steps=2 format=3 uid="uid://cei5q2oee4h2"]
+[gd_resource type="Resource" script_class="Augment2" load_steps=3 format=3 uid="uid://c4kdubfckm5lx"]
 
-[ext_resource type="Script" uid="uid://bs4wvc1dnw488" path="res://resources/augment/augment_resource.gd" id="1_bhewu"]
+[ext_resource type="Texture2D" uid="uid://b0ed5sw54bxbt" path="res://assets/sprites/augments/Augment2_icon.png" id="1_4eas0"]
+[ext_resource type="Script" uid="uid://c7n5h5gu7d6sd" path="res://scripts/augments/augment2.gd" id="1_vnq0g"]
 
 [resource]
-script = ExtResource("1_bhewu")
-name = "upgrade2"
-description = "10% MPS"
+script = ExtResource("1_vnq0g")
+efect_increment = 5.0
+name = "augment2"
+description = "2% MPS"
 tick_rate = 0.0
 tick_duration = 0.0
 permanent = true
 type = 0
-metadata/_custom_type_script = "uid://bs4wvc1dnw488"
+icon = ExtResource("1_4eas0")
+metadata/_custom_type_script = "uid://c7n5h5gu7d6sd"

@@ -1,19 +1,21 @@
-extends Control
+extends Resource
 class_name Augment
 
-@export var augment_res: AugmentResource
-@onready var upgrade: UpgradeAnimations = %TextureButton
-@onready var cost_label: Label = %CostLabel
-@onready var amount_label: Label = %AmountLabel
-@onready var description_label: Label = %Description
+enum AugmentType {
+	IDLE,
+	CLICK
+}
 
+@export var name: String = ""
+@export var description: String
+@export var tick_rate: float = 1
+@export var tick_duration: float = 1
+@export var permanent: bool
+@export var type: AugmentType
+@export var icon: Texture2D
 
-const MULTIPLIER_RATE: float = 1.15
-
-func _ready() -> void:
-	_setup()
-
-func _setup():
-	description_label.text = str(augment_res.description)
+func tick() -> void:
 	pass
-	
+
+func augment_efect() -> void:
+	pass

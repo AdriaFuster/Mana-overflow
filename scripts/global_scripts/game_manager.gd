@@ -26,9 +26,8 @@ func _on_tick():
 func _add_modifiers_mana() -> Big:
 	var total_gain = Big.new(0)
 	
-	
-	for name in Stats.active_modifiers_mana.keys():
-		var mod: Modifier = Stats.active_modifiers_mana[name]
+	for m_name in Stats.active_modifiers_mana.keys():
+		var mod: Modifier = Stats.active_modifiers_mana[m_name]
 		mod.function.call(total_gain)
 		if !mod.permanent:
 			mod.ticks_remaining -= 1

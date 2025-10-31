@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8g1d8h4sgsnt"
-path="res://.godot/imported/Background.png-6d72d35f07f42b3845e8764c552bb4fb.ctex"
+uid="uid://cn3c1dvhdkn7o"
+path="res://.godot/imported/Augment1_icon.png-6e2a68a4656a997740cf3661543967f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background.png"
-dest_files=["res://.godot/imported/Background.png-6d72d35f07f42b3845e8764c552bb4fb.ctex"]
+source_file="res://assets/sprites/augments/Augment1_icon.png"
+dest_files=["res://.godot/imported/Augment1_icon.png-6e2a68a4656a997740cf3661543967f4.ctex"]
 
 [params]
 

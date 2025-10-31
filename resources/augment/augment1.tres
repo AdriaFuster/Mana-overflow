@@ -1,13 +1,16 @@
-[gd_resource type="Resource" script_class="UpgradeResource" load_steps=2 format=3 uid="uid://cgxuatixw5hnt"]
+[gd_resource type="Resource" script_class="Augment1" load_steps=3 format=3 uid="uid://c60qgb00224lt"]
 
-[ext_resource type="Script" uid="uid://bs4wvc1dnw488" path="res://resources/augment/augment_resource.gd" id="1_pbctt"]
+[ext_resource type="Script" uid="uid://cgios64ye71ob" path="res://scripts/augments/augment1.gd" id="1_omghl"]
+[ext_resource type="Texture2D" uid="uid://cn3c1dvhdkn7o" path="res://assets/sprites/augments/Augment1_icon.png" id="1_rwpe6"]
 
 [resource]
-script = ExtResource("1_pbctt")
-name = "upgrade1"
-description = "20% mps for the next tick if no cauldron cick for 10 s"
+script = ExtResource("1_omghl")
+efect_increment = 5.0
+name = "augment1"
+description = "20% mps next click if no cauldron click in 10 seconds"
 tick_rate = 10.0
 tick_duration = 1.0
 permanent = false
 type = 0
-metadata/_custom_type_script = "uid://bs4wvc1dnw488"
+icon = ExtResource("1_rwpe6")
+metadata/_custom_type_script = "uid://cgios64ye71ob"

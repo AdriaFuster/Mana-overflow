@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5y886tdja0cd"]
 
-[ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui_manager.gd" id="1_gee14"]
-[ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/Background.png" id="2_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://b0awq37t4vt34" path="res://assets/Bookshelve.png" id="3_gee14"]
-[ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/Wizard.png" id="4_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://c6vt48gpkjsoo" path="res://scenes/augments/augment1.tscn" id="5_gee14"]
+[ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_manager.gd" id="1_gee14"]
+[ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/sprites/background/Background.png" id="2_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://b0awq37t4vt34" path="res://assets/sprites/background/Bookshelve.png" id="3_gee14"]
+[ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/background/Wizard.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://dbmln6jfoerjj" path="res://scenes/cauldron.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://b6vogarh0ybse" path="res://scenes/augments/augment2.tscn" id="7_u5sy4"]
+[ext_resource type="Script" uid="uid://bype7x6gudtos" path="res://scripts/ui/inventory_ui.gd" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/UI/augment_ui.tscn" id="7_u5sy4"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -70,38 +70,32 @@ position = Vector2(160, 90)
 [node name="Cauldron" parent="." instance=ExtResource("5_iywne")]
 position = Vector2(75, 96)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_left = 245.0
-offset_top = 8.0
-offset_right = 318.0
-offset_bottom = 172.0
+[node name="InventoryUI" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 205.0
+offset_top = 105.0
+offset_right = 320.0
+offset_bottom = 180.0
+script = ExtResource("6_p57ef")
+ui_scene = ExtResource("7_u5sy4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -97.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.368627, 0.32549, 0.337255, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryUI"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 18.0
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Augment1" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("7_u5sy4")]
-layout_mode = 2
-
-[node name="Augment3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("7_u5sy4")]
-layout_mode = 2
-
-[node name="Augment4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2
-
-[node name="Augment8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("5_gee14")]
-layout_mode = 2

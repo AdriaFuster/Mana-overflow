@@ -41,7 +41,6 @@ func _increase_cost() -> void:
 	
 
 func _on_pressed():
-	Stats.add_upgrade(self)	
 	GameEvents.deduce_mana.emit(upgrade_res.cost)
 	GameEvents.calculate_mps.emit()
 	

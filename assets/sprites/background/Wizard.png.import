@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0awq37t4vt34"
-path="res://.godot/imported/Bookshelve.png-e7b04a9721860994b3bef1b3fba0918a.ctex"
+uid="uid://drcilulghgxts"
+path="res://.godot/imported/Wizard.png-9491a00d16e5995b74a1ec1b048ac029.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bookshelve.png"
-dest_files=["res://.godot/imported/Bookshelve.png-e7b04a9721860994b3bef1b3fba0918a.ctex"]
+source_file="res://assets/sprites/background/Wizard.png"
+dest_files=["res://.godot/imported/Wizard.png-9491a00d16e5995b74a1ec1b048ac029.ctex"]
 
 [params]
 
