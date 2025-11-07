@@ -1,50 +1,34 @@
-extends Node2D
+extends Resource
 class_name Upgrade
 
-@export var upgrade_res: UpgradeResource
-@onready var upgrade: UpgradeAnimations = %TextureButton
-@onready var cost_label: Label = %CostLabel
-@onready var amount_label: Label = %AmountLabel
-@onready var description_label: Label = %Description
 
+@export var name: String = "upgrade"
+@export var description: String
+@export var cost: float = 10
+@export var mps: float = 1
+@export var tick_rate: float = 0.4
+@export var amount: int = 0
+@export var icon: Texture2D
 
 const MULTIPLIER_RATE: float = 1.15
 
-func _ready() -> void:
-	upgrade.pressed.connect(_on_pressed)
-	_setup()
-	
-
-func _process(_delta: float) -> void:
-	if (Stats.mana.isLessThan(upgrade_res.cost)):
-		upgrade.disabled = true
-		upgrade.modulate.a = .6
-	else: 
-		upgrade.disabled = false
-		upgrade.modulate.a = 1
-
-
-func _setup():
-	cost_label.text = str(upgrade_res.cost)
-	description_label.text = str(upgrade_res.description)
-	_update_amount_label()
-	
-func _update_amount_label() ->void :
-	amount_label.text = "Amount:"+ str(Stats.get_upgrade_amount(self))
-
-func _update_cost_label() -> void:
-	cost_label.text = str(upgrade_res.cost)
-	
+signal update_cost(new_cost: int)
+signal update_amount(new_amount: int)
 	
 func _increase_cost() -> void:
-	upgrade_res.cost *= MULTIPLIER_RATE
+	cost *= MULTIPLIER_RATE
+	update_cost.emit(cost)
 	
+func _increase_amount() -> void:
+	amount += 1
+	update_amount.emit(amount)
 
-func _on_pressed():
-	GameEvents.deduce_mana.emit(upgrade_res.cost)
-	GameEvents.calculate_mps.emit()
+func upgrade_click() -> void:
+	_increase_amount()
 	
+	GameEvents.deduce_mana.emit(cost)
 	_increase_cost()
 	
-	_update_amount_label()
-	_update_cost_label()
+	GameEvents.calculate_mps.emit()
+	
+	

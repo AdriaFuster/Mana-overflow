@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5y886tdja0cd"]
+[gd_scene load_steps=9 format=3 uid="uid://b5y886tdja0cd"]
 
 [ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_manager.gd" id="1_gee14"]
 [ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/sprites/background/Background.png" id="2_u5sy4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbmln6jfoerjj" path="res://scenes/cauldron.tscn" id="5_iywne"]
 [ext_resource type="Script" uid="uid://bype7x6gudtos" path="res://scripts/ui/inventory_ui.gd" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/UI/augment_ui.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/UI/upgrade_ui.tscn" id="8_gee14"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -77,9 +78,10 @@ offset_top = 105.0
 offset_right = 320.0
 offset_bottom = 180.0
 script = ExtResource("6_p57ef")
-ui_scene = ExtResource("7_u5sy4")
+a_ui_scene = ExtResource("7_u5sy4")
+u_ui_scene = ExtResource("8_gee14")
 
-[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+[node name="AugmentBackground" type="ColorRect" parent="InventoryUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +92,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.368627, 0.32549, 0.337255, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InventoryUI"]
+[node name="UpgradeBackground" type="ColorRect" parent="InventoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -98.0
+offset_right = -42.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.368627, 0.32549, 0.337255, 1)
+
+[node name="AugmentContainer" type="VBoxContainer" parent="InventoryUI"]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 1
 anchors_preset = 9
@@ -99,3 +113,9 @@ offset_right = 18.0
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="UpgradeContainer" type="VBoxContainer" parent="InventoryUI"]
+layout_mode = 0
+offset_top = -98.0
+offset_right = 73.0
+offset_bottom = -30.0

@@ -1,6 +1,6 @@
 extends Node
 
-@export var tick_interval: float = 1
+@export var tick_interval: float = 0.1
 
 var _timer: Timer
 signal tick
@@ -33,8 +33,8 @@ func _on_timeout():
 	_tick()
 
 func _tick() -> void:
-	print(_n_tick)
+	#print(_n_tick)
 	_n_tick += 1
 	tick.emit()	
-
+		
 	

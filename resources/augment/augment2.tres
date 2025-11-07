@@ -5,12 +5,9 @@
 
 [resource]
 script = ExtResource("1_vnq0g")
-efect_increment = 5.0
+seconds_duration = 0.1
+permanent = true
 name = "augment2"
 description = "2% MPS"
-tick_rate = 0.0
-tick_duration = 0.0
-permanent = true
-type = 0
 icon = ExtResource("1_4eas0")
 metadata/_custom_type_script = "uid://c7n5h5gu7d6sd"

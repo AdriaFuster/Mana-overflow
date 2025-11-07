@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://b65a2nsxyxd6k"]
+
+[ext_resource type="Texture2D" uid="uid://16v7a8u13258" path="res://assets/sprites/familiars/Familiar1_icon.png" id="1_0appt"]
+[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_dli5c"]
+
+[resource]
+script = ExtResource("1_dli5c")
+name = "upgrade1"
+mps = 0.1
+icon = ExtResource("1_0appt")
+metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

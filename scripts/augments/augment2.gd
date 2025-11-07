@@ -1,11 +1,14 @@
-extends Augment
+extends TickAugment
 class_name Augment2
 
 @export var increment: float = 0.02
 
-func augment_efect() -> void:
-	Stats.add_percent_modifier(name,increment, tick_duration, Stats.MODIFIER_TYPE.MPS, permanent)
+#Add 2% perma to the MPS
+func _calculate_value() -> Big:
+	var b_mps = Big.new(Stats.mps)
+	b_mps.multiplyEquals(increment)
 
+	return b_mps
 
 	
 	

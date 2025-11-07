@@ -1,0 +1,71 @@
+extends Node
+
+var augments: Dictionary = {}
+const  AUGMENTS_DIR: String = "res://resources/augment/"
+
+var upgrades: Dictionary = {}
+const  UPGRADES_DIR: String = "res://resources/upgrade/"
+
+enum LOCATION{
+	MANAGER,
+	SHOP,
+	INVENTORY
+}
+
+enum RESOURCE_TYPE{
+	AUGMENT,
+	UPGRADE
+}
+
+class ResourceEntry:
+	var resource: Variant
+	var location: LOCATION
+	var type: RESOURCE_TYPE
+	
+	func _init(r: Variant, l: LOCATION, t:RESOURCE_TYPE) -> void:
+		resource = r
+		location = l
+		type = t
+		
+
+
+func _init() -> void:
+	_load_augments()
+	_load_upgrades()
+	#for d_key: String in augments.keys():
+		#var augment: Augment = augments[d_key].augment
+		#print(augment.name)
+
+func get_augment(a_name: String, loc: LOCATION) -> Augment:
+	if augments.has(a_name) and augments[a_name].location != loc and augments[a_name].type == RESOURCE_TYPE.AUGMENT:
+		return augments[a_name].resource
+	print_debug("No s'ha trobat l'augment ", a_name, " al AugmentManager o ja esta a la location demanada")
+	return null
+	
+func get_upgrade(u_name: String, loc: LOCATION) -> Upgrade:
+	if upgrades.has(u_name) and upgrades[u_name].location != loc and upgrades[u_name].type == RESOURCE_TYPE.UPGRADE:
+		return upgrades[u_name].resource
+	print_debug("No s'ha trobat l'upgrade ", u_name, " al UpgradeManager o ja esta a la location demanada")
+	return null
+
+#func augment_removed(a_name: String, loc: AUGMENT_LOCATION) -> void:
+	#if augments.has(a_name):
+		#augments[a_name].location = loc
+		
+
+func _load_augments() -> void:
+	var dir = DirAccess.open(AUGMENTS_DIR)
+	if dir:
+		for file in dir.get_files():
+			if file.ends_with(".tres"):
+				var augment_entry: ResourceEntry = ResourceEntry.new(load(AUGMENTS_DIR + file), LOCATION.MANAGER, RESOURCE_TYPE.AUGMENT) 
+				augments[augment_entry.resource.name] = augment_entry
+
+
+func _load_upgrades() -> void:
+	var dir = DirAccess.open(UPGRADES_DIR)
+	if dir:
+		for file in dir.get_files():
+			if file.ends_with(".tres"):
+				var upgrade_entry: ResourceEntry = ResourceEntry.new(load(UPGRADES_DIR + file), LOCATION.MANAGER, RESOURCE_TYPE.UPGRADE) 
+				upgrades[upgrade_entry.resource.name] = upgrade_entry

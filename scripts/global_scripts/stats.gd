@@ -6,15 +6,24 @@ enum MODIFIER_TYPE {
 }
 
 var mana = Big.new(0)
-var mps = Big.new(100)
+var mps = Big.new(0)
 var mps_timer: float = 1
+var cauldron_power: float = 1
 
 #MODIFIERS
 var active_modifiers_mps: Dictionary = {}
 var active_modifiers_mana: Dictionary = {}
 
-
-func add_percent_modifier(m_name: String, percent: float, ticks: int, type: MODIFIER_TYPE, permanent: bool = false) -> void:
+func add_tick_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
+	if type == MODIFIER_TYPE.MPS:	
+		#print("afegim als mps ",Stats.mps.toAmericanName(), " ", percent+1)
+		active_modifiers_mps[m_name] = value
+	else:
+		#print("afegim al mana ",Stats.mana.toAmericanName(), " ", percent+1)
+		active_modifiers_mana[m_name] = value
+		
+#Not in use
+func add_percent_modifier(m_name: String, percent: float, ticks: int,type: MODIFIER_TYPE, permanent: bool = false) -> void:
 	var mod = Modifier.new(m_name,
 		func(base_gain: Big):
 		print("executing percent modifier ",m_name)
@@ -30,7 +39,7 @@ func add_percent_modifier(m_name: String, percent: float, ticks: int, type: MODI
 		#print("afegim al mana ",Stats.mana.toAmericanName(), " ", percent+1)
 		active_modifiers_mana[m_name] = mod
 		
-	
+#Not in use
 func add_flat_modifier(m_name: String, flat_value: float, ticks: int, type: MODIFIER_TYPE, permanent: bool = false) -> void:
 	var mod = Modifier.new(m_name, 
 		func(base_gain: Big):

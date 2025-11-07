@@ -1,26 +1,22 @@
-extends Augment
+extends TickAugment
 class_name Augment1
 
-@export var increment: float = 0.6
-var _tick_counter: int = 0
+@export var increment: float = 0.1
 
-func _init() -> void:
+func on_equip() -> void:
+	super.on_equip()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	
-		
-func tick() -> void:
-	_tick_counter += 1
-	if _tick_counter >= tick_rate:
-		augment_efect()
-		
-
-
-func augment_efect() -> void:
-	_tick_counter = 0
-	Stats.add_percent_modifier(name,increment, tick_duration, Stats.MODIFIER_TYPE.MPS)
+#Add 2% of the MPS for the next tick	
+func _calculate_value() -> Big:
+	var b_mps = Big.new(Stats.mps)
+	b_mps.multiplyEquals(increment+1)
 	
+	return b_mps
+
 
 func _on_cauldron_click() -> void:
-	_tick_counter = 0
+	_cd_cont = seconds_cd
+	_active = false
 	
 	

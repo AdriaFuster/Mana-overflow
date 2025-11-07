@@ -136,7 +136,7 @@ static var options = {
 	"default_exponent": 0,
 	"dynamic_decimals": false, 
 	"dynamic_numbers": 5, 
-	"small_decimals": 1, 
+	"small_decimals": 2, 
 	"thousand_decimals": 3, 
 	"big_decimals": 3, 
 	"scientific_decimals": 2, 

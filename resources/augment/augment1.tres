@@ -5,12 +5,9 @@
 
 [resource]
 script = ExtResource("1_omghl")
-efect_increment = 5.0
+seconds_cd = 10.0
+seconds_duration = 0.1
 name = "augment1"
 description = "20% mps next click if no cauldron click in 10 seconds"
-tick_rate = 10.0
-tick_duration = 1.0
-permanent = false
-type = 0
 icon = ExtResource("1_rwpe6")
 metadata/_custom_type_script = "uid://cgios64ye71ob"

@@ -8,20 +8,17 @@ func _ready() -> void:
 	GameEvents.calculate_mps.connect(_on_calculate_mps)
 	
 	GameTick.tick.connect(_on_tick)	
-
-func _process(_delta: float) -> void:
-	pass
-	
 	
 func _on_tick():
 	#ADD MODIFIERS TO MPS
 	var mps_modified = Big.new(_add_modifiers_mps())
 	Stats.mana.plusEquals(mps_modified)	
 	
-	#ADD MODIFIERS TO MANA
-	var mana_modified = Big.new(_add_modifiers_mana())
-	Stats.mana.plusEquals(mana_modified)	
 	
+	#ADD MODIFIERS TO MANA
+	#var mana_modified = Big.new(_add_modifiers_mana())
+	#Stats.mana.plusEquals(mana_modified)	
+
 	
 func _add_modifiers_mana() -> Big:
 	var total_gain = Big.new(0)
@@ -32,29 +29,21 @@ func _add_modifiers_mana() -> Big:
 		if !mod.permanent:
 			mod.ticks_remaining -= 1
 	
-	#Delete modifiers with 0 ticks
-	_delete_0_ticks_mod(Stats.active_modifiers_mana)
 	return total_gain
 
 func _add_modifiers_mps() -> Big:
 	var total_gain = Big.new(Stats.mps)
+	for m_name in Stats.active_modifiers_mps.keys():
+		total_gain.plusEquals(Stats.active_modifiers_mps[m_name]as Big)
 	
-	for name in Stats.active_modifiers_mps.keys():
-		var mod: Modifier = Stats.active_modifiers_mps[name]
-		mod.function.call(total_gain)
-		if !mod.permanent:
-			mod.ticks_remaining -= 1
+	_delete_mod(Stats.active_modifiers_mps)
 	
-	#Delete modifiers with 0 ticks
-	_delete_0_ticks_mod(Stats.active_modifiers_mps)
 	return total_gain
 
-func _delete_0_ticks_mod(d: Dictionary) -> void:
+func _delete_mod(d: Dictionary) -> void:
 	
-	for name in d.duplicate():
-		var mod: Modifier = d[name]
-		if mod.ticks_remaining <= 0 and !mod.permanent:
-			d.erase(name)
+	for m_name in d.duplicate():
+		d.erase(m_name)
 
 
 func _on_add_mana(mana_add: float):
@@ -65,9 +54,10 @@ func _on_deduced_mana(mana_deduced: float):
 
 	
 func _on_calculate_mps() -> void:
-	var total_mps: float = 0
+	var total_mps: Big = Big.new(0)
 	
-	for u:Upgrade in Stats.upgrades:
-		total_mps += u.upgrade_res.mps * Stats.get_upgrade_amount(u)	
+	for u_name:String in Inventory.upgrades.keys():
+		var u: Upgrade = Inventory.upgrades[u_name]
+		total_mps.plusEquals(u.mps*u.amount)
 	
 	Stats.mps = Big.new(total_mps)
