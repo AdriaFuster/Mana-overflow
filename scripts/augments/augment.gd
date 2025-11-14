@@ -1,19 +1,14 @@
-extends Resource
+extends InventoryItem
 class_name Augment
 
-enum AugmentType {
-	IDLE,
-	CLICK
-}
 
-@export var name: String = ""
-@export var description: String
-@export var type: AugmentType
+
+@export var type: GlobalEnum.AugmentType
 @export var icon: Texture2D
 
-var cd: float
-var duration: float = 0.1
 
+var cd_cont: int
+var active_cont: int
 
 func on_equip() -> void:
 	assert(false, ("No esta definida la funció on_equip per l'augment " + name))

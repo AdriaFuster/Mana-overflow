@@ -4,7 +4,7 @@ extends Node
 
 var _timer: Timer
 signal tick
-var _n_tick: int = 1
+var _n_tick: int = 0
 
 func _ready():
 	_timer = Timer.new()
@@ -33,7 +33,10 @@ func _on_timeout():
 	_tick()
 
 func _tick() -> void:
-	#print(_n_tick)
+	#if _n_tick%10 == 0:
+		#print(_n_tick)
+		
+		
 	_n_tick += 1
 	tick.emit()	
 		

@@ -7,14 +7,16 @@ var augments: Dictionary = {}
 var location = ResourceManager.LOCATION.INVENTORY
 
 func _init() -> void:
-	add_augment("augment1")
-	add_augment("augment2")
-	add_augment("augment3")
-	add_augment("augment4")
+	add_augment("Growing leaf")
+	#add_augment("Mana potion")
+	#add_augment("augment3")
+	add_augment("Mighty force")
+	add_augment("Cauldron dogma")
+	
 	add_upgrade("upgrade1")
 	add_upgrade("upgrade2")
 	
-	GameTick.tick.connect(_on_tick)
+	TickManager.register(self, 1)
 	
 	
 #AUGMENTS
@@ -27,7 +29,7 @@ func add_augment(a_name: String) -> void:
 			a.on_equip()
 			GameEvents.inventory_changed.emit()
 	
-func get_n_augments(type: Augment.AugmentType) -> int:
+func get_n_augments(type: GlobalEnum.AugmentType) -> int:
 	var cont: int = 0
 	for a_name in augments.keys():
 		var a: Augment = augments[a_name]
@@ -36,13 +38,6 @@ func get_n_augments(type: Augment.AugmentType) -> int:
 	
 	return cont
 
-#func remove_augment(a_name: String) -> void:
-	#if augments.has(a_name):
-		#augments.erase(a_name)
-		#ResourceManager.augment_removed(a_name, location)
-		#
-		#GameEvents.inventory_changed.emit()
-	
 
 #UPGRADES
 func add_upgrade(u_name: String) -> void:
@@ -54,12 +49,13 @@ func add_upgrade(u_name: String) -> void:
 			GameEvents.inventory_changed.emit()
 
 
-#func remove_upgrade(u_name: String) -> void:
-	#if upgrades.has(u_name):
-		#upgrades.erase(u_name)
-		#
-		
-func _on_tick() -> void:
+func _on_tick_permanent_a() -> void:
+	for a_name:String in augments.keys():
+		var a: Augment = augments[a_name]
+		if a is PermanentAugment:
+			a.tick()
+
+func _on_tick_tick_a() -> void:
 	for a_name:String in augments.keys():
 		var a: Augment = augments[a_name]
 		if a is TickAugment:

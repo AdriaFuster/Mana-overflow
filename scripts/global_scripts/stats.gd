@@ -7,59 +7,46 @@ enum MODIFIER_TYPE {
 
 var mana = Big.new(0)
 var mps = Big.new(0)
-var mps_timer: float = 1
+var mod_mps = Big.new(0)
 var cauldron_power: float = 1
+var mod_cauldron_power: float = 1
 
 #MODIFIERS
-var active_modifiers_mps: Dictionary = {}
+var tick_modifiers_mps: Dictionary = {}
+var permanent_modifiers_mps: Dictionary = {}
 var active_modifiers_mana: Dictionary = {}
+var cauldron_modifiers: Dictionary = {}
 
 func add_tick_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
+	print ("add to tick modifier ",m_name )
 	if type == MODIFIER_TYPE.MPS:	
 		#print("afegim als mps ",Stats.mps.toAmericanName(), " ", percent+1)
-		active_modifiers_mps[m_name] = value
+		tick_modifiers_mps[m_name] = value
 	else:
 		#print("afegim al mana ",Stats.mana.toAmericanName(), " ", percent+1)
-		active_modifiers_mana[m_name] = value
-		
-#Not in use
-func add_percent_modifier(m_name: String, percent: float, ticks: int,type: MODIFIER_TYPE, permanent: bool = false) -> void:
-	var mod = Modifier.new(m_name,
-		func(base_gain: Big):
-		print("executing percent modifier ",m_name)
-		print("multiply by ",percent+1)
-		base_gain.multiplyEquals(percent+1), 
-		ticks,
-		permanent)
-		
+		tick_modifiers_mps[m_name] = value
+
+func add_permanent_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
+	#print ("add to permanent modifier ",m_name )
 	if type == MODIFIER_TYPE.MPS:	
 		#print("afegim als mps ",Stats.mps.toAmericanName(), " ", percent+1)
-		active_modifiers_mps[m_name] = mod
-	else:
-		#print("afegim al mana ",Stats.mana.toAmericanName(), " ", percent+1)
-		active_modifiers_mana[m_name] = mod
-		
-#Not in use
-func add_flat_modifier(m_name: String, flat_value: float, ticks: int, type: MODIFIER_TYPE, permanent: bool = false) -> void:
-	var mod = Modifier.new(m_name, 
-		func(base_gain: Big):
-		print("executing flat modifier ",m_name)
-		print("sum by ",flat_value)
-		base_gain.plusEquals(flat_value), 
-		ticks,
-		permanent)
-	
+		permanent_modifiers_mps[m_name] = value
+
+func add_cauldron_modifier(m_name: String, value: float) -> void:
+	cauldron_modifiers[m_name] = value
+
+func remove_tick_modifier(m_name: String, type: MODIFIER_TYPE) -> void:
 	if type == MODIFIER_TYPE.MPS:	
-		active_modifiers_mps[m_name] = mod
+		tick_modifiers_mps.erase(m_name)
 	else:
-		active_modifiers_mana[m_name] = mod
-	
-	
-func remove_modifier(m_name: String, type: MODIFIER_TYPE) -> void:
+		tick_modifiers_mps.erase(m_name)
+
+func remove_permanent_modifier(m_name: String, type: MODIFIER_TYPE) -> void:
 	if type == MODIFIER_TYPE.MPS:	
-		active_modifiers_mps.erase(m_name)
-	else:
-		active_modifiers_mana.erase(m_name)
+		permanent_modifiers_mps.erase(m_name)
+
+func remove_cauldron_modifier(m_name: String) -> void:
+	cauldron_modifiers.erase(m_name)
 	
 	
 #UPGRADES
@@ -72,4 +59,3 @@ var upgrades: Dictionary = {}
 #
 #func add_upgrade(upgrade: Upgrade, amount: int = 1):
 	#upgrades[upgrade] = get_upgrade_amount(upgrade) + amount
-	

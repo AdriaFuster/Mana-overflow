@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8dnhp81ld2hm"]
+[gd_scene load_steps=5 format=3 uid="uid://c8dnhp81ld2hm"]
 
 [ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/UI/AugmentUI.png" id="1_aa8w3"]
 [ext_resource type="Script" uid="uid://cin7dgf4ioo7d" path="res://scripts/ui/augment_ui.gd" id="1_omxwx"]
+[ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_yqxyf"]
+
+[sub_resource type="Theme" id="Theme_h8gh8"]
+default_font = ExtResource("3_yqxyf")
+default_font_size = 8
 
 [node name="AugmentUi" type="Control"]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(18, 25)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -302.0
-offset_bottom = -162.0
+offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_omxwx")
@@ -29,3 +34,15 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 17.0
 offset_bottom = 17.0
+
+[node name="Cd" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 18.0
+offset_right = 18.0
+offset_bottom = 26.0
+theme = SubResource("Theme_h8gh8")
+text = "10"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

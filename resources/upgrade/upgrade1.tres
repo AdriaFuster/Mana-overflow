@@ -5,7 +5,9 @@
 
 [resource]
 script = ExtResource("1_dli5c")
-name = "upgrade1"
+cost = 15.0
 mps = 0.1
 icon = ExtResource("1_0appt")
+name = "upgrade1"
+description = "Each upgrade1 adds $MPS$ mana per second"
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

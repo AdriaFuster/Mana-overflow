@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvhs60koe8pqx"]
+[gd_scene load_steps=5 format=3 uid="uid://bvhs60koe8pqx"]
 
 [ext_resource type="Script" uid="uid://dc86vw3bltcsn" path="res://scripts/ui/upgrade_ui.gd" id="1_6jegm"]
 [ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="1_yfux5"]
+
+[sub_resource type="Theme" id="Theme_8hi8n"]
+
+[sub_resource type="Theme" id="Theme_6jegm"]
 
 [node name="UpgradeUi" type="Control"]
 custom_minimum_size = Vector2(73, 34)
@@ -31,6 +35,7 @@ offset_left = 18.0
 offset_top = 9.0
 offset_right = 61.0
 offset_bottom = 17.0
+theme = SubResource("Theme_8hi8n")
 theme_override_font_sizes/font_size = 8
 text = "<999>"
 
@@ -49,5 +54,9 @@ layout_mode = 0
 offset_top = 22.0
 offset_right = 69.0
 offset_bottom = 38.0
+theme = SubResource("Theme_6jegm")
 theme_override_font_sizes/font_size = 8
 text = "Amount 99"
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]

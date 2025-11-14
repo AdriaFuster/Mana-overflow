@@ -11,25 +11,26 @@ config_version=5
 [application]
 
 config/name="Mana overflow"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="uid://bmvh4dum13tdo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameTick="*res://scripts/global_scripts/game_tick.gd"
+TickManager="*res://scripts/global_scripts/tick_manager.gd"
+GlobalEnum="*res://scripts/global_scripts/global_enum.gd"
 GameEvents="*res://scripts/global_scripts/game_events.gd"
 Stats="*res://scripts/global_scripts/stats.gd"
 GameManager="*res://scripts/global_scripts/game_manager.gd"
 ResourceManager="*res://scripts/global_scripts/resource_manager.gd"
 Inventory="*res://scripts/global_scripts/inventory.gd"
+ItemPopup="*res://scenes/UI/popup.tscn"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [editor_plugins]
@@ -42,7 +43,8 @@ folder_colors={
 "res://addons/": "gray",
 "res://assets/": "red",
 "res://resources/": "yellow",
-"res://scripts/": "purple"
+"res://scripts/": "purple",
+"res://tools/": "pink"
 }
 
 [gui]

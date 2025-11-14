@@ -22,7 +22,7 @@ class ResourceEntry:
 	var location: LOCATION
 	var type: RESOURCE_TYPE
 	
-	func _init(r: Variant, l: LOCATION, t:RESOURCE_TYPE) -> void:
+	func _init(r: InventoryItem, l: LOCATION, t:RESOURCE_TYPE) -> void:
 		resource = r
 		location = l
 		type = t
@@ -68,4 +68,5 @@ func _load_upgrades() -> void:
 		for file in dir.get_files():
 			if file.ends_with(".tres"):
 				var upgrade_entry: ResourceEntry = ResourceEntry.new(load(UPGRADES_DIR + file), LOCATION.MANAGER, RESOURCE_TYPE.UPGRADE) 
+				upgrade_entry.resource.setup()
 				upgrades[upgrade_entry.resource.name] = upgrade_entry

@@ -14,4 +14,4 @@ func _process(_delta: float) -> void:
 
 func _display_values():
 	mana_label.text = "Mana = " + Stats.mana.toAmericanName()
-	mps_label.text = "MPS = " + Stats.mps.toAmericanName()
+	mps_label.text = "MPS = " + Stats.mod_mps.toAmericanName()

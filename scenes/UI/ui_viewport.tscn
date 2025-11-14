@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdpmq485dco6l"]
+
+[ext_resource type="Script" uid="uid://ke40kapn85ru" path="res://scripts/utils/viewport_change.gd" id="1_d08c8"]
+
+[node name="UiViewport" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d08c8")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 325.0
+offset_bottom = 157.0
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 92.0
+offset_right = 124.0
+offset_bottom = 140.0
+text = "1280x720"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 64.0
+text = "320x180"

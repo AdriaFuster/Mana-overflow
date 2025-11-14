@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf60d7nukpyr"]
+
+[ext_resource type="Script" uid="uid://ca2xbppb6y5cq" path="res://scripts/ui/popup.gd" id="1_b5l2p"]
+[ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="1_x0s5h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5l2p"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.30980393, 0.09803922, 0.11764706, 0.5411765)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Popup" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b5l2p")
+
+[node name="ItemPopUp" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(100, 35)
+size = Vector2i(300, 200)
+visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5l2p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemPopUp"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Name" type="RichTextLabel" parent="ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(80, 24)
+layout_mode = 2
+theme = ExtResource("1_x0s5h")
+theme_override_colors/font_shadow_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+bbcode_enabled = true
+text = "Name"
+scroll_active = false
+
+[node name="Description" type="RichTextLabel" parent="ItemPopUp/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 24)
+layout_mode = 2
+theme = ExtResource("1_x0s5h")
+theme_override_colors/font_shadow_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+text = "Description"

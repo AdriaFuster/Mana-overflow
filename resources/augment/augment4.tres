@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("1_2k5s5")
-click_cd = 10.0
-name = "augment4"
+cd = 10.0
+duration = 0.0
 type = 1
 icon = ExtResource("1_qppa2")
+name = "Mighty force"
+description = "Every 10 clicks, +100% cauldron power"
 metadata/_custom_type_script = "uid://oernwsi72kdj"

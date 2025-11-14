@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_6kx5r")
-name = "upgrade2"
 cost = 50.0
 mps = 0.4
+name = "upgrade2"
+description = "Each upgrade2 adds $MPS$ mana per second"
+locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

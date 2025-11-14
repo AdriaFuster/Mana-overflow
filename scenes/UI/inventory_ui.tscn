@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://eco7aeo6qdrx"]
+
+[ext_resource type="Script" uid="uid://bype7x6gudtos" path="res://scripts/ui/inventory_ui.gd" id="1_hpn5g"]
+[ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/UI/augment_ui.tscn" id="2_wa0qy"]
+[ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/UI/upgrade_ui.tscn" id="3_y0xdr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpn5g"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa0qy"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hpn5g")
+a_ui_scene = ExtResource("2_wa0qy")
+u_ui_scene = ExtResource("3_y0xdr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="AugmentBackground" type="PanelContainer" parent="CanvasLayer/Inventory"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hpn5g")
+
+[node name="AugmentContainer" type="HBoxContainer" parent="CanvasLayer/Inventory/AugmentBackground"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="UpgradeBackground" type="PanelContainer" parent="CanvasLayer/Inventory"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wa0qy")
+
+[node name="UpgradeContainer" type="VBoxContainer" parent="CanvasLayer/Inventory/UpgradeBackground"]
+unique_name_in_owner = true
+layout_mode = 2

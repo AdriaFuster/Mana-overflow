@@ -7,16 +7,15 @@ func on_equip() -> void:
 	super.on_equip()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	
-#Add 2% of the MPS for the next tick	
 func _calculate_value() -> Big:
-	var b_mps = Big.new(Stats.mps)
+	var b_mps = Big.new(Stats.mod_mps)
 	b_mps.multiplyEquals(increment+1)
 	
 	return b_mps
 
 
 func _on_cauldron_click() -> void:
-	_cd_cont = seconds_cd
+	cd_cont = int(cd / GameTick.tick_interval)
 	_active = false
 	
 	

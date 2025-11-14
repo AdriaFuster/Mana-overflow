@@ -36,6 +36,7 @@ func _set_state(active: bool) -> void:
 		button.disabled = true
 		button.modulate.a = 0.5
 
+
 func _on_pressed() -> void:
 	upgrade.upgrade_click()
 
@@ -46,6 +47,11 @@ func _on_update_cost(new_cost: int) -> void:
 func _on_update_amount(new_amount: int) -> void:
 	amount.text = str("Amount:",new_amount)
 	
-	
-	
-	
+
+func _on_texture_button_mouse_entered() -> void:
+	ItemPopup.item_popup(Rect2i(Vector2i(button.global_position), Vector2i(size)), 
+	upgrade, ItemPopup.DISTRIBUTION_MODE.VERTICAL)
+
+
+func _on_texture_button_mouse_exited() -> void:
+	ItemPopup.hide_item_popup()
