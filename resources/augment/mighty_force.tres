@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MightyForce" load_steps=3 format=3 uid="uid://xmwqxbrs5doj"]
+
+[ext_resource type="Texture2D" uid="uid://6v1iofcwe8xb" path="res://assets/sprites/augments/mighty_force.png" id="1_jtejt"]
+[ext_resource type="Script" uid="uid://oernwsi72kdj" path="res://scripts/augments/click/mighty_force.gd" id="2_38dh3"]
+
+[resource]
+script = ExtResource("2_38dh3")
+cd = 10.0
+type = 1
+icon = ExtResource("1_jtejt")
+name = "Mighty force"
+description = "Every 10 clicks, +100% cauldron power"
+metadata/_custom_type_script = "uid://oernwsi72kdj"

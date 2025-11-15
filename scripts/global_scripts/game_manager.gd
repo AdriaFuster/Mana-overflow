@@ -25,6 +25,7 @@ func calculate_permanent_modifiers() -> void:
 	
 	for m_name in Stats.permanent_modifiers_mps.keys():
 		Stats.mod_mps.plusEquals(Stats.permanent_modifiers_mps[m_name]as Big)
+		#print("permanent mod ",Stats.permanent_modifiers_mps[m_name].toAmericanName())
 
 	#print ("mod_mps ",Stats.mod_mps.toAmericanName())
 

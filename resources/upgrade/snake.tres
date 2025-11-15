@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://bu4rgg3ryspdh"]
+
+[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_6kx5r"]
+[ext_resource type="Texture2D" uid="uid://jgf60qpj46b8" path="res://assets/sprites/upgrades/snake.png" id="1_oqnms"]
+
+[resource]
+script = ExtResource("1_6kx5r")
+cost = 50.0
+mps = 0.4
+icon = ExtResource("1_oqnms")
+name = "Snake"
+description = "Each snake adds $MPS$ mana per second"
+locked = true
+metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

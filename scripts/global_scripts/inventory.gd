@@ -8,13 +8,13 @@ var location = ResourceManager.LOCATION.INVENTORY
 
 func _init() -> void:
 	add_augment("Growing leaf")
-	#add_augment("Mana potion")
+	add_augment("Mana potion")
 	#add_augment("augment3")
 	add_augment("Mighty force")
 	add_augment("Cauldron dogma")
 	
-	add_upgrade("upgrade1")
-	add_upgrade("upgrade2")
+	add_upgrade("Bat")
+	add_upgrade("Snake")
 	
 	TickManager.register(self, 1)
 	

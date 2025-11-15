@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvhs60koe8pqx"]
+[gd_scene load_steps=7 format=3 uid="uid://bvhs60koe8pqx"]
 
 [ext_resource type="Script" uid="uid://dc86vw3bltcsn" path="res://scripts/ui/upgrade_ui.gd" id="1_6jegm"]
 [ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="1_yfux5"]
+[ext_resource type="Shader" uid="uid://bfls0ka3u10vc" path="res://scenes/UI/upgrade_ui.gdshader" id="3_8hi8n"]
 
 [sub_resource type="Theme" id="Theme_8hi8n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jegm"]
+resource_local_to_scene = true
+shader = ExtResource("3_8hi8n")
+shader_parameter/use_silhouette = false
 
 [sub_resource type="Theme" id="Theme_6jegm"]
 
@@ -41,6 +47,7 @@ text = "<999>"
 
 [node name="Icon" type="TextureRect" parent="TextureButton"]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6jegm")
 custom_minimum_size = Vector2(9, 9)
 layout_mode = 0
 offset_left = 5.0

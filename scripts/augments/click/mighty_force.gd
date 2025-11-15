@@ -1,5 +1,5 @@
 extends ClickAugment
-class_name Augment4
+class_name MightyForce
 
 @export var increment: float = 1
 	

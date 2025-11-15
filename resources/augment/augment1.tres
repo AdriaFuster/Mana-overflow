@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Augment1" load_steps=3 format=3 uid="uid://c60qgb00224lt"]
 
-[ext_resource type="Script" uid="uid://cgios64ye71ob" path="res://scripts/augments/augment1.gd" id="1_omghl"]
+[ext_resource type="Script" uid="uid://cgios64ye71ob" path="res://scripts/augments/tick/augment1.gd" id="1_omghl"]
 [ext_resource type="Texture2D" uid="uid://cn3c1dvhdkn7o" path="res://assets/sprites/augments/Augment1_icon.png" id="1_rwpe6"]
 
 [resource]

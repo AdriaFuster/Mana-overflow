@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CauldronDogma" load_steps=3 format=3 uid="uid://ctx0whe15o23c"]
+
+[ext_resource type="Texture2D" uid="uid://cbyb3vs216k6x" path="res://assets/sprites/augments/cauldron_dogma.png" id="1_ab8fq"]
+[ext_resource type="Script" uid="uid://cc0resesqv4ip" path="res://scripts/augments/permanent/cauldron_dogma.gd" id="2_in24u"]
+
+[resource]
+script = ExtResource("2_in24u")
+increment = -0.8
+type = 1
+icon = ExtResource("1_ab8fq")
+name = "Cauldron dogma"
+description = "-50% MPS but 40% cauldron power"
+metadata/_custom_type_script = "uid://cc0resesqv4ip"

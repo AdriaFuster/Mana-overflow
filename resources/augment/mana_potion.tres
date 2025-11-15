@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ManaPotion" load_steps=3 format=3 uid="uid://jm6sui6w4xq1"]
+
+[ext_resource type="Texture2D" uid="uid://b0ed5sw54bxbt" path="res://assets/sprites/augments/mana_potion.png" id="1_r4sx0"]
+[ext_resource type="Script" uid="uid://c7n5h5gu7d6sd" path="res://scripts/augments/permanent/mana_potion.gd" id="2_8bghb"]
+
+[resource]
+script = ExtResource("2_8bghb")
+increment = 0.2
+icon = ExtResource("1_r4sx0")
+name = "Mana potion"
+description = "$MPS$ MPS"
+metadata/_custom_type_script = "uid://c7n5h5gu7d6sd"

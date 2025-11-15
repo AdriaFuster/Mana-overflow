@@ -1,9 +1,8 @@
 extends PermanentAugment
-class_name Augment2
+class_name ManaPotion
 
 @export var increment: float = 0.02
 
-#Add 2% perma to the MPS
 func _calculate_value() -> Big:
 	var b_mps = Big.new(Stats.mod_mps)
 	b_mps.multiplyEquals(increment)

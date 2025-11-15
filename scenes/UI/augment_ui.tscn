@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8dnhp81ld2hm"]
+[gd_scene load_steps=6 format=3 uid="uid://c8dnhp81ld2hm"]
 
 [ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/UI/AugmentUI.png" id="1_aa8w3"]
 [ext_resource type="Script" uid="uid://cin7dgf4ioo7d" path="res://scripts/ui/augment_ui.gd" id="1_omxwx"]
 [ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_yqxyf"]
+[ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/UI/infinite.png" id="4_h8gh8"]
 
 [sub_resource type="Theme" id="Theme_h8gh8"]
 default_font = ExtResource("3_yqxyf")
@@ -43,6 +44,13 @@ offset_right = 18.0
 offset_bottom = 26.0
 theme = SubResource("Theme_h8gh8")
 text = "10"
+
+[node name="permanent" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 29.0
+texture = ExtResource("4_h8gh8")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

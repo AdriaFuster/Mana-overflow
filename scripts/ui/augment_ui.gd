@@ -3,11 +3,20 @@ class_name AugmentUI
 
 @onready var icon: TextureRect = $UI/TextureRect
 @onready var cd: Label = $Cd
+@onready var permanent: TextureRect = $permanent
+
 var augment: Augment
 
 func setup(a: Augment) -> void:
 	augment = a
 	icon.texture = a.icon
+	
+	if augment is PermanentAugment:
+		cd.hide()
+		permanent.show()
+	else:
+		cd.show()
+		permanent.hide()
 
 	#if !augment.permanent:
 		#cd.text = str(augment.cd)

@@ -1,8 +1,6 @@
 extends InventoryItem
 class_name Augment
 
-
-
 @export var type: GlobalEnum.AugmentType
 @export var icon: Texture2D
 
