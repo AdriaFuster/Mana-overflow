@@ -14,7 +14,7 @@ func _calculate_value() -> Big:
 func _augment_efect() -> void:
 	
 	var value: Big = Big.new(_calculate_value())
-	print("augment_efect with value = ", value.toAmericanName())
+	#print("augment_efect with value = ", value.toAmericanName())
 	
 	#Encapsular-ho a una funcio a Stats
 	Stats.mana.plusEquals(value)

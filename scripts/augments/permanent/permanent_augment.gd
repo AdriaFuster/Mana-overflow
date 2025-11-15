@@ -3,6 +3,7 @@ class_name PermanentAugment
 
 
 func on_equip() -> void:
+	super.on_equip()
 	_augment_efect()
 
 

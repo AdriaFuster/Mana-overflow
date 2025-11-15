@@ -17,8 +17,27 @@ var permanent_modifiers_mps: Dictionary = {}
 var active_modifiers_mana: Dictionary = {}
 var cauldron_modifiers: Dictionary = {}
 
+
+func _ready() -> void:
+	GameEvents.add_mana.connect(_on_add_mana)
+	GameEvents.deduce_mana.connect(_on_deduced_mana)
+	GameEvents.calculate_mps.connect(_on_calculate_mps)
+		
+
+#MANA
+func add_mana(n_mana: Big) -> void:
+	mana.plusEquals(n_mana)
+
+func deduce_mana(n_mana: Big) -> void:
+	#print("restem ", n_mana.toAmericanName())
+	mana.minusEquals(n_mana)
+	if mana.isLessThan(0):
+		mana = Big.new(0)
+	#print("ens quedem amb ", mana.toAmericanName())	
+
+#MODIFIERS
 func add_tick_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
-	print ("add to tick modifier ",m_name )
+	#print ("add to tick modifier ",m_name )
 	if type == MODIFIER_TYPE.MPS:	
 		#print("afegim als mps ",Stats.mps.toAmericanName(), " ", percent+1)
 		tick_modifiers_mps[m_name] = value
@@ -59,3 +78,20 @@ var upgrades: Dictionary = {}
 #
 #func add_upgrade(upgrade: Upgrade, amount: int = 1):
 	#upgrades[upgrade] = get_upgrade_amount(upgrade) + amount
+
+
+func _on_add_mana(mana_add: Big):
+	add_mana(mana_add)
+	
+func _on_deduced_mana(mana_deduced: Big):
+	deduce_mana(mana_deduced)
+
+	
+func _on_calculate_mps() -> void:
+	var total_mps: Big = Big.new(0)
+	
+	for u_name:String in Inventory.upgrades.keys():
+		var u: Upgrade = Inventory.upgrades[u_name]
+		total_mps.plusEquals(u.mps*u.amount)
+	
+	mps = Big.new(total_mps)

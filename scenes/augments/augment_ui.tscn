@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c6vt48gpkjsoo"]
 
-[ext_resource type="Script" uid="uid://cgios64ye71ob" path="res://scripts/augments/tick/augment1.gd" id="1_iit3v"]
+[ext_resource type="Script" uid="uid://cgios64ye71ob" path="res://scripts/augments/tick/growing_leaf.gd" id="1_iit3v"]
 [ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="2_vvq3x"]
 [ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="3_0oqk7"]
 [ext_resource type="Script" uid="uid://cacjd5sdv7lpp" path="res://scripts/animations/upgrade_animations.gd" id="4_dgstq"]

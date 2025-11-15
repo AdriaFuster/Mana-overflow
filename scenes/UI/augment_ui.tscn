@@ -10,13 +10,13 @@ default_font = ExtResource("3_yqxyf")
 default_font_size = 8
 
 [node name="AugmentUi" type="Control"]
-custom_minimum_size = Vector2(18, 25)
+custom_minimum_size = Vector2(20, 25)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -302.0
-offset_bottom = -155.0
+offset_right = -1260.0
+offset_bottom = -695.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_omxwx")
@@ -38,14 +38,15 @@ offset_bottom = 17.0
 
 [node name="Cd" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 1.0
 offset_top = 18.0
-offset_right = 18.0
+offset_right = 17.0
 offset_bottom = 26.0
 theme = SubResource("Theme_h8gh8")
 text = "10"
 
 [node name="permanent" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 19.0
 offset_right = 20.0

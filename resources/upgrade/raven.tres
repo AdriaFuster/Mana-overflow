@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://qujfmm724gvx"]
+
+[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_17elv"]
+
+[resource]
+script = ExtResource("1_17elv")
+order = 4
+name = "Raven"
+metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

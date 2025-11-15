@@ -32,12 +32,15 @@ func _on_inventory_changed() -> void:
 		var aug_ui: AugmentUI = a_ui_scene.instantiate() as AugmentUI
 		augment_container.add_child(aug_ui)
 		aug_ui.setup(aug)
-		
-	for i_name in Inventory.upgrades.keys():
-		var upg: Upgrade = Inventory.upgrades[i_name]
-		var upg_ui: UpgradeUI = u_ui_scene.instantiate() as UpgradeUI
-		upgrade_container.add_child(upg_ui)
-		upg_ui.setup(upg)
+	
+	
+	for c in range(1,Inventory.upgrades.size() + 1):
+		for i_name in Inventory.upgrades.keys():
+			var upg: Upgrade = Inventory.upgrades[i_name]
+			if upg.order == c:
+				var upg_ui: UpgradeUI = u_ui_scene.instantiate() as UpgradeUI
+				upgrade_container.add_child(upg_ui)
+				upg_ui.setup(upg)
 		
 
 func _queue_free_children() -> void:

@@ -4,6 +4,7 @@ class_name ClickAugment
 @export var cd: float
 
 func on_equip() -> void:
+	super.on_equip()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	cd_cont = int(cd)
 

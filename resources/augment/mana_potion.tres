@@ -8,5 +8,5 @@ script = ExtResource("2_8bghb")
 increment = 0.2
 icon = ExtResource("1_r4sx0")
 name = "Mana potion"
-description = "$MPS$ MPS"
+description = "$INC_F$ MPS"
 metadata/_custom_type_script = "uid://c7n5h5gu7d6sd"

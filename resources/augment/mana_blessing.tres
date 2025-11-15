@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ManaBlessing" load_steps=3 format=3 uid="uid://bmhd6ls2aklqw"]
+
+[ext_resource type="Texture2D" uid="uid://lcf31qxuoxhw" path="res://assets/sprites/augments/mana_blessing.png" id="1_fnye6"]
+[ext_resource type="Script" uid="uid://v7klkp6ub862" path="res://scripts/augments/permanent/mana_blessing.gd" id="1_w5dd6"]
+
+[resource]
+script = ExtResource("1_w5dd6")
+icon = ExtResource("1_fnye6")
+name = "Mana blessing"
+description = "Regain $REFUND_P$% of mana each time you spend it"
+metadata/_custom_type_script = "uid://v7klkp6ub862"

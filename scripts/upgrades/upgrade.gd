@@ -2,19 +2,25 @@ extends InventoryItem
 class_name Upgrade
 
 
-@export var cost: float = 10
+@export var order: int
+@export var initial_cost: float = 10
+var cost: Big
+
 @export var mps: float = 1
-@export var tick_rate: float = 0.4
 @export var amount: int = 0
 @export var icon: Texture2D
 
 const MULTIPLIER_RATE: float = 1.15
+const UNLOCK_PERCENT: float = 0.8
 
-signal update_cost(new_cost: int)
+signal update_cost(new_cost: Big)
 signal update_amount(new_amount: int)
 	
 
 func setup() -> void:
+	
+	cost = Big.new(initial_cost)
+	
 	if locked:
 		GameTick.tick.connect(_on_tick)
 	
@@ -22,7 +28,7 @@ func setup() -> void:
 	
 	
 func _increase_cost() -> void:
-	cost *= MULTIPLIER_RATE
+	cost.multiplyEquals(MULTIPLIER_RATE)
 	update_cost.emit(cost)
 	
 func _increase_amount() -> void:
@@ -32,13 +38,16 @@ func _increase_amount() -> void:
 func upgrade_click() -> void:
 	_increase_amount()
 	
+	#print("upgrade ", name, " i ens gastem ", cost.toAmericanName())
 	GameEvents.deduce_mana.emit(cost)
 	_increase_cost()
 	
 	GameEvents.calculate_mps.emit()
 
 func _on_tick() -> void:
-	var upgrade_unlock_cost: float = cost * 0.8
+	var upgrade_unlock_cost: Big = Big.new(cost)
+	upgrade_unlock_cost.multiplyEquals(UNLOCK_PERCENT)
+	
 	if Stats.mana.isGreaterThanOrEqualTo(upgrade_unlock_cost):
 		locked = false
 		

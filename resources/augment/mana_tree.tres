@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ManaTree" load_steps=3 format=3 uid="uid://bme1am6jahqck"]
+
+[ext_resource type="Texture2D" uid="uid://b25ipq4odghtx" path="res://assets/sprites/augments/mana_tree.png" id="1_ar2sp"]
+[ext_resource type="Script" uid="uid://el3pbaf1dw4g" path="res://scripts/augments/permanent/mana_tree.gd" id="2_ar2sp"]
+
+[resource]
+script = ExtResource("2_ar2sp")
+icon = ExtResource("1_ar2sp")
+name = "Mana tree"
+description = "$INC_P$% per IDLE augment"
+metadata/_custom_type_script = "uid://el3pbaf1dw4g"

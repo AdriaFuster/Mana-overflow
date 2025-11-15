@@ -1,0 +1,22 @@
+extends PermanentAugment
+class_name ManaBlessing
+
+@export var refund: float = 0.05
+	
+
+func on_equip() -> void:
+	super.on_equip()
+	GameEvents.deduce_mana.connect(_on_mana_spended)
+
+
+func _on_mana_spended(mana_cost: Big) -> void:
+	var refunded_mana: Big = Big.new(mana_cost)
+	refunded_mana.multiplyEquals(refund)
+	#print("fem refund de ", refunded_mana.toAmericanName())
+	Stats.add_mana(refunded_mana)
+	
+func _augment_efect() -> void:
+	pass
+	
+
+	

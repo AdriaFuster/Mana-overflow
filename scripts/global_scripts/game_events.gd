@@ -1,7 +1,7 @@
 extends Node
 
-signal add_mana(mana:int)
-signal deduce_mana(cost: int)
+signal add_mana(mana: Big)
+signal deduce_mana(cost: Big)
 
 signal cauldron_click()
 

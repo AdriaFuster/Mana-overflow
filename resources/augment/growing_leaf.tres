@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GrowingLeaf" load_steps=3 format=3 uid="uid://c60qgb00224lt"]
+
+[ext_resource type="Texture2D" uid="uid://cn3c1dvhdkn7o" path="res://assets/sprites/augments/Growing_leaf.png" id="1_30sjb"]
+[ext_resource type="Script" uid="uid://cgios64ye71ob" path="res://scripts/augments/tick/growing_leaf.gd" id="2_nyp0r"]
+
+[resource]
+script = ExtResource("2_nyp0r")
+cd = 10.0
+duration = 0.0
+icon = ExtResource("1_30sjb")
+name = "Growing leaf"
+description = "$INC_P$% mps every $CD$ secons if no cauldron click into"
+metadata/_custom_type_script = "uid://cgios64ye71ob"

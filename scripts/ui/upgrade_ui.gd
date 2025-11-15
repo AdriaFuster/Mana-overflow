@@ -16,14 +16,13 @@ func _ready() -> void:
 
 func setup(u:Upgrade) -> void:
 	icon.texture = u.icon
-	cost.text = str(u.cost)
+	cost.text = u.cost.toAmericanName()
 	upgrade = u
 	amount.text = str("Amount:",0)
 	
 	icon_mat = icon.material
 	u.update_cost.connect(_on_update_cost)
 	u.update_amount.connect(_on_update_amount)
-	print(icon_mat)
 
 func _process(_delta: float) -> void:
 	#Check if locked
@@ -56,8 +55,8 @@ func _on_pressed() -> void:
 	upgrade.upgrade_click()
 
 
-func _on_update_cost(new_cost: int) -> void:
-	cost.text = str(new_cost)
+func _on_update_cost(new_cost: Big) -> void:
+	cost.text = new_cost.toAmericanName()
 	
 func _on_update_amount(new_amount: int) -> void:
 	amount.text = str("Amount:",new_amount)

@@ -6,19 +6,26 @@ var augments: Dictionary = {}
 
 var location = ResourceManager.LOCATION.INVENTORY
 
-func _init() -> void:
-	add_augment("Growing leaf")
-	add_augment("Mana potion")
-	#add_augment("augment3")
-	add_augment("Mighty force")
-	add_augment("Cauldron dogma")
+func _ready() -> void:
+	_add_upgrades()
 	
-	add_upgrade("Bat")
-	add_upgrade("Snake")
+	#add_augment("Growing leaf")
+	#add_augment("Mana potion")
+	#add_augment("Mana tree")
+	#add_augment("Mighty force")
+	#add_augment("Cauldron dogma")
+	add_augment("Mana blessing")
 	
 	TickManager.register(self, 1)
 	
-	
+
+func _add_upgrades() -> void:
+
+	for u_name in ResourceManager.upgrades.keys():
+		var u: Upgrade = ResourceManager.upgrades[u_name].resource
+		add_upgrade(u.name)
+		
+
 #AUGMENTS
 func add_augment(a_name: String) -> void:
 	if !augments.has(a_name):
@@ -45,7 +52,7 @@ func add_upgrade(u_name: String) -> void:
 		var u: Upgrade = ResourceManager.get_upgrade(u_name, location)
 		if u != null:
 			upgrades[u_name] = u
-			print("afegim upgrade ", u_name)
+			#print("afegim upgrade ", u_name)
 			GameEvents.inventory_changed.emit()
 
 

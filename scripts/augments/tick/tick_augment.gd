@@ -6,6 +6,7 @@ var _active: bool = false
 @export var duration: float = 0.1
 
 func on_equip() -> void:
+	super.on_equip()
 	cd_cont = int(cd / GameTick.tick_interval)
 	
 func tick() -> void:	

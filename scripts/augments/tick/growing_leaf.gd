@@ -1,5 +1,5 @@
 extends TickAugment
-class_name Augment1
+class_name GrowingLeaf
 
 @export var increment: float = 0.1
 

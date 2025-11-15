@@ -5,6 +5,7 @@ class_name AugmentUI
 @onready var cd: Label = $Cd
 @onready var permanent: TextureRect = $permanent
 
+
 var augment: Augment
 
 func setup(a: Augment) -> void:
@@ -17,12 +18,6 @@ func setup(a: Augment) -> void:
 	else:
 		cd.show()
 		permanent.hide()
-
-	#if !augment.permanent:
-		#cd.text = str(augment.cd)
-	#else:
-		#cd.text = "∞"
-	
 	
 func _process(_delta: float) -> void:
 	if augment is TickAugment:
@@ -33,10 +28,16 @@ func _process(_delta: float) -> void:
 	else:
 		cd.text = str(augment.cd_cont)
 
-func _on_mouse_entered() -> void:
+func _show_popup() -> void:
 	ItemPopup.item_popup(Rect2i(Vector2i(global_position), Vector2i(size)), 
 	augment, ItemPopup.DISTRIBUTION_MODE.HORIZONTAL)
+
+func _on_mouse_entered() -> void:
+	_show_popup()
+	
 
 
 func _on_mouse_exited() -> void:
 	ItemPopup.hide_item_popup()
+	
+	

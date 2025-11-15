@@ -1,13 +1,5 @@
 extends Node
 
-var optional_add_mana = Big.new(0)
-
-func _ready() -> void:
-	GameEvents.add_mana.connect(_on_add_mana)
-	GameEvents.deduce_mana.connect(_on_deduced_mana)
-	GameEvents.calculate_mps.connect(_on_calculate_mps)
-		
-
 func reset_mod_values() -> void:
 	Stats.mod_cauldron_power = Stats.cauldron_power
 	Stats.mod_mps = Big.new(Stats.mps)
@@ -53,20 +45,3 @@ func _delete_mod(d: Dictionary) -> void:
 	
 	for m_name in d.duplicate():
 		d.erase(m_name)
-
-
-func _on_add_mana(mana_add: float):
-	Stats.mana.plusEquals(mana_add)
-	
-func _on_deduced_mana(mana_deduced: float):
-	Stats.mana.minusEquals(mana_deduced)
-
-	
-func _on_calculate_mps() -> void:
-	var total_mps: Big = Big.new(0)
-	
-	for u_name:String in Inventory.upgrades.keys():
-		var u: Upgrade = Inventory.upgrades[u_name]
-		total_mps.plusEquals(u.mps*u.amount)
-	
-	Stats.mps = Big.new(total_mps)
