@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qotwwuwh1juj"
-path="res://.godot/imported/bat.png-fa4626ca6b4b85cdd471c2de23e4aa13.ctex"
+uid="uid://bwnx3c6htwri8"
+path="res://.godot/imported/raven.png-b0e565341a92abe4856de3e921495ba1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/upgrades/bat.png"
-dest_files=["res://.godot/imported/bat.png-fa4626ca6b4b85cdd471c2de23e4aa13.ctex"]
+source_file="res://assets/sprites/upgrades/raven.png"
+dest_files=["res://.godot/imported/raven.png-b0e565341a92abe4856de3e921495ba1.ctex"]
 
 [params]
 

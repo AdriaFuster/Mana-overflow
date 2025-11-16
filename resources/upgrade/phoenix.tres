@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://cwhemrrpmnone"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://cwhemrrpmnone"]
 
+[ext_resource type="Texture2D" uid="uid://cbh4wsq16ofwk" path="res://assets/sprites/upgrades/phoenix.png" id="1_5h7s3"]
 [ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_jc2d7"]
 
 [resource]
@@ -8,6 +9,7 @@ order = 6
 cost_mantissa = 1.0
 cost_exponent = 6
 mps = 1000.0
+icon = ExtResource("1_5h7s3")
 name = "Phoenix"
 locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

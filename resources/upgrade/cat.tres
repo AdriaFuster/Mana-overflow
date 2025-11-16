@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://bgss8gq2mbxs"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://bgss8gq2mbxs"]
 
 [ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_g844k"]
+[ext_resource type="Texture2D" uid="uid://otpevlerreo2" path="res://assets/sprites/upgrades/cat.png" id="1_ubq47"]
 
 [resource]
 script = ExtResource("1_g844k")
@@ -8,6 +9,7 @@ order = 5
 cost_mantissa = 1.0
 cost_exponent = 5
 mps = 500.0
+icon = ExtResource("1_ubq47")
 name = "Cat"
 locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

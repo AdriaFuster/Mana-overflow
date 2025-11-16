@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qotwwuwh1juj"
-path="res://.godot/imported/bat.png-fa4626ca6b4b85cdd471c2de23e4aa13.ctex"
+uid="uid://cbh4wsq16ofwk"
+path="res://.godot/imported/phoenix.png-20bdaaf5d778920057b9f7fc91bedf13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/upgrades/bat.png"
-dest_files=["res://.godot/imported/bat.png-fa4626ca6b4b85cdd471c2de23e4aa13.ctex"]
+source_file="res://assets/sprites/upgrades/phoenix.png"
+dest_files=["res://.godot/imported/phoenix.png-20bdaaf5d778920057b9f7fc91bedf13.ctex"]
 
 [params]
 
