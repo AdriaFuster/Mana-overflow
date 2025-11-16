@@ -6,8 +6,9 @@
 [resource]
 script = ExtResource("1_dli5c")
 order = 2
-initial_cost = 100.0
+cost_mantissa = 100.0
 icon = ExtResource("1_0appt")
 name = "Bat"
 description = "Each bat adds $MPS$ mana per second"
+locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

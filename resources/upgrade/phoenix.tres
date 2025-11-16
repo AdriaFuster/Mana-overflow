@@ -5,5 +5,9 @@
 [resource]
 script = ExtResource("1_jc2d7")
 order = 6
+cost_mantissa = 1.0
+cost_exponent = 6
+mps = 1000.0
 name = "Phoenix"
+locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

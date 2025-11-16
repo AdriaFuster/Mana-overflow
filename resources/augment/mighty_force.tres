@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_38dh3")
+increment = 2.0
 cd = 10.0
 type = 1
 icon = ExtResource("1_jtejt")

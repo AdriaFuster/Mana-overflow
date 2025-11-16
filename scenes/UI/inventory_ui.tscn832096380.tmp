@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://eco7aeo6qdrx"]
+[gd_scene load_steps=7 format=3 uid="uid://eco7aeo6qdrx"]
 
 [ext_resource type="Script" uid="uid://bype7x6gudtos" path="res://scripts/ui/inventory_ui.gd" id="1_hpn5g"]
 [ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/UI/augment_ui.tscn" id="2_wa0qy"]
 [ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/UI/upgrade_ui.tscn" id="3_y0xdr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hpn5g"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa0qy"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
 
 [sub_resource type="Theme" id="Theme_y0xdr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa0qy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpn5g"]
 bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
@@ -27,30 +26,35 @@ u_ui_scene = ExtResource("3_y0xdr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UpgradeContainer" type="PanelContainer" parent="CanvasLayer"]
+[node name="UpgradeInventory" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(145, 0)
-anchors_preset = 1
+layout_mode = 3
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -120.0
+anchor_bottom = 1.0
+offset_left = -63.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_hpn5g")
+grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/UpgradeContainer"]
+[node name="UpgradeContainer" type="PanelContainer" parent="CanvasLayer/UpgradeInventory"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wa0qy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/UpgradeInventory/UpgradeContainer"]
 layout_mode = 2
-mouse_filter = 0
 theme = SubResource("Theme_y0xdr")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wa0qy")
-scroll_vertical_custom_step = 694.717
-horizontal_scroll_mode = 0
-scroll_deadzone = -10
 
-[node name="UpgradeList" type="VBoxContainer" parent="CanvasLayer/UpgradeContainer/ScrollContainer"]
+[node name="UpgradeList" type="VBoxContainer" parent="CanvasLayer/UpgradeInventory/UpgradeContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="AugmentInventory" type="Control" parent="CanvasLayer"]
 custom_minimum_size = Vector2(120, 0)

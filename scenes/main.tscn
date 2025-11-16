@@ -30,10 +30,6 @@ render_target_update_mode = 4
 
 [node name="Game" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_o5qli")]
 
-[node name="UI" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="PopupLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]

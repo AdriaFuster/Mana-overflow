@@ -52,7 +52,7 @@ position = Vector2(115, 61)
 texture = ExtResource("3_gee14")
 
 [node name="Bookshelve3" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(156, 61)
+position = Vector2(140, 61)
 texture = ExtResource("3_gee14")
 
 [node name="Bookshelve5" type="Sprite2D" parent="BackgroundGroup"]
@@ -71,8 +71,7 @@ position = Vector2(75, 96)
 
 [node name="InventoryUI" parent="." instance=ExtResource("6_p57ef")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = -14.0
+offset_top = -1.0
+offset_right = -14.0
+offset_bottom = -1.0

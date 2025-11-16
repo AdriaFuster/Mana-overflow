@@ -5,5 +5,9 @@
 [resource]
 script = ExtResource("1_m8ln6")
 order = 7
+cost_mantissa = 10.0
+cost_exponent = 6
+mps = 15000.0
 name = "Dragon"
+locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

@@ -3,7 +3,8 @@ class_name Upgrade
 
 
 @export var order: int
-@export var initial_cost: float = 10
+@export var cost_mantissa: float
+@export var cost_exponent: int
 var cost: Big
 
 @export var mps: float = 1
@@ -19,7 +20,7 @@ signal update_amount(new_amount: int)
 
 func setup() -> void:
 	
-	cost = Big.new(initial_cost)
+	cost = Big.new(cost_mantissa, cost_exponent)
 	
 	if locked:
 		GameTick.tick.connect(_on_tick)
@@ -48,7 +49,9 @@ func _on_tick() -> void:
 	var upgrade_unlock_cost: Big = Big.new(cost)
 	upgrade_unlock_cost.multiplyEquals(UNLOCK_PERCENT)
 	
+	#print("Comprovem si per la upgrade", name, "podem comprarla")
 	if Stats.mana.isGreaterThanOrEqualTo(upgrade_unlock_cost):
+		#print("SI PODEEM")
 		locked = false
 		
 		if GameTick.tick.is_connected(_on_tick):

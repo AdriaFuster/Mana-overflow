@@ -5,5 +5,9 @@
 [resource]
 script = ExtResource("1_g844k")
 order = 5
+cost_mantissa = 1.0
+cost_exponent = 5
+mps = 500.0
 name = "Cat"
+locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

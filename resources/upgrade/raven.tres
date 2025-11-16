@@ -5,5 +5,9 @@
 [resource]
 script = ExtResource("1_17elv")
 order = 4
+cost_mantissa = 12.0
+cost_exponent = 3
+mps = 150.0
 name = "Raven"
+locked = true
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

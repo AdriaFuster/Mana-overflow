@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_in24u")
 increment = -0.8
+click_increment = 1.0
 type = 1
 icon = ExtResource("1_ab8fq")
 name = "Cauldron dogma"

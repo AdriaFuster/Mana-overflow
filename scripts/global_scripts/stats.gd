@@ -6,7 +6,7 @@ enum MODIFIER_TYPE {
 }
 
 var mana = Big.new(0)
-var mps = Big.new(0)
+var mps = Big.new(10)
 var mod_mps = Big.new(0)
 var cauldron_power: float = 1
 var mod_cauldron_power: float = 1
