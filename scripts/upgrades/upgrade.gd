@@ -25,7 +25,11 @@ func setup() -> void:
 	if locked:
 		GameTick.tick.connect(_on_tick)
 	
-	description = description.replace("$MPS$", str(mps))
+	description = "Each $NAME$ adds $MPS$ mana per second"
+	
+
+	description = _replace_string("NAME", "name", description)
+	description = _replace_string("MPS", "mps", description)
 	
 	
 func _increase_cost() -> void:
@@ -56,3 +60,19 @@ func _on_tick() -> void:
 		
 		if GameTick.tick.is_connected(_on_tick):
 			GameTick.tick.disconnect(_on_tick)
+
+
+func _replace_string(replace_string: String, var_name: String, text: String ) -> String:
+	
+	var dollar_replace_string = "$"+replace_string+"$"
+	var new_text := text
+	
+	if dollar_replace_string not in text or get(var_name) == null:
+		return new_text
+	
+	var var_value = get(var_name)
+	
+
+	new_text = text.replace(dollar_replace_string, str(var_value))
+	
+	return new_text
