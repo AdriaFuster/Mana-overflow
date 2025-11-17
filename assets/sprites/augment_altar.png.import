@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0lh2lei7q187"
-path="res://.godot/imported/AugmentUI.png-e4fbaa6908289f882e54d5afa10cc957.ctex"
+uid="uid://dsd8d1x8piitj"
+path="res://.godot/imported/augment_altar.png-3e7880c25ffe74ae66c8ec7b929e3055.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/AugmentUI.png"
-dest_files=["res://.godot/imported/AugmentUI.png-e4fbaa6908289f882e54d5afa10cc957.ctex"]
+source_file="res://assets/sprites/augment_altar.png"
+dest_files=["res://.godot/imported/augment_altar.png-3e7880c25ffe74ae66c8ec7b929e3055.ctex"]
 
 [params]
 

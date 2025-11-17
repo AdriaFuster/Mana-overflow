@@ -36,7 +36,8 @@ func _setup_parent() -> void:
 	ui_layer.add_child(self)
 
 func _on_inventory_changed() -> void:
-	#_queue_free_children()
+	#CAMBIAR AIXO PERQ BBORRI ELS QUE NO ESTAN I AFEGEIXI ELS QUE ENCARA FALTEN
+	_queue_free_children()
 	
 	for i_name in Inventory.augments.keys():
 		var aug: Augment = Inventory.augments[i_name]

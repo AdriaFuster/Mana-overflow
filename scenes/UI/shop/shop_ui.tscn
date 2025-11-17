@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt6o07o4c605o"]
+
+[ext_resource type="Script" uid="uid://xe3n7kl3jn8q" path="res://scripts/ui/shop/shop_ui.gd" id="1_b6mtu"]
+[ext_resource type="PackedScene" uid="uid://bar52tocqunyw" path="res://scenes/UI/shop/shop_item.tscn" id="2_b6mtu"]
+[ext_resource type="Texture2D" uid="uid://dsd8d1x8piitj" path="res://assets/sprites/augment_altar.png" id="3_ugmj2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to2pc"]
+bg_color = Color(0.30151466, 0.27550647, 0.26199958, 1)
+
+[node name="ShopUI" type="Control"]
+z_index = 1
+custom_minimum_size = Vector2(180, 90)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_b6mtu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 1000
+
+[node name="ShopPanel" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -45.0
+offset_right = 90.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_to2pc")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ShopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AugmentList" type="HBoxContainer" parent="CanvasLayer/ShopPanel/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="Slot1" parent="CanvasLayer/ShopPanel/MarginContainer/AugmentList" instance=ExtResource("2_b6mtu")]
+layout_mode = 2
+
+[node name="Slot2" parent="CanvasLayer/ShopPanel/MarginContainer/AugmentList" instance=ExtResource("2_b6mtu")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Slot3" parent="CanvasLayer/ShopPanel/MarginContainer/AugmentList" instance=ExtResource("2_b6mtu")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ShopPanel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_ugmj2")

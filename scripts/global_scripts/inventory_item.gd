@@ -7,3 +7,7 @@ class_name InventoryItem
 
 var locked_name: String = "????"
 var locked_description: String = "??????"
+
+
+func setup() -> void:
+	pass

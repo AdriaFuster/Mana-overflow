@@ -7,8 +7,11 @@ class_name Augment
 var cd_cont: int
 var active_cont: int
 
-func on_equip() -> void:
+func setup() -> void:
 	_replace_texts()
+
+func on_equip() -> void:
+	pass
 	
 
 func _augment_efect() -> void:

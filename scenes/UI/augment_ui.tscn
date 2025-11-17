@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8dnhp81ld2hm"]
 
-[ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/UI/AugmentUI.png" id="1_aa8w3"]
+[ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/ui/AugmentUI.png" id="1_aa8w3"]
 [ext_resource type="Script" uid="uid://cin7dgf4ioo7d" path="res://scripts/ui/augment_ui.gd" id="1_omxwx"]
 [ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_yqxyf"]
-[ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/UI/infinite.png" id="4_h8gh8"]
+[ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/ui/infinite.png" id="4_h8gh8"]
 
 [sub_resource type="Theme" id="Theme_h8gh8"]
 default_font = ExtResource("3_yqxyf")

@@ -33,6 +33,7 @@ layout_mode = 0
 offset_right = 112.0
 offset_bottom = 20.0
 mouse_filter = 1
+action_mode = 0
 texture_normal = ExtResource("2_us0at")
 
 [node name="Cost" type="Label" parent="TextureButton"]

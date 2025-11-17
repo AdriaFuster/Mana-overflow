@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5y886tdja0cd"]
+[gd_scene load_steps=8 format=3 uid="uid://b5y886tdja0cd"]
 
 [ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_manager.gd" id="1_gee14"]
 [ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/sprites/background/Background.png" id="2_u5sy4"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/background/Wizard.png" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://dbmln6jfoerjj" path="res://scenes/cauldron.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://eco7aeo6qdrx" path="res://scenes/UI/inventory_ui.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://45d5cfwk1863" path="res://scenes/augment_altar.tscn" id="7_u5sy4"]
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" groups=["AltarMenu"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,15 @@ grow_vertical = 2
 script = ExtResource("1_gee14")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CauldronPower" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 5.0
+offset_top = 109.0
+offset_right = 191.0
+offset_bottom = 125.0
+scale = Vector2(0.5, 0.5)
+text = "CP: <value>"
 
 [node name="Mana" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -44,30 +54,33 @@ scale = Vector2(1.38889, 1)
 texture = ExtResource("2_u5sy4")
 
 [node name="Bookshelve" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(73, 61)
+position = Vector2(73, 47)
 texture = ExtResource("3_gee14")
 
 [node name="Bookshelve2" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(115, 61)
+position = Vector2(115, 47)
 texture = ExtResource("3_gee14")
 
 [node name="Bookshelve3" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(140, 61)
+position = Vector2(140, 47)
 texture = ExtResource("3_gee14")
 
 [node name="Bookshelve5" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(32, 61)
+position = Vector2(37, 47)
 texture = ExtResource("3_gee14")
 
 [node name="Wizard" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(102, 77)
+position = Vector2(102, 63)
 texture = ExtResource("4_0tnpc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
 
+[node name="AugmentAltar" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(15, 68)
+
 [node name="Cauldron" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(75, 96)
+position = Vector2(75, 84)
 
 [node name="InventoryUI" parent="." instance=ExtResource("6_p57ef")]
 layout_mode = 1

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b843e3kysa2ku" path="res://scripts/augments/augment.gd" id="1_wxwnq"]
 [ext_resource type="Resource" path="res://resources/fixed_upgrade/familiar1_upgrade.tres" id="2_pahos"]
 [ext_resource type="Script" uid="uid://cacjd5sdv7lpp" path="res://scripts/animations/upgrade_animations.gd" id="3_8v8n1"]
-[ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/UI/ButtonUI_v2.png" id="3_wxwnq"]
-[ext_resource type="Texture2D" uid="uid://16v7a8u13258" path="res://assets/sprites/upgrades/Bat.png" id="4_8v8n1"]
+[ext_resource type="Texture2D" uid="uid://d2yty8ugnepit" path="res://assets/sprites/ui/ButtonUI_v2.png" id="3_wxwnq"]
+[ext_resource type="Texture2D" uid="uid://qotwwuwh1juj" path="res://assets/sprites/upgrades/Bat.png" id="4_8v8n1"]
 [ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="4_pahos"]
 [ext_resource type="FontFile" uid="uid://cwspk20ov43rw" path="res://assets/fonts/PrStart.ttf" id="6_wxwnq"]
 

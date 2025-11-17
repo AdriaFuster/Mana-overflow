@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource("2_nyp0r")
-cd = 10.0
+increment = 0.45
+cd = 5.0
 duration = 0.0
 icon = ExtResource("1_30sjb")
 name = "Growing leaf"

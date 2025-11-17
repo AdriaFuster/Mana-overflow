@@ -4,17 +4,17 @@ extends Node
 var upgrades: Dictionary = {}
 var augments: Dictionary = {}
 
-var location = ResourceManager.LOCATION.INVENTORY
+var location = GlobalEnum.LOCATION.INVENTORY
 
 func _ready() -> void:
 	_add_upgrades()
 	
-	add_augment("Growing leaf")
-	add_augment("Mana potion")
+	#add_augment("Growing leaf")
+	#add_augment("Mana potion")
 	#add_augment("Mana tree")
-	#add_augment("Mighty force")
+	add_augment("Mighty force")
 	#add_augment("Cauldron dogma")
-	add_augment("Mana blessing")
+	#add_augment("Mana blessing")
 	
 	TickManager.register(self, 1)
 	
@@ -24,15 +24,19 @@ func _add_upgrades() -> void:
 	for u_name in ResourceManager.upgrades.keys():
 		var u: Upgrade = ResourceManager.upgrades[u_name].resource
 		add_upgrade(u.name)
+		ResourceManager.set_upgrade_location(u.name, location)
 		
 
 #AUGMENTS
 func add_augment(a_name: String) -> void:
 	if !augments.has(a_name):
-		var a: Augment = ResourceManager.get_augment(a_name, location)
-		if a != null:
+		var r: ResourceManager.ResourceEntry = ResourceManager.get_augment(a_name, location)
+		if r != null:
+			var a: Augment = r.resource
 			augments[a_name] = a
+			ResourceManager.set_augment_location(a_name, location) 
 			print("afegim augment ", a_name)
+			
 			a.on_equip()
 			GameEvents.inventory_changed.emit()
 	

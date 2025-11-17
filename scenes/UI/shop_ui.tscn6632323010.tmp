@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt6o07o4c605o"]
+
+[ext_resource type="Script" uid="uid://xe3n7kl3jn8q" path="res://scripts/ui/shop_ui.gd" id="1_5tinp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to2pc"]
+bg_color = Color(0.8191545, 0.4863791, 0.6718466, 1)
+
+[node name="ShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5tinp")
+
+[node name="ShopPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_to2pc")
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopPanel"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="AugmentList" type="HBoxContainer" parent="ShopPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2

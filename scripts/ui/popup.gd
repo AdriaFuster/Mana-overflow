@@ -110,7 +110,6 @@ func _setup_parent() -> void:
 func hide_item_popup() -> void:
 	item_pop_up.hide()
 
-
 func _set_value(item: InventoryItem) -> void:
 	if item.locked:
 		name_label.text = item.locked_name

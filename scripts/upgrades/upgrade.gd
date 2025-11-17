@@ -37,6 +37,8 @@ func _increase_cost() -> void:
 	update_cost.emit(cost)
 	
 func _increase_amount() -> void:
+	if amount == 0:
+		GameEvents.new_upgrade_bought.emit()
 	amount += 1
 	update_amount.emit(amount)
 

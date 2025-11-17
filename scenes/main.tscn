@@ -30,6 +30,6 @@ render_target_update_mode = 4
 
 [node name="Game" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_o5qli")]
 
-[node name="PopupLayer" type="CanvasLayer" parent="."]
-
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]

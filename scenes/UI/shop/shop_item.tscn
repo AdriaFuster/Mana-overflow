@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bar52tocqunyw"]
+
+[ext_resource type="Texture2D" uid="uid://cbx6k7b8trci5" path="res://assets/sprites/ui/shop/Shop_item.png" id="1_b422p"]
+[ext_resource type="Script" uid="uid://bglp64wnbvd4h" path="res://scripts/ui/shop/shop_item.gd" id="1_lyj4g"]
+
+[node name="ShopItem" type="Button"]
+custom_minimum_size = Vector2(18, 18)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1262.0
+offset_bottom = -702.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_lyj4g")
+
+[node name="Slot" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("1_b422p")
+
+[node name="Augment" type="TextureRect" parent="Slot"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 17.0
+offset_bottom = 17.0

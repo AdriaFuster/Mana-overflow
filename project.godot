@@ -26,6 +26,7 @@ GameManager="*res://scripts/global_scripts/game_manager.gd"
 ResourceManager="*res://scripts/global_scripts/resource_manager.gd"
 Inventory="*res://scripts/global_scripts/inventory.gd"
 ItemPopup="*res://scenes/UI/popup.tscn"
+Shop="*res://scripts/global_scripts/shop.gd"
 
 [display]
 
@@ -46,6 +47,10 @@ folder_colors={
 "res://scripts/": "purple",
 "res://tools/": "pink"
 }
+
+[global_group]
+
+AltarMenu=""
 
 [gui]
 
