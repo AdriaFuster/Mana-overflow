@@ -39,4 +39,8 @@ func _augment_efect() -> void:
 func _enter_cd() -> void:
 	_active = false
 	
+
+func reset() -> void:
+	super.reset()
+	_active = false
 	

@@ -5,8 +5,11 @@ enum MODIFIER_TYPE {
 	MPS
 }
 
-var mana = Big.new(0)
+var mana = Big.new(99)
 var mps = Big.new(0)
+var tick_mana: Big
+
+
 var mod_mps = Big.new(0)
 var cauldron_power: float = 1
 var mod_cauldron_power: float = 1
@@ -22,6 +25,7 @@ func _ready() -> void:
 	GameEvents.add_mana.connect(_on_add_mana)
 	GameEvents.deduce_mana.connect(_on_deduced_mana)
 	GameEvents.calculate_mps.connect(_on_calculate_mps)
+	GameEvents.change_scene.connect(_on_change_scene)
 		
 
 #MANA
@@ -95,3 +99,13 @@ func _on_calculate_mps() -> void:
 		total_mps.plusEquals(u.mps*u.amount)
 	
 	mps = Big.new(total_mps)
+
+
+func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
+	if scene == GlobalEnum.GAME_SCENE.BOSS:
+		#Save mana value o tick mana
+		tick_mana = Big.new(mana)
+		mana = Big.new(0)
+		
+	elif scene == GlobalEnum.GAME_SCENE.CLICK:
+		mana = Big.new(tick_mana)

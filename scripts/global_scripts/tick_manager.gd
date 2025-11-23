@@ -40,10 +40,7 @@ func _on_tick() -> void:
 	#for entry in _listeners:
 		#var o = entry.obj
 		#if o and o.has_method("_on_tick"):
-			#o._on_tick()
-	
-	
-		
+			#o._on_tick()		
 	#MPS + tick modifiers
 	GameManager.calculate_tick_modifiers()
 		

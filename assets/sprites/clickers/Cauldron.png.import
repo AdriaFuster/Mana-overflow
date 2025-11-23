@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsd8d1x8piitj"
-path="res://.godot/imported/augment_altar.png-3e7880c25ffe74ae66c8ec7b929e3055.ctex"
+uid="uid://dk54fer0prtr7"
+path="res://.godot/imported/Cauldron.png-824ff086936cdf9bca0ac960a8fca5b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/augment_altar.png"
-dest_files=["res://.godot/imported/augment_altar.png-3e7880c25ffe74ae66c8ec7b929e3055.ctex"]
+source_file="res://assets/sprites/clickers/Cauldron.png"
+dest_files=["res://.godot/imported/Cauldron.png-824ff086936cdf9bca0ac960a8fca5b5.ctex"]
 
 [params]
 

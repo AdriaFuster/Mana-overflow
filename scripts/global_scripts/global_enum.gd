@@ -14,7 +14,7 @@ enum LOCATION{
 }
 
 enum GAME_SCENE{
-	BASE,
+	CLICK,
 	BOSS
 }
 

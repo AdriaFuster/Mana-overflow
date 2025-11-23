@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xe3n7kl3jn8q" path="res://scripts/ui/shop/shop_ui.gd" id="1_b6mtu"]
 [ext_resource type="PackedScene" uid="uid://bar52tocqunyw" path="res://scenes/UI/shop/shop_item.tscn" id="2_b6mtu"]
-[ext_resource type="Texture2D" uid="uid://dsd8d1x8piitj" path="res://assets/sprites/augment_altar.png" id="3_ugmj2"]
+[ext_resource type="Texture2D" uid="uid://dsd8d1x8piitj" path="res://assets/sprites/clickers/augment_altar.png" id="3_ugmj2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to2pc"]
 bg_color = Color(0.30151466, 0.27550647, 0.26199958, 1)

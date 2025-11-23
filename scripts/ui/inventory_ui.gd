@@ -1,8 +1,12 @@
 extends Control
 
 @onready var augment_list: HBoxContainer = %AugmentList
-@onready var upgrade_list: VBoxContainer = %UpgradeList
+
 @onready var upgrade_container: PanelContainer = %UpgradeContainer
+@onready var upgrade_list: VBoxContainer = %UpgradeList
+
+
+@onready var display_values: VBoxContainer = %DisplayValues
 
 @export var a_ui_scene: PackedScene
 @export var u_ui_scene: PackedScene
@@ -11,7 +15,7 @@ extends Control
 func _ready() -> void:
 	#_setup_parent()
 	GameEvents.inventory_changed.connect(_on_inventory_changed)
-	GameEvents.show_boss.connect(_on_show_boss)
+	GameEvents.change_scene.connect(_on_change_scene)
 	_on_inventory_changed()
 	_setup()
 
@@ -66,8 +70,13 @@ func _queue_free_children() -> void:
 		#if c is Augment:
 			c.queue_free()
 			
-func _on_show_boss() -> void:
-	upgrade_container.hide()
+func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
+	if scene == GlobalEnum.GAME_SCENE.BOSS:
+		upgrade_container.hide()
+		#display_values.hide()
+	elif scene == GlobalEnum.GAME_SCENE.CLICK:
+		upgrade_container.show()
+		display_values.show()
 	
 	
 	

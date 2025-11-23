@@ -28,7 +28,7 @@ Inventory="*res://scripts/global_scripts/inventory.gd"
 Shop="*res://scripts/global_scripts/shop.gd"
 AugmentPopup="*res://scenes/UI/popup/augment_popup.tscn"
 UpgradePopup="*res://scenes/UI/popup/upgrade_popup.tscn"
-BossSpawner="*res://scripts/global_scripts/boss/boss_spawner.gd"
+BossSpawner="*res://scripts/boss/boss_spawner.gd"
 
 [display]
 

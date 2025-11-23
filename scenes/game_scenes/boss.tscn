@@ -1,21 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://di87u0qxxsxpb"]
+[gd_scene load_steps=4 format=3 uid="uid://di87u0qxxsxpb"]
 
+[ext_resource type="Script" uid="uid://cd08q0tw8io0e" path="res://scripts/boss/boss_scene.gd" id="1_mhvgb"]
 [ext_resource type="Texture2D" uid="uid://dimhx8m3g5kun" path="res://assets/sprites/bosses/boss.png" id="2_mhvgb"]
+[ext_resource type="PackedScene" uid="uid://cdhhdkp3q6c5v" path="res://scenes/clickers/big_cauldron.tscn" id="3_isdvr"]
 
 [node name="Boss" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_mhvgb")
 
-[node name="TextureRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1285.0
-offset_bottom = 726.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color(0.47788018, 0.47788012, 0.47788012, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 164.0
-offset_top = 4.0
-offset_right = 304.0
-offset_bottom = 144.0
+[node name="Boss" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.02
+anchor_right = 0.55
+anchor_bottom = 0.02
+offset_right = 140.0
+offset_bottom = 140.0
 texture = ExtResource("2_mhvgb")
+
+[node name="start_counter" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BigCauldron" parent="CanvasLayer" instance=ExtResource("3_isdvr")]
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.2
+anchor_right = 0.05
+anchor_bottom = 0.2

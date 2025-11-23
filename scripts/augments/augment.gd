@@ -10,10 +10,16 @@ var active_cont: int
 func setup() -> void:
 	_replace_texts()
 
+
 func on_equip() -> void:
 	pass
 	
-
+	
+func reset() -> void:
+	cd_cont = 0
+	active_cont = 0
+	
+	
 func _augment_efect() -> void:
 	#assert(false, ("No esta definida la funció _augment_efect per l'augment " + name))
 	pass
