@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://di87u0qxxsxpb"]
+
+[ext_resource type="Texture2D" uid="uid://dimhx8m3g5kun" path="res://assets/sprites/bosses/boss.png" id="2_mhvgb"]
+
+[node name="Boss" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 726.0
+color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 4.0
+offset_right = 304.0
+offset_bottom = 144.0
+texture = ExtResource("2_mhvgb")

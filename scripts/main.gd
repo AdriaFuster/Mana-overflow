@@ -1,6 +1,25 @@
 extends Node2D
-@onready var sub_viewport_container: SubViewportContainer = $CanvasLayer/SubViewportContainer
-var size: Vector2 = Vector2(1280, 720)
 
-func _process(delta: float) -> void:
-	pass
+@onready var game: Control = %Game
+@onready var boss: Control = %Boss
+
+
+
+func _ready() -> void:
+	GameEvents.change_scene.connect(_on_change_scene)
+	_setup()
+	
+	
+func _setup() -> void:
+	boss.hide()
+	game.show()
+	
+
+			
+func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
+	if scene == GlobalEnum.GAME_SCENE.BOSS:
+		boss.show()
+		game.hide()
+	elif scene == GlobalEnum.GAME_SCENE.BASE:
+		boss.hide()
+		game.show()

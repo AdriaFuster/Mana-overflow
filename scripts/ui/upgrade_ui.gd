@@ -15,10 +15,10 @@ func _ready() -> void:
 
 
 func setup(u:Upgrade) -> void:
-	icon.texture = u.icon
-	cost.text = u.cost.toAmericanName()
 	upgrade = u
-	amount.text = str(0)
+	icon.texture = upgrade.icon
+	cost.text = upgrade.cost.toAmericanName()
+	amount.text = str(upgrade.amount)
 	
 	icon_mat = icon.material
 	u.update_cost.connect(_on_update_cost)
@@ -59,9 +59,9 @@ func _on_update_amount(new_amount: int) -> void:
 	
 
 func _on_texture_button_mouse_entered() -> void:
-	ItemPopup.item_popup(Rect2i(Vector2i(button.global_position), Vector2i(size)), 
-	upgrade, ItemPopup.DISTRIBUTION_MODE.VERTICAL)
+	UpgradePopup.item_popup(Rect2i(Vector2i(button.global_position), Vector2i(size)), 
+	upgrade, UpgradePopup.DISTRIBUTION_MODE.VERTICAL)
 
 
 func _on_texture_button_mouse_exited() -> void:
-	ItemPopup.hide_item_popup()
+	UpgradePopup.hide_item_popup()

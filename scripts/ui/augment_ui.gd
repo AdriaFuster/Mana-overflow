@@ -29,8 +29,8 @@ func _process(_delta: float) -> void:
 		cd.text = str(augment.cd_cont)
 
 func _show_popup() -> void:
-	ItemPopup.item_popup(Rect2i(Vector2i(global_position), Vector2i(size)), 
-	augment, ItemPopup.DISTRIBUTION_MODE.HORIZONTAL)
+	AugmentPopup.item_popup(Rect2i(Vector2i(global_position), Vector2i(size)), 
+	augment, AugmentPopup.DISTRIBUTION_MODE.HORIZONTAL)
 
 func _on_mouse_entered() -> void:
 	_show_popup()
@@ -38,6 +38,6 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	ItemPopup.hide_item_popup()
+	AugmentPopup.hide_item_popup()
 	
 	

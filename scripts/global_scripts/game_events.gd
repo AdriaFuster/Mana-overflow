@@ -11,6 +11,10 @@ signal inventory_changed
 
 signal new_upgrade_bought
 
+#BOSS
+signal change_scene(scene: GlobalEnum.GAME_SCENE)
+
+
 #SHOP
 signal augment_bought(augment: Augment)
 signal shop_disabled(d: bool)

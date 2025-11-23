@@ -11,6 +11,7 @@ extends Control
 func _ready() -> void:
 	#_setup_parent()
 	GameEvents.inventory_changed.connect(_on_inventory_changed)
+	GameEvents.show_boss.connect(_on_show_boss)
 	_on_inventory_changed()
 	_setup()
 
@@ -64,3 +65,9 @@ func _queue_free_children() -> void:
 	for c in upgrade_list.get_children():
 		#if c is Augment:
 			c.queue_free()
+			
+func _on_show_boss() -> void:
+	upgrade_container.hide()
+	
+	
+	

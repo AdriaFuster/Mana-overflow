@@ -16,12 +16,12 @@ func setup(a: Augment) -> void:
 
 
 func _on_mouse_entered() -> void:
-	ItemPopup.item_popup(Rect2i(Vector2i(global_position), Vector2i(size)), 
-	augment, ItemPopup.DISTRIBUTION_MODE.HORIZONTAL)
+	AugmentPopup.item_popup(Rect2i(Vector2i(global_position), Vector2i(size)), 
+	augment, AugmentPopup.DISTRIBUTION_MODE.HORIZONTAL)
 	
 
 func _on_mouse_exited() -> void:
-	ItemPopup.hide_item_popup()
+	AugmentPopup.hide_item_popup()
 
 
 func _on_pressed() -> void:

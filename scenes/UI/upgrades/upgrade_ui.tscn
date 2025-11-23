@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dc86vw3bltcsn" path="res://scripts/ui/upgrade_ui.gd" id="1_6jegm"]
 [ext_resource type="Texture2D" uid="uid://cx0kjlgo3byif" path="res://assets/sprites/upgrades/upgrade_button.png" id="2_us0at"]
-[ext_resource type="Shader" uid="uid://bfls0ka3u10vc" path="res://scenes/UI/upgrade_ui.gdshader" id="3_8hi8n"]
+[ext_resource type="Shader" uid="uid://bfls0ka3u10vc" path="res://scenes/UI/upgrades/upgrade_ui.gdshader" id="3_8hi8n"]
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="3_us0at"]
 
 [sub_resource type="Theme" id="Theme_us0at"]

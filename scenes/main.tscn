@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmvh4dum13tdo"]
+[gd_scene load_steps=5 format=3 uid="uid://bmvh4dum13tdo"]
 
 [ext_resource type="Script" uid="uid://b2w5yxpdhcrgg" path="res://scripts/main.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://b5y886tdja0cd" path="res://scenes/game.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://b5y886tdja0cd" path="res://scenes/game_scenes/game.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://eco7aeo6qdrx" path="res://scenes/UI/inventory_ui.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://di87u0qxxsxpb" path="res://scenes/game_scenes/boss.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0wfyh")
@@ -29,6 +31,14 @@ size = Vector2i(320, 180)
 render_target_update_mode = 4
 
 [node name="Game" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Boss" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("4_jyhfs")]
+unique_name_in_owner = true
+visible = false
+
+[node name="InventoryUI" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("3_sugp2")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
