@@ -47,7 +47,7 @@ func _calculate_popup_position(slot:Rect2i, mode: DISTRIBUTION_MODE) -> Vector2:
 	var correction: Vector2
 
 	correction = _correction(slot.size, mode)
-	var sub_container = get_tree().root.get_node("Main/CanvasLayer/SubViewportContainer")
+	var sub_container = get_tree().root.get_node("Main/SceneManager/CanvasLayer/SubViewportContainer")
 	var container_scale = sub_container.size / Vector2(320, 180)
 	var global_container_pos = sub_container.get_global_position()
 

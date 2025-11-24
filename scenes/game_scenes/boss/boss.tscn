@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b10gewjyw2qq1"]
+
+[ext_resource type="Texture2D" uid="uid://dimhx8m3g5kun" path="res://assets/sprites/bosses/boss.png" id="1_kjmux"]
+[ext_resource type="Script" uid="uid://di34h5haeqxh0" path="res://scripts/boss/boss.gd" id="2_stekj"]
+[ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="3_k7gp7"]
+
+[node name="Boss" type="TextureRect"]
+offset_right = 140.0
+offset_bottom = 140.0
+texture = ExtResource("1_kjmux")
+script = ExtResource("2_stekj")
+
+[node name="Hp" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20714286
+anchor_top = 1.0
+anchor_right = 0.20714286
+anchor_bottom = 1.0
+offset_right = 84.0
+offset_bottom = 13.0
+theme = ExtResource("3_k7gp7")
+text = "HP:<amount>"
+metadata/_edit_use_anchors_ = true

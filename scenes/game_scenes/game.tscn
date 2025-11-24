@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5y886tdja0cd"]
 
-[ext_resource type="Script" uid="uid://ceqimpntwptkp" path="res://scripts/click_scene.gd" id="1_pgsqd"]
+[ext_resource type="Script" uid="uid://ceqimpntwptkp" path="res://scripts/scenes/click_scene.gd" id="1_pgsqd"]
 [ext_resource type="Texture2D" uid="uid://b8g1d8h4sgsnt" path="res://assets/sprites/background/Background.png" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b0awq37t4vt34" path="res://assets/sprites/background/Bookshelve.png" id="3_gee14"]
 [ext_resource type="Texture2D" uid="uid://drcilulghgxts" path="res://assets/sprites/background/Wizard.png" id="4_0tnpc"]
@@ -50,4 +50,8 @@ position = Vector2(160, 90)
 position = Vector2(15, 68)
 
 [node name="Cauldron" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(75, 84)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 84.0
+offset_right = 75.0
+offset_bottom = 84.0

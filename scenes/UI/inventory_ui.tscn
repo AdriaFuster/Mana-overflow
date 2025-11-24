@@ -1,20 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://eco7aeo6qdrx"]
+[gd_scene load_steps=5 format=3 uid="uid://eco7aeo6qdrx"]
 
 [ext_resource type="Script" uid="uid://bype7x6gudtos" path="res://scripts/ui/inventory_ui.gd" id="1_hpn5g"]
-[ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/UI/augments/augment_ui.tscn" id="2_wa0qy"]
-[ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/UI/upgrades/upgrade_ui.tscn" id="3_y0xdr"]
-[ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="4_wa0qy"]
-[ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_manager.gd" id="4_y0xdr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa0qy"]
-bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
-
-[sub_resource type="Theme" id="Theme_y0xdr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa0qy"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpn5g"]
-bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
+[ext_resource type="PackedScene" uid="uid://du1067w156ryn" path="res://scenes/UI/ui_menus/items.tscn" id="4_mn6gr"]
+[ext_resource type="PackedScene" uid="uid://dg51toimrq3jy" path="res://scenes/UI/ui_menus/display_click_canvas.tscn" id="4_y0xdr"]
+[ext_resource type="PackedScene" uid="uid://beg5g7jkr7bat" path="res://scenes/UI/ui_menus/display_boss_canvas.tscn" id="6_mn6gr"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -25,93 +14,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_hpn5g")
-a_ui_scene = ExtResource("2_wa0qy")
-u_ui_scene = ExtResource("3_y0xdr")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="UpgradeContainer" type="PanelContainer" parent="CanvasLayer"]
+[node name="Items" parent="." instance=ExtResource("4_mn6gr")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(145, 0)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -120.0
-grow_horizontal = 0
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_wa0qy")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/UpgradeContainer"]
-layout_mode = 2
-theme = SubResource("Theme_y0xdr")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wa0qy")
-scroll_vertical_custom_step = 694.717
-horizontal_scroll_mode = 0
-scroll_deadzone = -10
-
-[node name="UpgradeList" type="VBoxContainer" parent="CanvasLayer/UpgradeContainer/ScrollContainer"]
+[node name="DisplayClickCanvas" parent="." instance=ExtResource("4_y0xdr")]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 3
 
-[node name="AugmentInventory" type="Control" parent="CanvasLayer"]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 3
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 120.0
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="AugmentContainer" type="PanelContainer" parent="CanvasLayer/AugmentInventory"]
-custom_minimum_size = Vector2(20, 30)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hpn5g")
-
-[node name="AugmentList" type="HBoxContainer" parent="CanvasLayer/AugmentInventory/AugmentContainer"]
+[node name="DisplayBossCanvas" parent="." instance=ExtResource("6_mn6gr")]
 unique_name_in_owner = true
-layout_mode = 2
-
-[node name="DisplayValuesContainer" type="Control" parent="."]
-layout_mode = 1
-anchor_top = 0.6
-anchor_bottom = 0.6
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MarginContainer" type="MarginContainer" parent="DisplayValuesContainer"]
-layout_mode = 0
-offset_right = 93.0
-offset_bottom = 32.0
-theme_override_constants/margin_left = 5
-
-[node name="DisplayValues" type="VBoxContainer" parent="DisplayValuesContainer/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 6
-script = ExtResource("4_y0xdr")
-
-[node name="CauldronPower" type="Label" parent="DisplayValuesContainer/MarginContainer/DisplayValues"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("4_wa0qy")
-text = "CP: <value>"
-
-[node name="Mana" type="Label" parent="DisplayValuesContainer/MarginContainer/DisplayValues"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("4_wa0qy")
-text = "Mana: <value>"
-
-[node name="MPS" type="Label" parent="DisplayValuesContainer/MarginContainer/DisplayValues"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("4_wa0qy")
-text = "MPS: <value>"

@@ -6,9 +6,11 @@ var _current_range: int = 0
 
 
 func _ready() -> void:
+	spawn_ranges.append(Big.new(100))
+	
 	for i in range(1, 10):
-		var new_rangee: Big = Big.new(i*100)
-		spawn_ranges.append(new_rangee)
+		var new_range: Big = Big.new(i*1000)
+		spawn_ranges.append(new_range)
 	
 
 func _process(_delta: float) -> void:
