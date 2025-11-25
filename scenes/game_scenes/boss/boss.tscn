@@ -1,14 +1,113 @@
-[gd_scene load_steps=4 format=3 uid="uid://b10gewjyw2qq1"]
+[gd_scene load_steps=9 format=3 uid="uid://b10gewjyw2qq1"]
 
 [ext_resource type="Texture2D" uid="uid://dimhx8m3g5kun" path="res://assets/sprites/bosses/boss.png" id="1_kjmux"]
 [ext_resource type="Script" uid="uid://di34h5haeqxh0" path="res://scripts/boss/boss.gd" id="2_stekj"]
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="3_k7gp7"]
+[ext_resource type="Shader" uid="uid://nbqphfd6pk3d" path="res://scripts/shaders/boss.tres" id="3_stekj"]
 
-[node name="Boss" type="TextureRect"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7gp7"]
+shader = ExtResource("3_stekj")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_kjmux"]
+resource_name = "hurt"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.059039533, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BossSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BossSprite:material:shader_parameter/enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_stekj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BossSprite:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BossSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BossSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stekj"]
+_data = {
+&"RESET": SubResource("Animation_stekj"),
+&"hurt": SubResource("Animation_kjmux")
+}
+
+[node name="Boss" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 140.0
+offset_bottom = 140.0
+script = ExtResource("2_stekj")
+
+[node name="BossSprite" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_k7gp7")
+layout_mode = 0
 offset_right = 140.0
 offset_bottom = 140.0
 texture = ExtResource("1_kjmux")
-script = ExtResource("2_stekj")
 
 [node name="Hp" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
@@ -23,3 +122,9 @@ offset_bottom = 13.0
 theme = ExtResource("3_k7gp7")
 text = "HP:<amount>"
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_stekj")
+}

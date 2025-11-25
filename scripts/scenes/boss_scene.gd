@@ -5,14 +5,17 @@ class_name BossScene
 @onready var start_timer_label: RichTextLabel = %StartTimerCounter
 @onready var fight_timer_label: RichTextLabel = %FightTimerCounter
 @onready var text_announces_label: RichTextLabel = %TextAnnounces
+@onready var start_button: Button = %StartButton
 
 @onready var big_cauldron: Cauldron = %BigCauldron
 @onready var timer: Timer = %Timer
 
 @onready var boss: Boss = %Boss
 
+var _number_hits: int = 10
+
 var _start_countdown: int = 3
-var _fight_countdown: int = 5
+var _fight_countdown: int = 2
 
 var _timer_counter: int
 
@@ -47,6 +50,11 @@ func desactivate_scene() -> void:
 func _setup_countdown() -> void:
 	scene_state = STATE.COUNTDOWN
 	big_cauldron.show_cauldron(false)
+	
+	_show_start_button(true)
+	await start_button.pressed
+	_show_start_button(false)
+	
 	_setup_timer_counter_label()
 	
 	_setup_countdow_timer()
@@ -82,25 +90,16 @@ func _setup_hurt_boss() -> void:
 	_apply_damage()
 
 func _apply_damage() -> void:
-	var total_damage: Big = Big.new(Stats.mana)
-	var step_dmg: Big = Big.new(total_damage)
-	step_dmg.divideEquals(3)
-	
-	for i:int in range(0, 3):
-		if boss.is_alive :
-			boss.take_damage(step_dmg)
-			await get_tree().create_timer(1).timeout
+	await boss.take_damage(Stats.mana)
 	
 	if boss.is_alive:
 		pass
-		_set_annouce_text("You loose 1 hp")
-		await get_tree().create_timer(2).timeout
+		await _set_annouce_text("You loose 1 hp", 3)
 		GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.CLICK)
 	
 	else:
 		#exit boss scene
-		_set_annouce_text("You defeated the boss")
-		await get_tree().create_timer(2).timeout
+		await _set_annouce_text("You defeated the boss", 3)
 		GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.CLICK)
 		
 
@@ -122,10 +121,10 @@ func _update_timer_counter(l_text: int) -> void:
 	elif scene_state == STATE.FIGHT:
 		fight_timer_label.text = str(l_text)
 	
-func _set_annouce_text(a_text: String) -> void:
+func _set_annouce_text(a_text: String, text_duration: float) -> void:
 	text_announces_label.show()
 	text_announces_label.text = a_text
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(text_duration).timeout
 	text_announces_label.hide()
 	
 	
@@ -136,12 +135,16 @@ func _on_timer_timeout() -> void:
 		timer.stop()
 		if scene_state == STATE.COUNTDOWN:
 			_setup_fight()
-			_set_annouce_text("Start")
+			_set_annouce_text("Start", 1)
 			
 		elif  scene_state == STATE.FIGHT:
-			_set_annouce_text("Time's Up!")
+			_set_annouce_text("Time's Up!", 1)
 			_setup_hurt_boss()
 			
 func _on_boss_dead() -> void:
 	pass
+
+
+func _show_start_button(b_show: bool) -> void:
+	start_button.visible = b_show
 	
