@@ -10,6 +10,7 @@ func _ready():
 	_timer = Timer.new()
 	_timer.timeout.connect(_on_timeout)
 	GameEvents.change_scene.connect(_on_change_scene)
+	GameEvents.boss_start.connect(_on_boss_start)
 	
 	_timer.process_callback =Timer.TIMER_PROCESS_PHYSICS
 	_timer.wait_time = tick_interval
@@ -42,9 +43,9 @@ func _tick() -> void:
 func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
 	if scene == GlobalEnum.GAME_SCENE.BOSS:
 		stop()
-		await get_tree().create_timer(5).timeout
-		resume()
 	elif scene == GlobalEnum.GAME_SCENE.CLICK:
 		resume()
 		
-	
+		
+func _on_boss_start() -> void:
+	resume()

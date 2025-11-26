@@ -5,7 +5,7 @@ enum MODIFIER_TYPE {
 	MPS
 }
 
-var mana = Big.new(99)
+var mana = Big.new(0)
 var mps = Big.new(0)
 var tick_mana: Big
 

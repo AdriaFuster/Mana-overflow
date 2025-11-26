@@ -24,6 +24,10 @@ func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
 		items.show_upgrade_ui(true)
 		display_click_canvas.show()
 		display_boss_canvas.hide()
-	
+
+func hide_ui() -> void:
+	items.hide()
+	display_click_canvas.hide()
+	display_boss_canvas.hide()
 	
 	

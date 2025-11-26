@@ -66,4 +66,3 @@ func show_upgrade_ui(ui_show: bool) -> void:
 	else:
 		upgrade_container.hide()
 	
-	
