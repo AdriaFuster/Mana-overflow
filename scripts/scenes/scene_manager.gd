@@ -27,4 +27,4 @@ func _on_test_scene() -> void:
 	boss_scene.desactivate_scene()
 	game_scene.desactivate_scene()
 	boss_test_scene.show()
-	$CanvasLayer/SubViewportContainer/SubViewport/InventoryUI.hide_ui()
+	%InventoryUI.hide_ui()

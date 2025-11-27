@@ -12,5 +12,5 @@ func tick() -> void:
 
 
 func _augment_efect() -> void:
-	var value: Big = Big.new(_calculate_value())
+	var value: float = _calculate_value()
 	Stats.add_permanent_modifier(name,value,Stats.MODIFIER_TYPE.MPS)

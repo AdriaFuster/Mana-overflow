@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmvh4dum13tdo"]
+[gd_scene load_steps=7 format=3 uid="uid://bmvh4dum13tdo"]
 
 [ext_resource type="Script" uid="uid://cmj1ok141etdy" path="res://scripts/scenes/scene_manager.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b5y886tdja0cd" path="res://scenes/game_scenes/game.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dct8in6qo848g" path="res://scenes/test/boss_test_scene.tscn" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://eco7aeo6qdrx" path="res://scenes/UI/inventory_ui.tscn" id="3_sugp2"]
-[ext_resource type="Script" uid="uid://b88e3jpqkx1at" path="res://scripts/camera_shake.gd" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://di87u0qxxsxpb" path="res://scenes/game_scenes/boss/boss_scene.tscn" id="4_jyhfs"]
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="5_tbgi4"]
 
@@ -14,7 +13,6 @@
 script = ExtResource("1_jyhfs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SceneManager"]
-script = ExtResource("3_tipki")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="SceneManager/CanvasLayer"]
 anchors_preset = 15
@@ -39,31 +37,14 @@ render_target_update_mode = 4
 [node name="BossTestScene" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("2_tefeu")]
 unique_name_in_owner = true
 visible = false
-offset_left = -157.25
-offset_top = -87.75
-offset_right = -157.25
-offset_bottom = -87.75
 
 [node name="Game" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
-offset_left = -157.25
-offset_top = -87.75
-offset_right = -157.25
-offset_bottom = -87.75
 
 [node name="Boss" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("4_jyhfs")]
 unique_name_in_owner = true
-offset_left = -157.25
-offset_top = -87.75
-offset_right = -157.25
-offset_bottom = -87.75
 
 [node name="InventoryUI" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("3_sugp2")]
-unique_name_in_owner = true
-offset_left = -157.25
-offset_top = -87.75
-offset_right = -157.25
-offset_bottom = -87.75
 
 [node name="UI" type="CanvasLayer" parent="."]
 

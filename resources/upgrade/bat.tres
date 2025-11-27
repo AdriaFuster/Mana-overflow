@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://b65a2nsxyxd6k"]
 
-[ext_resource type="Texture2D" uid="uid://qotwwuwh1juj" path="res://assets/sprites/upgrades/Bat.png" id="1_0appt"]
-[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_dli5c"]
+[ext_resource type="Texture2D" uid="uid://qotwwuwh1juj" path="res://assets/sprites/upgrades/bat.png" id="1_0appt"]
+[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/utils/upgrades/upgrade.gd" id="1_dli5c"]
 
 [resource]
 script = ExtResource("1_dli5c")
 order = 2
-cost_mantissa = 100.0
+cost = 100.0
+mps = 0.1
 icon = ExtResource("1_0appt")
 name = "Bat"
 locked = true

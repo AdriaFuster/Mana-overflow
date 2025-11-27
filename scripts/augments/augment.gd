@@ -25,9 +25,9 @@ func _augment_efect() -> void:
 	pass
 
 
-func _calculate_value() -> Big:
+func _calculate_value() -> float:
 	#assert(false, ("No esta definida la funció _calculate_value per l'augment " + name))
-	return
+	return 0
 	
 	
 func _replace_texts() -> void:

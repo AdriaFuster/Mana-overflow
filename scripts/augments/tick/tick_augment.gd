@@ -32,7 +32,7 @@ func _augment_efect() -> void:
 		_enter_cd()
 
 	
-	var value: Big = Big.new(_calculate_value())
+	var value: float = _calculate_value()
 	#print ("value = ",value.toAmericanName())
 	Stats.add_tick_modifier(name,value,Stats.MODIFIER_TYPE.MPS)
 

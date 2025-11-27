@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://45d5cfwk1863"]
 
 [ext_resource type="Texture2D" uid="uid://dsd8d1x8piitj" path="res://assets/sprites/clickers/augment_altar.png" id="1_3s5un"]
-[ext_resource type="Script" uid="uid://qqovlb42wpqc" path="res://scripts/augment_altar.gd" id="1_sn8pp"]
+[ext_resource type="Script" uid="uid://qqovlb42wpqc" path="res://scripts/clickers/augment_altar.gd" id="1_sn8pp"]
 
 [node name="AugmentAltar" type="Node2D"]
 script = ExtResource("1_sn8pp")

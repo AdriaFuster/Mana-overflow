@@ -1,13 +1,12 @@
 [gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://qujfmm724gvx"]
 
 [ext_resource type="Texture2D" uid="uid://bwnx3c6htwri8" path="res://assets/sprites/upgrades/raven.png" id="1_3xbbk"]
-[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/upgrades/upgrade.gd" id="1_17elv"]
+[ext_resource type="Script" uid="uid://d0nmxvu0gpoa1" path="res://scripts/utils/upgrades/upgrade.gd" id="1_17elv"]
 
 [resource]
 script = ExtResource("1_17elv")
 order = 4
-cost_mantissa = 12.0
-cost_exponent = 3
+cost = 12000.0
 mps = 150.0
 icon = ExtResource("1_3xbbk")
 name = "Raven"

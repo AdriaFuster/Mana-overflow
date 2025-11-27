@@ -9,9 +9,9 @@ func on_equip() -> void:
 	GameEvents.deduce_mana.connect(_on_mana_spended)
 
 
-func _on_mana_spended(mana_cost: Big) -> void:
-	var refunded_mana: Big = Big.new(mana_cost)
-	refunded_mana.multiplyEquals(refund)
+func _on_mana_spended(mana_cost: float) -> void:
+	var refunded_mana: float = mana_cost
+	refunded_mana *= refund
 	#print("fem refund de ", refunded_mana.toAmericanName())
 	Stats.add_mana(refunded_mana)
 	

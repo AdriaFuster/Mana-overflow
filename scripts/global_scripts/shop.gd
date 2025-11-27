@@ -47,7 +47,6 @@ func _setup_ui() -> void:
 	shop_ui = shop_ui_scene.instantiate()
 	
 	var ui_layer = get_tree().root.get_node("Main/SceneManager/CanvasLayer/SubViewportContainer/SubViewport/Game")
-	
 	ui_layer.add_child(shop_ui)
 	shop_ui.call_deferred("hide_shop")
 	

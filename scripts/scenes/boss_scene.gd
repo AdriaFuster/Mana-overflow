@@ -12,7 +12,7 @@ class_name BossScene
 
 @onready var boss: Boss = %Boss
 
-var _start_countdown: int = 3
+var _start_countdown: int = 1
 var _fight_countdown: int = 5
 
 var _timer_counter: int
@@ -87,21 +87,23 @@ func _setup_fight_timer() -> void:
 
 func _setup_hurt_boss() -> void:
 	scene_state = STATE.HURT_BOSS
+	GameEvents.boss_end.emit()
 	big_cauldron.disable_button(true)
 	_apply_damage()
 
 func _apply_damage() -> void:
 	await boss.take_damage(Stats.mana)
 	
+	print("BOSS ALIVE = ", boss.is_alive())
 	if boss.is_alive():
 		await _set_annouce_text("You loose 1 hp", 3)
-		GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.CLICK)
-	
+		_continue_fight()
 	else:
-		#exit boss scene
 		await _set_annouce_text("You defeated the boss", 3)
 		GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.CLICK)
-		
+
+func _continue_fight() -> void:
+	_setup_countdown()
 
 func _setup_timer_counter_label() -> void:
 

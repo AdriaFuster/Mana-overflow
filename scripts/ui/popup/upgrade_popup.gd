@@ -1,9 +1,13 @@
 extends BasePopup
 
-func _set_value(item: InventoryItem) -> void:
-
-	name_label.text = _set_name_effect(item.name)
-	description_label.text = item.description.strip_edges()
+func _set_value(item: Upgrade) -> void:
+	
+	if item.locked:
+		name_label.text = _set_name_effect(item.locked_name)
+		description_label.text = item.locked_description.strip_edges()
+	else:
+		name_label.text = _set_name_effect(item.name)
+		description_label.text = item.description.strip_edges()
 
 
 func _set_type_effect(item_name:String, item: InventoryItem) -> String:

@@ -3,9 +3,9 @@ class_name ManaPotion
 
 @export var increment: float
 
-func _calculate_value() -> Big:
-	var b_mps = Big.new(Stats.mod_mps)
-	b_mps.multiplyEquals(increment)
+func _calculate_value() -> float:
+	var b_mps = Stats.mod_mps
+	b_mps *= increment
 
 	return b_mps
 

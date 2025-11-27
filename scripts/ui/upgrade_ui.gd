@@ -17,7 +17,7 @@ func _ready() -> void:
 func setup(u:Upgrade) -> void:
 	upgrade = u
 	icon.texture = upgrade.icon
-	cost.text = upgrade.cost.toAmericanName()
+	cost.text = Big.new(upgrade.cost).sufix()
 	amount.text = str(upgrade.amount)
 	
 	icon_mat = icon.material
@@ -37,7 +37,7 @@ func _set_state() -> void:
 	else:
 		icon_mat.set_shader_parameter("use_silhouette", false)
 		
-		if Stats.mana.isGreaterThanOrEqualTo(upgrade.cost):
+		if Comp.greater_equal(Stats.mana,upgrade.cost):
 			button.disabled = false
 			modulate.a = 1
 		
@@ -50,8 +50,8 @@ func _on_pressed() -> void:
 	upgrade.upgrade_click()
 
 
-func _on_update_cost(new_cost: Big) -> void:
-	cost.text = new_cost.toAmericanName()
+func _on_update_cost(new_cost: float) -> void:
+	cost.text = Big.new(new_cost).sufix()
 	
 	
 func _on_update_amount(new_amount: int) -> void:

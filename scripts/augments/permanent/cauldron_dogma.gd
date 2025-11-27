@@ -12,9 +12,9 @@ func _augment_efect() -> void:
 	new_cauldron_power *= click_increment
 	Stats.add_cauldron_modifier(name, new_cauldron_power)
 
-func _calculate_value() -> Big:
-	var m_mps = Big.new(Stats.mod_mps)
-	m_mps.multiplyEquals(increment)
+func _calculate_value() -> float:
+	var m_mps = Stats.mod_mps
+	m_mps *= increment
 	#print("increment = ", m_mps.toAmericanName())
 	
 	return m_mps

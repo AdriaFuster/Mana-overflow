@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b10gewjyw2qq1"]
+[gd_scene load_steps=11 format=3 uid="uid://b10gewjyw2qq1"]
 
 [ext_resource type="Texture2D" uid="uid://dimhx8m3g5kun" path="res://assets/sprites/bosses/boss.png" id="1_kjmux"]
 [ext_resource type="Script" uid="uid://di34h5haeqxh0" path="res://scripts/boss/boss.gd" id="2_stekj"]
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="3_k7gp7"]
 [ext_resource type="Shader" uid="uid://nbqphfd6pk3d" path="res://scripts/shaders/boss.tres" id="3_stekj"]
+[ext_resource type="Script" uid="uid://dj0txxg2uonvm" path="res://scenes/game_scenes/boss/boss_animation.gd" id="5_k7gp7"]
+[ext_resource type="AudioStream" uid="uid://crl4fwjhvm6og" path="res://assets/sounds/boss_hit.wav" id="6_q6ieq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7gp7"]
 shader = ExtResource("3_stekj")
@@ -89,6 +91,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_hit_sound"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_stekj"]
 _data = {
@@ -129,3 +145,8 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_stekj")
 }
+script = ExtResource("5_k7gp7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("6_q6ieq")
+volume_db = -6.69

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dbmln6jfoerjj"]
 
 [ext_resource type="Texture2D" uid="uid://dk54fer0prtr7" path="res://assets/sprites/clickers/Cauldron.png" id="1_8jqlm"]
-[ext_resource type="Script" uid="uid://cmekwn4bp2ik0" path="res://scripts/cauldron.gd" id="2_l3ke8"]
+[ext_resource type="Script" uid="uid://cmekwn4bp2ik0" path="res://scripts/clickers/cauldron.gd" id="2_l3ke8"]
 [ext_resource type="Script" uid="uid://x81y23lhnyu8" path="res://scripts/animations/cauldron_animations.gd" id="3_l3ke8"]
 [ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="4_au12p"]
 

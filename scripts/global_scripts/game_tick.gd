@@ -11,6 +11,7 @@ func _ready():
 	_timer.timeout.connect(_on_timeout)
 	GameEvents.change_scene.connect(_on_change_scene)
 	GameEvents.boss_start.connect(_on_boss_start)
+	GameEvents.boss_end.connect(_on_boss_end)
 	
 	_timer.process_callback =Timer.TIMER_PROCESS_PHYSICS
 	_timer.wait_time = tick_interval
@@ -49,3 +50,6 @@ func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
 		
 func _on_boss_start() -> void:
 	resume()
+
+func _on_boss_end() -> void:
+	stop()

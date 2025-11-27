@@ -92,5 +92,5 @@ func _set_name_effect(item_name:String) -> String:
 	return text
 	
 
-func _set_value(_item: InventoryItem) -> void:
+func _set_value(_item) -> void:
 	pass

@@ -7,9 +7,9 @@ func on_equip() -> void:
 	super.on_equip()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	
-func _calculate_value() -> Big:
-	var b_mps = Big.new(Stats.mod_mps)
-	b_mps.multiplyEquals(increment+1)
+func _calculate_value() -> float:
+	var b_mps = Stats.mod_mps
+	b_mps *= increment+1
 	
 	return b_mps
 

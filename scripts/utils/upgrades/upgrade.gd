@@ -3,25 +3,24 @@ class_name Upgrade
 
 
 @export var order: int
-@export var cost_mantissa: float
-@export var cost_exponent: int
-var cost: Big
+@export var cost: float
 
 @export var mps: float = 1
 @export var amount: int = 0
 @export var icon: Texture2D
 
-const MULTIPLIER_RATE: float = 1.15
-const UNLOCK_PERCENT: float = 0.8
+var locked_name: String = "????"
+var locked_description: String = "??????"
+@export var locked: bool = true
 
-signal update_cost(new_cost: Big)
+const MULTIPLIER_RATE: float = 1.15
+const UNLOCK_PERCENT: float = 0.7
+
+signal update_cost(new_cost: float)
 signal update_amount(new_amount: int)
 	
 
 func setup() -> void:
-	
-	cost = Big.new(cost_mantissa, cost_exponent)
-	
 	if locked:
 		GameTick.tick.connect(_on_tick)
 	
@@ -33,7 +32,7 @@ func setup() -> void:
 	
 	
 func _increase_cost() -> void:
-	cost.multiplyEquals(MULTIPLIER_RATE)
+	cost *= MULTIPLIER_RATE
 	update_cost.emit(cost)
 	
 func _increase_amount() -> void:
@@ -52,11 +51,10 @@ func upgrade_click() -> void:
 	GameEvents.calculate_mps.emit()
 
 func _on_tick() -> void:
-	var upgrade_unlock_cost: Big = Big.new(cost)
-	upgrade_unlock_cost.multiplyEquals(UNLOCK_PERCENT)
+	var upgrade_unlock_cost: float = cost * UNLOCK_PERCENT
 	
 	#print("Comprovem si per la upgrade", name, "podem comprarla")
-	if Stats.mana.isGreaterThanOrEqualTo(upgrade_unlock_cost):
+	if Comp.greater_equal(Stats.mana,upgrade_unlock_cost):
 		#print("SI PODEEM")
 		locked = false
 		

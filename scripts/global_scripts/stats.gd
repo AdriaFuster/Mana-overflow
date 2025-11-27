@@ -5,12 +5,12 @@ enum MODIFIER_TYPE {
 	MPS
 }
 
-var mana = Big.new(0)
-var mps = Big.new(0)
-var tick_mana: Big
+var mana: float = 99
+var mps: float = 0
+var tick_mana: float
 
 
-var mod_mps = Big.new(0)
+var mod_mps: float = 0
 var cauldron_power: float = 1
 var mod_cauldron_power: float = 1
 
@@ -29,18 +29,18 @@ func _ready() -> void:
 		
 
 #MANA
-func add_mana(n_mana: Big) -> void:
-	mana.plusEquals(n_mana)
+func add_mana(n_mana: float) -> void:
+	mana += n_mana
 
-func deduce_mana(n_mana: Big) -> void:
-	#print("restem ", n_mana.toAmericanName())
-	mana.minusEquals(n_mana)
-	if mana.isLessThan(0):
-		mana = Big.new(0)
-	#print("ens quedem amb ", mana.toAmericanName())	
-
+func deduce_mana(n_mana: float) -> void:
+	if Comp.less((mana - n_mana), 0):
+		mana = 0
+	else:
+		mana -= n_mana
+	
+		
 #MODIFIERS
-func add_tick_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
+func add_tick_modifier(m_name: String, value: float, type: MODIFIER_TYPE) -> void:
 	#print ("add to tick modifier ",m_name )
 	if type == MODIFIER_TYPE.MPS:	
 		#print("afegim als mps ",Stats.mps.toAmericanName(), " ", percent+1)
@@ -49,7 +49,7 @@ func add_tick_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
 		#print("afegim al mana ",Stats.mana.toAmericanName(), " ", percent+1)
 		tick_modifiers_mps[m_name] = value
 
-func add_permanent_modifier(m_name: String, value: Big, type: MODIFIER_TYPE) -> void:
+func add_permanent_modifier(m_name: String, value: float, type: MODIFIER_TYPE) -> void:
 	#print ("add to permanent modifier ",m_name )
 	if type == MODIFIER_TYPE.MPS:	
 		#print("afegim als mps ",Stats.mps.toAmericanName(), " ", percent+1)
@@ -84,28 +84,28 @@ var upgrades: Dictionary = {}
 	#upgrades[upgrade] = get_upgrade_amount(upgrade) + amount
 
 
-func _on_add_mana(mana_add: Big):
+func _on_add_mana(mana_add: float):
 	add_mana(mana_add)
 	
-func _on_deduced_mana(mana_deduced: Big):
+func _on_deduced_mana(mana_deduced: float):
 	deduce_mana(mana_deduced)
 
 	
 func _on_calculate_mps() -> void:
-	var total_mps: Big = Big.new(0)
+	var total_mps: float = 0
 	
 	for u_name:String in Inventory.upgrades.keys():
 		var u: Upgrade = Inventory.upgrades[u_name]
-		total_mps.plusEquals(u.mps*u.amount)
+		total_mps += u.mps*u.amount
 	
-	mps = Big.new(total_mps)
+	mps = total_mps
 
 
 func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
 	if scene == GlobalEnum.GAME_SCENE.BOSS:
 		#Save mana value o tick mana
-		tick_mana = Big.new(mana)
-		mana = Big.new(0)
+		tick_mana = mana
+		mana = 0
 		
 	elif scene == GlobalEnum.GAME_SCENE.CLICK:
-		mana = Big.new(tick_mana)
+		mana = tick_mana

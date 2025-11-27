@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 func _on_dmg() -> void:
 	var dmg: int = int(text_edit.text)
-	boss.take_damage(Big.new(dmg))
+	boss.take_damage(dmg)
 
 func _on_reset() -> void:
 	boss._setup()

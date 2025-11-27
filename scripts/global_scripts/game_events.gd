@@ -1,7 +1,9 @@
 extends Node
 
-signal add_mana(mana: Big)
-signal deduce_mana(cost: Big)
+signal screen_shake()
+
+signal add_mana(mana: float)
+signal deduce_mana(cost: float)
 
 signal cauldron_click()
 
@@ -16,6 +18,7 @@ signal change_scene(scene: GlobalEnum.GAME_SCENE)
 
 #BOSS
 signal boss_start()
+signal boss_end()
 
 #SHOP
 signal augment_bought(augment: Augment)

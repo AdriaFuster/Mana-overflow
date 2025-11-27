@@ -5,18 +5,16 @@ class_name MightyForce
 	
 
 #Each 10 clicks, next one +100% click power
-func _calculate_value() -> Big:
-	var b_mps = Big.new(Stats.mod_cauldron_power)
-	b_mps.multiplyEquals(increment)
+func _calculate_value() -> float:
+	var b_mps = Stats.mod_cauldron_power
+	b_mps *= increment
 	
 	return b_mps
 
 func _augment_efect() -> void:
 	
-	var value: Big = Big.new(_calculate_value())
-	#print("augment_efect with value = ", value.toAmericanName())
+	var value: float = _calculate_value()
 	
-	#Encapsular-ho a una funcio a Stats
-	Stats.mana.plusEquals(value)
+	Stats.add_mana(value)
 	
 	cd_cont = int(cd)

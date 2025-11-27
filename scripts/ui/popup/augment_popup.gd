@@ -3,7 +3,7 @@ extends BasePopup
 @onready var type_label: RichTextLabel = %Type
 @onready var extra_info: RichTextLabel = %ExtraInfo
 
-func _set_value(item: InventoryItem) -> void:
+func _set_value(item: Augment) -> void:
 
 	name_label.text = _set_name_effect(item.name)
 	description_label.text = item.description.strip_edges()
