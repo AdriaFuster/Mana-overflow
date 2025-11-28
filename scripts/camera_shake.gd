@@ -10,7 +10,6 @@ func _ready() -> void:
 	GameEvents.screen_shake.connect(_on_screen_shake)
 
 func _on_screen_shake(intensity: float = 8, duration: float = 0.1) -> void:
-	print("shake")
 	shake_intensity = intensity
 	shake_timer = duration
 	shake_lenght = 	Vector2(1,1)

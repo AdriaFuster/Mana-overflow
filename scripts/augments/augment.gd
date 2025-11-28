@@ -40,6 +40,7 @@ func _replace_texts() -> void:
 	description = _replace_string("N_CLICKS", "cd", description)
 	description = _replace_string("REFUND_P", "refund", description)
 
+
 func _replace_string(replace_string: String, var_name: String, text: String ) -> String:
 	
 	var dollar_replace_string = "$"+replace_string+"$"

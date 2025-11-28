@@ -10,6 +10,7 @@ var location = GlobalEnum.LOCATION.SHOP
 
 var shop_bought: bool = false
 
+
 func _ready() -> void:
 	GameEvents.augment_bought.connect(_on_augment_bought)
 	GameEvents.new_upgrade_bought.connect(_on_new_upgrade_bought)
@@ -38,7 +39,7 @@ func _get_valid_augments() -> Dictionary:
 		var r: ResourceManager.ResourceEntry = ResourceManager.augments[r_name]
 		if r.location != GlobalEnum.LOCATION.INVENTORY:
 			d[r.resource.name] = r.resource
-			print("augment disponible per la botiga ",r.resource.name)
+			#print("augment disponible per la botiga ",r.resource.name)
 	
 	return d
 	

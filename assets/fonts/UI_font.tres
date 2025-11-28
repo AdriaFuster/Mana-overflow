@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dtps5mnet6rm8"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtps5mnet6rm8"]
 
 [ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_g21bd"]
+[ext_resource type="FontFile" uid="uid://b0w5kfsv5kjkv" path="res://assets/fonts/PixelOperator8.ttf" id="2_hl2eg"]
 
 [resource]
-default_font = ExtResource("1_g21bd")
+default_font = ExtResource("2_hl2eg")
 default_font_size = 16
+RichTextLabel/fonts/bold_font = ExtResource("1_g21bd")

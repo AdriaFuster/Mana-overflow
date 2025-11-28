@@ -47,16 +47,32 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Name" type="RichTextLabel" parent="ItemPopUp/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemPopUp/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ItemPopUp/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 clip_contents = false
 custom_minimum_size = Vector2(80, 24)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.46
 theme = ExtResource("2_oenoo")
-theme_override_colors/font_shadow_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
 bbcode_enabled = true
 text = "Name"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Lvl" type="RichTextLabel" parent="ItemPopUp/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_oenoo")
+bbcode_enabled = true
+text = "Lvl 10000"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
@@ -67,6 +83,6 @@ custom_minimum_size = Vector2(300, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_oenoo")
-theme_override_colors/font_shadow_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+bbcode_enabled = true
 text = "Description"
 fit_content = true

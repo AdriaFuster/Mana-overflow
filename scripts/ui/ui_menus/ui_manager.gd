@@ -13,6 +13,6 @@ func _process(_delta: float) -> void:
 	
 
 func _display_values():
-	mana_label.text = "Mana = " + Big.new(Stats.mana).sufix()
+	mana_label.text = "Mana = " + Big.new(Stats.mana).sufix(true,0,3)
 	mps_label.text = "MPS = " + Big.new(Stats.mod_mps).sufix()
-	cauldron_power.text = "CP = " + str(Stats.mod_cauldron_power)
+	cauldron_power.text = "CP = " + Big.new(Stats.mod_cauldron_power).sufix()

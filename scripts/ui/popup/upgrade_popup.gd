@@ -1,25 +1,26 @@
 extends BasePopup
 
+@onready var lvl: RichTextLabel = %Lvl
+const lvl_prefix = "LVL "
+
+
+func _ready() -> void:
+	super._ready()
+	GameEvents.update_info.connect(_on_update_info)
+
 func _set_value(item: Upgrade) -> void:
 	
 	if item.locked:
-		name_label.text = _set_name_effect(item.locked_name)
-		description_label.text = item.locked_description.strip_edges()
+		name_label.text = TextUtils.bold(item.locked_name)
+		description_label.text = item.locked_description
+		lvl.hide()
 	else:
-		name_label.text = _set_name_effect(item.name)
-		description_label.text = item.description.strip_edges()
+		name_label.text = TextUtils.bold(item.name)
+		description_label.text = item.get_description()
+		
+		lvl.show()
+		lvl.text = TextUtils.bold(item.get_lvl(lvl_prefix))
 
 
-func _set_type_effect(item_name:String, item: InventoryItem) -> String:
-	var text: String = item_name
-	
-	if item is Augment:
-	
-		if item.type == GlobalEnum.AugmentType.CLICK :
-			text = "[shake rate=3 level=1][color=#ffaa00][b]" + text + "[/b][/color][/shake]"	
-		elif item.type == GlobalEnum.AugmentType.IDLE:
-			text = "[wave amp=2 freq=3][color=#80dfff]" + text + "[/color][/wave]"
-		else:
-			text = "[color=#32a852]" + text + "[/color]"
-	
-	return text
+func _on_update_info(u: Upgrade) -> void:
+	_set_value(u)

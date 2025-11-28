@@ -2,9 +2,9 @@ extends Control
 class_name UpgradeUI
 
 @onready var button: TextureButton = %TextureButton
-@onready var cost: Label = %Cost
+@onready var cost: RichTextLabel = %Cost
 @onready var icon: TextureRect = %Icon
-@onready var amount: Label = %Amount
+@onready var amount: RichTextLabel = %Amount
 var upgrade: Upgrade
 
 var icon_mat: ShaderMaterial
@@ -17,8 +17,8 @@ func _ready() -> void:
 func setup(u:Upgrade) -> void:
 	upgrade = u
 	icon.texture = upgrade.icon
-	cost.text = Big.new(upgrade.cost).sufix()
-	amount.text = str(upgrade.amount)
+	cost.text = TextUtils.bold(Big.new(upgrade.cost).sufix())
+	amount.text = TextUtils.bold(str(upgrade.amount))
 	
 	icon_mat = icon.material
 	u.update_cost.connect(_on_update_cost)
@@ -51,11 +51,11 @@ func _on_pressed() -> void:
 
 
 func _on_update_cost(new_cost: float) -> void:
-	cost.text = Big.new(new_cost).sufix()
+	cost.text = TextUtils.bold(Big.new(new_cost).sufix())
 	
 	
 func _on_update_amount(new_amount: int) -> void:
-	amount.text = str(new_amount)
+	amount.text = TextUtils.bold(str(new_amount))
 	
 
 func _on_texture_button_mouse_entered() -> void:

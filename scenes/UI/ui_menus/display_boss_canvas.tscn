@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://beg5g7jkr7bat"]
 
-[ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_manager.gd" id="1_u2ltl"]
+[ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_menus/ui_manager.gd" id="1_u2ltl"]
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="2_hsqss"]
 
 [node name="DisplayBossCanvas" type="CanvasLayer"]

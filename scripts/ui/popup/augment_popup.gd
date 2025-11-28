@@ -5,12 +5,12 @@ extends BasePopup
 
 func _set_value(item: Augment) -> void:
 
-	name_label.text = _set_name_effect(item.name)
+	name_label.text = TextUtils.bold(_set_name_effect(item.name))
 	description_label.text = item.description.strip_edges()
-	type_label.text = _set_type_effect(
+	type_label.text = TextUtils.bold(_set_type_effect(
 		GlobalEnum.enum_to_string(GlobalEnum.AugmentType, item.type), 
-		item)
-	extra_info.text = "prova extra info"
+		item))
+	extra_info.text = "Extra info"
 	
 	name_label.update_minimum_size()
 	description_label.update_minimum_size()
@@ -24,7 +24,7 @@ func _set_type_effect(item_name:String, item: InventoryItem) -> String:
 	if item is Augment:
 	
 		if item.type == GlobalEnum.AugmentType.CLICK :
-			text = "[shake rate=3 level=1][color=#ffaa00][b]" + text + "[/b][/color][/shake]"	
+			text = "[shake rate=3 level=1][color=#ffaa00]" + text + "[/color][/shake]"	
 		elif item.type == GlobalEnum.AugmentType.IDLE:
 			text = "[wave amp=2 freq=3][color=#80dfff]" + text + "[/color][/wave]"
 		else:

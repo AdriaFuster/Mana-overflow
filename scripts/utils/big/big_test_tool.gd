@@ -4,7 +4,7 @@
 var number: Array = [
 	0,
 	5,
-	12,
+	10,
 	999,
 	1000,
 	1234,
@@ -74,17 +74,17 @@ var number: Array = [
 	1_000_000_000_000]
 	
 func _run() -> void:
-	var a: float = 1000000.5
-	var b: float = 51000
-	var c:Big = Big.new(a+b)
-	print(c.with_sufix())
-	
+	#var a: float = 1000000.5
+	#var b: float = 51000
+	#var c:Big = Big.new(a+b)
+	#print(c.with_sufix())
+	test_numbers()
 	
 	
 func test_numbers() -> void:
 	for n in number:
 		var a: Big = Big.new(n)
 		print("-----------")
-		print("valor ",n, " resultat ", a._to_A())
+		print("valor ",n, " resultat ", a.sufix(true, 0))
 	
 	

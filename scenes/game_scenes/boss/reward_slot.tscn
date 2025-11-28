@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvo6qlj00vaqk"]
+
+[ext_resource type="Texture2D" uid="uid://crroycicyhuq4" path="res://assets/sprites/bosses/boss_rewards/reward_slot.png" id="1_0mni4"]
+[ext_resource type="Script" uid="uid://bi2v46cs6mecp" path="res://scripts/boss/reward_slot.gd" id="1_q3prj"]
+
+[node name="RewardSlot" type="Button"]
+custom_minimum_size = Vector2(34, 34)
+offset_right = 34.0
+offset_bottom = 34.0
+mouse_filter = 1
+script = ExtResource("1_q3prj")
+
+[node name="Slot" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+texture = ExtResource("1_0mni4")
+
+[node name="Reward" type="TextureRect" parent="Slot"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 17.0
+offset_bottom = 17.0

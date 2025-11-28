@@ -8,6 +8,7 @@ class_name Upgrade
 @export var mps: float = 1
 @export var amount: int = 0
 @export var icon: Texture2D
+var lvl: int = 1
 
 var locked_name: String = "????"
 var locked_description: String = "??????"
@@ -15,6 +16,7 @@ var locked_description: String = "??????"
 
 const MULTIPLIER_RATE: float = 1.15
 const UNLOCK_PERCENT: float = 0.7
+const MPS_INCREMENT: float = 1.5
 
 signal update_cost(new_cost: float)
 signal update_amount(new_amount: int)
@@ -25,10 +27,6 @@ func setup() -> void:
 		GameTick.tick.connect(_on_tick)
 	
 	description = "Each $NAME$ adds $MPS$ mana per second"
-	
-
-	description = _replace_string("NAME", "name", description)
-	description = _replace_string("MPS", "mps", description)
 	
 	
 func _increase_cost() -> void:
@@ -41,15 +39,36 @@ func _increase_amount() -> void:
 	amount += 1
 	update_amount.emit(amount)
 
+func _increase_lvl() -> void:
+	if amount%10 == 0:
+		lvl += 1
+		mps *= MPS_INCREMENT
+	
+	
 func upgrade_click() -> void:
 	_increase_amount()
+	_increase_lvl()
 	
-	#print("upgrade ", name, " i ens gastem ", cost.toAmericanName())
 	GameEvents.deduce_mana.emit(cost)
+	Stats.spend_mana(cost)
+	
 	_increase_cost()
 	
+	GameEvents.update_info.emit(self)
 	GameEvents.calculate_mps.emit()
 
+func get_description() -> String:
+	var d: String = description 
+	d = TextUtils.replace_upgrade_string("NAME", "name", d, self)
+	d = TextUtils.replace_upgrade_string("MPS", "mps", d, self, UpgradeLvl.get_lvl_color(lvl))
+	
+	return d
+
+func get_lvl(prefix: String) -> String:
+	var c: Color = UpgradeLvl.get_lvl_color(lvl)
+	return TextUtils.set_color(prefix+str(lvl),c)
+		
+	
 func _on_tick() -> void:
 	var upgrade_unlock_cost: float = cost * UNLOCK_PERCENT
 	
@@ -60,19 +79,3 @@ func _on_tick() -> void:
 		
 		if GameTick.tick.is_connected(_on_tick):
 			GameTick.tick.disconnect(_on_tick)
-
-
-func _replace_string(replace_string: String, var_name: String, text: String ) -> String:
-	
-	var dollar_replace_string = "$"+replace_string+"$"
-	var new_text := text
-	
-	if dollar_replace_string not in text or get(var_name) == null:
-		return new_text
-	
-	var var_value = get(var_name)
-	
-
-	new_text = text.replace(dollar_replace_string, str(var_value))
-	
-	return new_text

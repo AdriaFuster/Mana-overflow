@@ -56,8 +56,8 @@ func _init(v: float = 0.0):
 		_initialized = true
 
 
-func sufix(enable_millions: bool = true) -> String:
-	return _format_value(value, enable_millions)
+func sufix(enable_millions: bool = true, max_dec_small: int = MAX_DECIMALS_SMALL, max_dec_big:int = MAX_DECIMALS) -> String:
+	return _format_value(value, enable_millions, max_dec_small, max_dec_big)
 
 static func _init_thresholds():
 	var count := SUFFIXES.size()
@@ -72,7 +72,7 @@ static func _init_thresholds():
 		x *= 1000.0
 
 
-static func _format_value(n: float, enable_millions: bool) -> String:
+static func _format_value(n: float, enable_millions: bool,max_dec_small, max_dec_big) -> String:
 	
 	var inf:String = _check_if_inf(n)
 	
@@ -83,9 +83,10 @@ static func _format_value(n: float, enable_millions: bool) -> String:
 	var s: String
 	if absn < _thresholds[start_i]:
 		# valors petits: mostrar decimals només si són significatius
-		var decimals := MAX_DECIMALS_SMALL
+		var decimals :int = max_dec_small
 		s = "%.*f" % [decimals, n]
-		s = s.rstrip("0").rstrip(".")
+		if "." in s:
+			s = s.rstrip("0").rstrip(".")
 		s = _add_thousand_separator(s)
 		#s = s.replace(".", DECIMAL_SEPARATOR)
 		return s
@@ -103,7 +104,7 @@ static func _format_value(n: float, enable_millions: bool) -> String:
 	var mag := lo
 	var scaled := n / _thresholds[mag]
 
-	s = "%.*f" % [MAX_DECIMALS, scaled]
+	s = "%.*f" % [max_dec_big, scaled]
 	s = s.rstrip("0").rstrip(".")
 	s = s.replace(".", DECIMAL_SEPARATOR)
 	return "%s %s" % [s, SUFFIXES[mag]]

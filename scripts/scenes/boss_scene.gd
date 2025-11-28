@@ -94,9 +94,10 @@ func _setup_hurt_boss() -> void:
 func _apply_damage() -> void:
 	await boss.take_damage(Stats.mana)
 	
-	print("BOSS ALIVE = ", boss.is_alive())
 	if boss.is_alive():
 		await _set_annouce_text("You loose 1 hp", 3)
+		Stats.add_hp(-1)
+		GameEvents.screen_shake.emit()
 		_continue_fight()
 	else:
 		await _set_annouce_text("You defeated the boss", 3)

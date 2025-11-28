@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://di34h5haeqxh0" path="res://scripts/boss/boss.gd" id="2_stekj"]
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="3_k7gp7"]
 [ext_resource type="Shader" uid="uid://nbqphfd6pk3d" path="res://scripts/shaders/boss.tres" id="3_stekj"]
-[ext_resource type="Script" uid="uid://dj0txxg2uonvm" path="res://scenes/game_scenes/boss/boss_animation.gd" id="5_k7gp7"]
+[ext_resource type="Script" uid="uid://dj0txxg2uonvm" path="res://scripts/boss/boss_animation.gd" id="5_k7gp7"]
 [ext_resource type="AudioStream" uid="uid://crl4fwjhvm6og" path="res://assets/sounds/boss_hit.wav" id="6_q6ieq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7gp7"]
@@ -149,4 +149,4 @@ script = ExtResource("5_k7gp7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource("6_q6ieq")
-volume_db = -6.69
+volume_db = -13.988

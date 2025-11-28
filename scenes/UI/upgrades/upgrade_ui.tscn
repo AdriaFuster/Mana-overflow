@@ -1,12 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvhs60koe8pqx"]
+[gd_scene load_steps=6 format=3 uid="uid://bvhs60koe8pqx"]
 
-[ext_resource type="Script" uid="uid://dc86vw3bltcsn" path="res://scripts/ui/upgrade_ui.gd" id="1_6jegm"]
+[ext_resource type="Script" uid="uid://dc86vw3bltcsn" path="res://scripts/ui/ui_menus/upgrade_ui.gd" id="1_6jegm"]
 [ext_resource type="Texture2D" uid="uid://cx0kjlgo3byif" path="res://assets/sprites/upgrades/upgrade_button.png" id="2_us0at"]
 [ext_resource type="Shader" uid="uid://bfls0ka3u10vc" path="res://scenes/UI/upgrades/upgrade_ui.gdshader" id="3_8hi8n"]
-[ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="3_us0at"]
-
-[sub_resource type="Theme" id="Theme_us0at"]
-default_font_size = 8
+[ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="3_gfosq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6jegm"]
 resource_local_to_scene = true
@@ -36,7 +33,7 @@ mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("2_us0at")
 
-[node name="Cost" type="Label" parent="TextureButton"]
+[node name="Cost" type="RichTextLabel" parent="TextureButton"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 48.0
@@ -44,7 +41,8 @@ offset_top = 9.0
 offset_right = 107.0
 offset_bottom = 17.0
 mouse_filter = 1
-theme = SubResource("Theme_us0at")
+theme = ExtResource("3_gfosq")
+bbcode_enabled = true
 text = "99999"
 horizontal_alignment = 1
 
@@ -58,17 +56,17 @@ offset_top = 5.0
 offset_right = 14.0
 offset_bottom = 14.0
 
-[node name="Amount" type="Label" parent="TextureButton"]
+[node name="Amount" type="RichTextLabel" parent="TextureButton"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(23, 0)
 layout_mode = 0
 offset_left = 19.0
 offset_top = 9.0
 offset_right = 43.0
-offset_bottom = 18.0
+offset_bottom = 17.0
 mouse_filter = 1
-theme = ExtResource("3_us0at")
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("3_gfosq")
+bbcode_enabled = true
 text = "999"
 horizontal_alignment = 1
 
