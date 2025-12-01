@@ -14,16 +14,8 @@ const HORIZONTAL_Y_PADDING: int = 4
 const VERTICAL_X_PADDING: int = 0#20
 const VERTICAL_Y_PADDING: int = 0#-5
 
-enum DISTRIBUTION_MODE{
-	VERTICAL, 
-	HORIZONTAL
-}
-
-func _ready() -> void:
-	_setup_parent() 
-	hide_item_popup()
 	
-func item_popup(slot:Rect2i, item: InventoryItem, mode: DISTRIBUTION_MODE) -> void:
+func item_popup(slot:Rect2i, item: InventoryItem, mode: GlobalEnum.DISTRIBUTION_MODE) -> void:
 	#print("------------------")
 	
 	if item == null:
@@ -43,7 +35,7 @@ func item_popup(slot:Rect2i, item: InventoryItem, mode: DISTRIBUTION_MODE) -> vo
 	item_pop_up.show()
 	
 	
-func _calculate_popup_position(slot:Rect2i, mode: DISTRIBUTION_MODE) -> Vector2:
+func _calculate_popup_position(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector2:
 	var correction: Vector2
 
 	correction = _correction(slot.size, mode)
@@ -55,11 +47,11 @@ func _calculate_popup_position(slot:Rect2i, mode: DISTRIBUTION_MODE) -> Vector2:
 	
 	return final_pos
 
-func _correction(i_size: Vector2i, mode: DISTRIBUTION_MODE) -> Vector2i:
+func _correction(i_size: Vector2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector2i:
 	var mouse_pos = get_global_mouse_position()
 	var correction: Vector2
 	
-	if mode == DISTRIBUTION_MODE.VERTICAL:
+	if mode == GlobalEnum.DISTRIBUTION_MODE.VERTICAL:
 		if mouse_pos.x <= get_viewport_rect().size.x/2:
 			correction = Vector2i(i_size.x + VERTICAL_X_PADDING, VERTICAL_Y_PADDING)
 		else:
@@ -73,15 +65,6 @@ func _correction(i_size: Vector2i, mode: DISTRIBUTION_MODE) -> Vector2i:
 	return correction
 	
 	
-func _setup_parent() -> void:
-	var popup_layer = get_tree().root.get_node("Main/PopupLayer")
-	
-	if item_pop_up.get_parent() != popup_layer:
-		item_pop_up.get_parent().remove_child(item_pop_up)
-		popup_layer.add_child(item_pop_up)
-		
-func hide_item_popup() -> void:
-	item_pop_up.hide()
 
 	
 func _set_name_effect(item_name:String) -> String:

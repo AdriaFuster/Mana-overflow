@@ -6,7 +6,6 @@ enum AugmentType {
 	CLICK
 }
 
-
 enum LOCATION{
 	MANAGER,
 	SHOP,
@@ -16,6 +15,17 @@ enum LOCATION{
 enum GAME_SCENE{
 	CLICK,
 	BOSS
+}
+
+enum POPUP_TYPE{
+	AUGMENT,
+	UPGRADE,
+	REWARD
+}
+
+enum DISTRIBUTION_MODE{
+	VERTICAL, 
+	HORIZONTAL
 }
 
 func enum_to_string(enum_dict: Dictionary, value: int) -> String:

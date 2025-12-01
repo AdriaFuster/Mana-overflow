@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="OneHP" load_steps=3 format=3 uid="uid://de3hkuapxvd28"]
+[gd_resource type="Resource" script_class="OneHP" load_steps=2 format=3 uid="uid://de3hkuapxvd28"]
 
 [ext_resource type="Script" uid="uid://j7xrn8l6rfri" path="res://scripts/rewards/one_hp.gd" id="1_lwxkv"]
-[ext_resource type="Texture2D" uid="uid://brk0yl3x5f6he" path="res://assets/sprites/rewards/heart.png" id="1_s2xsm"]
 
 [resource]
 script = ExtResource("1_lwxkv")
-name = "1 HP"
+name = "HP"
 description = "Gives 1 HP"
-icon = ExtResource("1_s2xsm")
 metadata/_custom_type_script = "uid://j7xrn8l6rfri"
