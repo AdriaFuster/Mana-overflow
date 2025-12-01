@@ -1,8 +1,8 @@
 extends Node
 
 
-var shop_ui_scene: PackedScene = preload("uid://bt6o07o4c605o")
-var shop_ui :ShopUI
+var shop_menu_scene: PackedScene = preload("uid://bt6o07o4c605o")
+var shop_menu :ShopMenu
 
 var augments: Dictionary
 
@@ -45,22 +45,22 @@ func _get_valid_augments() -> Dictionary:
 	
 	
 func _setup_ui() -> void:
-	shop_ui = shop_ui_scene.instantiate()
+	shop_menu = shop_menu_scene.instantiate()
 	
 	var ui_layer = get_tree().root.get_node("Main/SceneManager/CanvasLayer/SubViewportContainer/SubViewport/Game")
-	ui_layer.add_child(shop_ui)
-	shop_ui.call_deferred("hide_shop")
+	ui_layer.add_child(shop_menu)
+	shop_menu.call_deferred("hide_menu")
 	
-	shop_ui.augment_bought.connect(_on_augment_bought)
+	#GameEvents.augment_bought.connect(_on_augment_bought)
 
 func show_shop() -> void:
 	if !shop_bought:
-		shop_ui.set_aguments()
-		shop_ui.show_shop()
+		shop_menu.set_items()
+		shop_menu.show_menu()
 
 
 func hide_shop() -> void:	
-	shop_ui.hide_shop()
+	shop_menu.hide_menu()
 
 
 func _on_augment_bought(a: Augment) -> void:

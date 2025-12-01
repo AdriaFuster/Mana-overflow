@@ -6,6 +6,9 @@ const  AUGMENTS_DIR: String = "res://resources/augment/"
 var upgrades: Dictionary = {}
 const  UPGRADES_DIR: String = "res://resources/upgrade/"
 
+var rewards: Dictionary = {}
+const  REWARDS_DIR: String = "res://resources/reward/"
+
 enum RESOURCE_TYPE{
 	AUGMENT,
 	UPGRADE
@@ -26,6 +29,7 @@ class ResourceEntry:
 func _init() -> void:
 	_load_augments()
 	_load_upgrades()
+	_load_rewards()
 	#for d_key: String in augments.keys():
 		#var augment: Augment = augments[d_key].augment
 		#print(augment.name)
@@ -68,3 +72,12 @@ func _load_upgrades() -> void:
 				var upgrade_entry: ResourceEntry = ResourceEntry.new(load(UPGRADES_DIR + file), GlobalEnum.LOCATION.MANAGER, RESOURCE_TYPE.UPGRADE) 
 				upgrade_entry.resource.setup()
 				upgrades[upgrade_entry.resource.name] = upgrade_entry
+
+func _load_rewards() -> void:
+	var dir = DirAccess.open(REWARDS_DIR)
+	if dir:
+		for file in dir.get_files():
+			if file.ends_with(".tres"):
+				var reward: Reward = load(REWARDS_DIR + file)
+				reward.setup()
+				rewards[reward.name] = reward

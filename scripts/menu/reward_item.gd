@@ -1,10 +1,10 @@
 extends Button
 
-class_name RewardSlot
+class_name RewardItem
 
 @onready var reward_icon: TextureRect = %Reward
 
-var reward: Augment
+var reward: Reward
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
@@ -12,8 +12,8 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 
-func setup(a: Augment) -> void:
-	reward = a
+func setup(r: Reward) -> void:
+	reward = r
 	reward_icon.texture = reward.icon
 
 
@@ -24,9 +24,11 @@ func _on_mouse_entered() -> void:
 	
 
 func _on_mouse_exited() -> void:
-	AugmentPopup.hide_item_popup()
+	#AugmentPopup.hide_item_popup()
+	pass
 
 
 func _on_pressed() -> void:
 	#GameEvents.augment_bought.emit(augment)
+	reward.reward_effect()
 	pass

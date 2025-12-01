@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bar52tocqunyw"]
 
-[ext_resource type="Texture2D" uid="uid://cbx6k7b8trci5" path="res://assets/sprites/ui/shop/Shop_item.png" id="1_b422p"]
-[ext_resource type="Script" uid="uid://bglp64wnbvd4h" path="res://scripts/ui/shop/shop_item.gd" id="1_lyj4g"]
+[ext_resource type="Script" uid="uid://bglp64wnbvd4h" path="res://scripts/menu/shop_item.gd" id="1_gaggj"]
+[ext_resource type="Texture2D" uid="uid://cbx6k7b8trci5" path="res://assets/sprites/ui/shop/Shop_item.png" id="2_lh4jg"]
 
 [node name="ShopItem" type="Button"]
 custom_minimum_size = Vector2(18, 18)
@@ -13,14 +13,14 @@ offset_bottom = -702.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_lyj4g")
+script = ExtResource("1_gaggj")
 
 [node name="Slot" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 18.0
-texture = ExtResource("1_b422p")
+texture = ExtResource("2_lh4jg")
 
 [node name="Augment" type="TextureRect" parent="Slot"]
 unique_name_in_owner = true

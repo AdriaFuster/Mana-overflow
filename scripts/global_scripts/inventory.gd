@@ -1,6 +1,5 @@
 extends Node
 
-
 var upgrades: Dictionary = {}
 var augments: Dictionary = {}
 
@@ -13,10 +12,8 @@ func _ready() -> void:
 	#add_augment("Mana potion")
 	#add_augment("Mana tree")
 	#add_augment("Mighty force")
-	#add_augment("Cauldron dogma")
+	add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
-	
-	TickManager.register(self, 1)
 	
 
 func _add_upgrades() -> void:

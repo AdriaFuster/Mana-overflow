@@ -7,7 +7,6 @@ class_name Upgrade
 
 @export var mps: float = 1
 @export var amount: int = 0
-@export var icon: Texture2D
 var lvl: int = 1
 
 var locked_name: String = "????"
@@ -55,6 +54,7 @@ func upgrade_click() -> void:
 	_increase_cost()
 	
 	GameEvents.update_info.emit(self)
+	
 	GameEvents.calculate_mps.emit()
 
 func get_description() -> String:

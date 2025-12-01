@@ -1,7 +1,8 @@
 extends Control
 class_name BossScene
 
-@onready var canvas_layer: CanvasLayer = %CanvasLayer
+@onready var game_canvas_layer: CanvasLayer = %GameCanvasLayer
+@onready var reward_menu: RewardMenu = %RewardMenu
 @onready var start_timer_label: RichTextLabel = %StartTimerCounter
 @onready var fight_timer_label: RichTextLabel = %FightTimerCounter
 @onready var text_announces_label: RichTextLabel = %TextAnnounces
@@ -30,11 +31,12 @@ var scene_state: STATE = STATE.IDLE
 func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	boss.dead.connect(_on_boss_dead)
-
+	
 
 func activate_scene() -> void:
 	show()
-	canvas_layer.show()
+	game_canvas_layer.show()
+	reward_menu.hide_menu()
 	
 	_setup_countdown()
 	boss._setup()	
@@ -42,7 +44,7 @@ func activate_scene() -> void:
 
 func desactivate_scene() -> void:
 	hide()
-	canvas_layer.hide()
+	game_canvas_layer.hide()
 	
 
 func _setup_countdown() -> void:
@@ -101,10 +103,17 @@ func _apply_damage() -> void:
 		_continue_fight()
 	else:
 		await _set_annouce_text("You defeated the boss", 3)
+		await _set_rewards()
 		GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.CLICK)
 
 func _continue_fight() -> void:
 	_setup_countdown()
+
+func _set_rewards() -> void:
+	RewardManager.generate_rewards()
+	reward_menu.show_menu()
+	await reward_menu.select_reward()
+	reward_menu.hide_menu()
 
 func _setup_timer_counter_label() -> void:
 

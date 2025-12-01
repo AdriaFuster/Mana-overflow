@@ -12,6 +12,7 @@ signal new_upgrade_bought
 
 signal add_mana(mana:float)
 signal deduce_mana (mana: float)
+
 #SCENE
 signal change_scene(scene: GlobalEnum.GAME_SCENE)
 
@@ -19,8 +20,9 @@ signal change_scene(scene: GlobalEnum.GAME_SCENE)
 signal boss_start()
 signal boss_end()
 
-#SHOP
+#MENU
 signal augment_bought(augment: Augment)
+signal reward_selected()
 signal shop_disabled(d: bool)
 
 #UPGRADE

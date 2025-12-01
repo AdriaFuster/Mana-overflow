@@ -2,7 +2,6 @@ extends InventoryItem
 class_name Augment
 
 @export var type: GlobalEnum.AugmentType
-@export var icon: Texture2D
 
 var cd_cont: int
 var active_cont: int

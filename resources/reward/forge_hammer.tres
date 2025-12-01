@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Reward" load_steps=3 format=3 uid="uid://c0sab0wxmrxm5"]
+
+[ext_resource type="Texture2D" uid="uid://w8vptf248q0x" path="res://assets/sprites/rewards/hammer.png" id="1_klkq8"]
+[ext_resource type="Script" uid="uid://bmj2dvkd7nrgc" path="res://scripts/rewards/reward.gd" id="1_ofjxk"]
+
+[resource]
+script = ExtResource("1_ofjxk")
+name = "Forge hammer"
+description = "Allows to upgrade an equiped augment"
+icon = ExtResource("1_klkq8")
+metadata/_custom_type_script = "uid://bmj2dvkd7nrgc"
