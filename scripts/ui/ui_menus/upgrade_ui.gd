@@ -59,11 +59,11 @@ func _on_update_amount(new_amount: int) -> void:
 	
 
 func _on_texture_button_mouse_entered() -> void:
-	PopupTemplate.show_popup(GlobalEnum.POPUP_TYPE.UPGRADE,
+	PopupManager.show_popup(GlobalEnum.POPUP_TYPE.UPGRADE,
 	Rect2i(Vector2i(global_position), Vector2i(size)), 
 	upgrade, 
 	GlobalEnum.DISTRIBUTION_MODE.VERTICAL)
 
 
 func _on_texture_button_mouse_exited() -> void:
-	PopupTemplate.hide_item_popup()
+	PopupManager.hide_popup()

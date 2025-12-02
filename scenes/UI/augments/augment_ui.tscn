@@ -21,14 +21,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_omxwx")
 
-[node name="UI" type="TextureRect" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 18.0
-texture = ExtResource("1_aa8w3")
+mouse_filter = 1
+texture_normal = ExtResource("1_aa8w3")
 
-[node name="TextureRect" type="TextureRect" parent="UI"]
+[node name="TextureRect" type="TextureRect" parent="Button"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_left = 1.0

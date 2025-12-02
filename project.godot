@@ -25,17 +25,17 @@ Stats="*res://scripts/global_scripts/stats.gd"
 TickManager="*res://scripts/global_scripts/tick_manager.gd"
 Inventory="*res://scripts/global_scripts/inventory.gd"
 Shop="*res://scripts/global_scripts/shop.gd"
-AugmentPopup="*res://scenes/UI/popup/augment_popup_old.tscn"
 RewardManager="*res://scripts/rewards/reward_manager.gd"
-UpgradePopup="*res://scenes/UI/popup/upgrade_popup_old.tscn"
 BossSpawner="*res://scripts/boss/boss_spawner.gd"
-PopupTemplate="*res://scenes/UI/popup/popup_template.tscn"
+PopupManager="*res://scripts/ui/popup/popup_manager.gd"
+AugmentEnhanceManager="*res://scripts/augments/augment_enhance_manager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://ccqwxqhu85kvl"
 
 [editor_plugins]
 

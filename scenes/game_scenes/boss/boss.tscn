@@ -117,6 +117,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 140.0
 offset_bottom = 140.0
+mouse_filter = 2
 script = ExtResource("2_stekj")
 
 [node name="BossSprite" type="TextureRect" parent="."]

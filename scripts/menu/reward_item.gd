@@ -18,17 +18,16 @@ func setup(r: Reward) -> void:
 
 
 func _on_mouse_entered() -> void:
-	#AugmentPopup.item_popup(Rect2i(Vector2i(global_position), Vector2i(size)), 
-	#augment, AugmentPopup.DISTRIBUTION_MODE.HORIZONTAL)
-	pass
+	PopupManager.show_popup(GlobalEnum.POPUP_TYPE.REWARD,
+	Rect2i(Vector2i(global_position), Vector2i(size)), 
+	reward, 
+	GlobalEnum.DISTRIBUTION_MODE.HORIZONTAL)
 	
 
 func _on_mouse_exited() -> void:
-	#AugmentPopup.hide_item_popup()
-	pass
+	PopupManager.hide_popup()
 
 
 func _on_pressed() -> void:
-	#GameEvents.augment_bought.emit(augment)
 	reward.reward_effect()
-	pass
+	

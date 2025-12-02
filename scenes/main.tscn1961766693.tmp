@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmvh4dum13tdo"]
+
+[ext_resource type="Script" uid="uid://cmj1ok141etdy" path="res://scripts/scenes/scene_manager.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b5y886tdja0cd" path="res://scenes/game_scenes/game.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dct8in6qo848g" path="res://scenes/test/boss_test_scene.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://eco7aeo6qdrx" path="res://scenes/UI/inventory_ui.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://b88e3jpqkx1at" path="res://scripts/ui/camera_shake.gd" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://di87u0qxxsxpb" path="res://scenes/game_scenes/boss/boss_scene.tscn" id="4_jyhfs"]
+[ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="5_tbgi4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("1_jyhfs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SceneManager"]
+script = ExtResource("3_tipki")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SceneManager/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SceneManager/CanvasLayer/SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="BossTestScene" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("2_tefeu")]
+unique_name_in_owner = true
+visible = false
+offset_left = -157.25
+offset_top = -87.75
+offset_right = -157.25
+offset_bottom = -87.75
+
+[node name="Game" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+offset_left = -157.25
+offset_top = -87.75
+offset_right = -157.25
+offset_bottom = -87.75
+
+[node name="Boss" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("4_jyhfs")]
+unique_name_in_owner = true
+offset_left = -157.25
+offset_top = -87.75
+offset_right = -157.25
+offset_bottom = -87.75
+
+[node name="InventoryUI" parent="SceneManager/CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("3_sugp2")]
+unique_name_in_owner = true
+offset_left = -157.25
+offset_top = -87.75
+offset_right = -157.25
+offset_bottom = -87.75
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TestScene" type="Button" parent="UI"]
+visible = false
+offset_right = 189.0
+offset_bottom = 127.0
+theme = ExtResource("5_tbgi4")
+theme_override_font_sizes/font_size = 24
+text = "boss test scene"
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]

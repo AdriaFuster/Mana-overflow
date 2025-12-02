@@ -16,14 +16,14 @@ func setup(a: Augment) -> void:
 
 
 func _on_mouse_entered() -> void:
-	PopupTemplate.show_popup(GlobalEnum.POPUP_TYPE.AUGMENT,
+	PopupManager.show_popup(GlobalEnum.POPUP_TYPE.AUGMENT,
 	Rect2i(Vector2i(global_position), Vector2i(size)), 
 	augment, 
 	GlobalEnum.DISTRIBUTION_MODE.HORIZONTAL)
 	
 
 func _on_mouse_exited() -> void:
-	PopupTemplate.hide_item_popup()
+	PopupManager.hide_item_popup()
 
 
 func _on_pressed() -> void:

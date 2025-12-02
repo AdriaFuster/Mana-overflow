@@ -1,12 +1,16 @@
 extends Control
 class_name AugmentUI
 
-@onready var icon: TextureRect = $UI/TextureRect
+@onready var icon: TextureRect = $Button/TextureRect
+@onready var button: TextureButton = $Button
 @onready var cd: Label = $Cd
 @onready var permanent: TextureRect = $permanent
 
 
 var augment: Augment
+
+func _ready() -> void:
+	button.pressed.connect(_on_button_pressed)
 
 func setup(a: Augment) -> void:
 	augment = a
@@ -29,7 +33,7 @@ func _process(_delta: float) -> void:
 		cd.text = str(augment.cd_cont)
 
 func _show_popup() -> void:
-	PopupTemplate.show_popup(GlobalEnum.POPUP_TYPE.AUGMENT,
+	PopupManager.show_popup(GlobalEnum.POPUP_TYPE.AUGMENT,
 	Rect2i(Vector2i(global_position), Vector2i(size)), 
 	augment, 
 	GlobalEnum.DISTRIBUTION_MODE.HORIZONTAL)
@@ -38,8 +42,9 @@ func _on_mouse_entered() -> void:
 	_show_popup()
 	
 
-
 func _on_mouse_exited() -> void:
-	PopupTemplate.hide_item_popup()
-	
+	PopupManager.hide_popup()
+
+func _on_button_pressed() -> void:
+	GameEvents.augment_clicked.emit(augment)
 	

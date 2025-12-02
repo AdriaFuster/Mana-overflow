@@ -17,6 +17,7 @@ signal dead
 func _setup() -> void:
 	var boss_range:float = BossSpawner.get_spawn_range()
 	hp = round(boss_range/BOSS_HP_RATE)
+	hp = 1
 	_update_ui()
 
 	

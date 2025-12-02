@@ -20,6 +20,11 @@ signal change_scene(scene: GlobalEnum.GAME_SCENE)
 signal boss_start()
 signal boss_end()
 
+#AUGMENTS
+signal augment_clicked(a:Augment)
+signal augment_enhanced()
+
+
 #MENU
 signal augment_bought(augment: Augment)
 signal reward_selected()

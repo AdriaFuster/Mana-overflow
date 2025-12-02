@@ -27,6 +27,9 @@ func _augment_efect() -> void:
 func _calculate_value() -> float:
 	#assert(false, ("No esta definida la funció _calculate_value per l'augment " + name))
 	return 0
+
+func enhance() -> void:
+	print("enhance ", name)
 	
 	
 func _replace_texts() -> void:
