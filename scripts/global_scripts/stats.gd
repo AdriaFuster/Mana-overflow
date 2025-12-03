@@ -4,7 +4,7 @@ enum MODIFIER_TYPE {
 	MANA,
 	MPS
 }
-var mana: float = 200
+var mana: float = 1000
 var mana_spent: float = 0
 var mps: float = 0
 var mod_mps: float = 0
@@ -12,7 +12,7 @@ var mod_mps: float = 0
 var tick_mana: float
 var hp: int = 3
 
-var cauldron_power: float = 1000
+var cauldron_power: float = 1
 var mod_cauldron_power: float = 1
 
 #MODIFIERS
@@ -34,7 +34,6 @@ func _ready() -> void:
 func add_mana(n_mana: float) -> void:
 	mana += n_mana
 
-
 func spend_mana(n_mana: float) -> void:
 	mana_spent += n_mana
 	
@@ -43,6 +42,15 @@ func deduce_mana(n_mana: float) -> void:
 		mana = 0
 	else:
 		mana -= n_mana
+
+func add_mps(a_mps) -> void:
+	mps += a_mps
+
+func deduce_mps(d_mps) -> void:
+	if Comp.less_equal((mps - d_mps), 0):
+		mps = 0
+	else:
+		mps -= d_mps
 	
 func add_hp(p_hp: int) -> void:
 	if (hp + p_hp) == 0:

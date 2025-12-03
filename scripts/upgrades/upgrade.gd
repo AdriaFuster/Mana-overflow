@@ -53,7 +53,7 @@ func upgrade_click() -> void:
 	
 	_increase_cost()
 	
-	GameEvents.update_info.emit(self)
+	GameEvents.update_upgrade_info.emit(self)
 	
 	GameEvents.calculate_mps.emit()
 

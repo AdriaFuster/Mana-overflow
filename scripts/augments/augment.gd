@@ -5,14 +5,25 @@ class_name Augment
 
 var cd_cont: int
 var active_cont: int
+var enhanced: bool = false
+const ENHANCE_COLOR: Color = Color("#a7a1dc")
+
+#REPLACE STRING [var_name, enhanced]
+var d_replacements: Dictionary = {
+	"INC_P": ["increment", false],
+	"INC_F": ["increment", false],
+	"CD": ["cd", false],
+	"C_INC_P": ["click_increment", false],
+	"C_INC_F": ["click_increment", false],
+	"N_CLICKS": ["cd", false],
+	"REFUND_P": ["refund", false],	
+}
 
 func setup() -> void:
-	_replace_texts()
-
+	pass
 
 func on_equip() -> void:
 	pass
-	
 	
 func reset() -> void:
 	cd_cont = 0
@@ -28,38 +39,21 @@ func _calculate_value() -> float:
 	#assert(false, ("No esta definida la funció _calculate_value per l'augment " + name))
 	return 0
 
+
 func enhance() -> void:
-	print("enhance ", name)
+	GameEvents.augment_enhanced.emit()
+	GameEvents.update_augment_info.emit(self)
+		
 	
 	
-func _replace_texts() -> void:
-
-	description = _replace_string("INC_P", "increment", description)
-	description = _replace_string("INC_F", "increment", description)
-	description = _replace_string("CD", "cd", description)
-	description = _replace_string("C_INC_P", "click_increment", description)
-	description = _replace_string("C_INC_F", "click_increment", description)
-	description = _replace_string("N_CLICKS", "cd", description)
-	description = _replace_string("REFUND_P", "refund", description)
-
-
-func _replace_string(replace_string: String, var_name: String, text: String ) -> String:
+func get_description() -> String:
+	var d: String = description 
+	for r in d_replacements:
+		var a: Array = d_replacements[r]
+		#if enhanced, we paint the number
+		if a[1]:
+			d = TextUtils.replace_augment_string(r, a[0], d, self,ENHANCE_COLOR)
+		else:
+			d = TextUtils.replace_augment_string(r, a[0], d, self)
 	
-	var dollar_replace_string = "$"+replace_string+"$"
-	var new_text := text
-	
-	if dollar_replace_string not in text or get(var_name) == null:
-		return new_text
-	
-	var var_value: float = get(var_name)
-	
-	if replace_string.ends_with("_P"):
-		var_value *= 100
-	
-	#No decimals
-	if var_value == floor(var_value):
-		new_text = text.replace(dollar_replace_string, str(int(var_value)))
-	#Decimal
-	else:
-		new_text = text.replace(dollar_replace_string, str(var_value))
-	return new_text
+	return d

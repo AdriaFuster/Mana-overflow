@@ -23,7 +23,7 @@ func _on_mouse_entered() -> void:
 	
 
 func _on_mouse_exited() -> void:
-	PopupManager.hide_item_popup()
+	PopupManager.hide_popup()
 
 
 func _on_pressed() -> void:

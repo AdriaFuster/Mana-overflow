@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_w5dd6")
-icon = ExtResource("1_fnye6")
 name = "Mana blessing"
-description = "Regain $REFUND_P$% of mana each time you spend it"
+description = "Regain $REFUND_P$ of mana each time you spend it"
+icon = ExtResource("1_fnye6")
 metadata/_custom_type_script = "uid://v7klkp6ub862"

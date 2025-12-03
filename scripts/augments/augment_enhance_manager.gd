@@ -6,10 +6,7 @@ const HAMMER_CURSOR = preload("uid://3h5nephw47d2")
 
 var enchance_state: bool = false
 
-func _ready() -> void:
-	GameEvents.augment_clicked.connect(_on_augment_clicked)
-
-func enhance_augment() -> void:
+func start_enhancing() -> void:
 	enchance_state = true
 	Input.set_custom_mouse_cursor(HAMMER_CURSOR)
 	#change mouse sprite
@@ -19,15 +16,16 @@ func disable_enhance() -> void:
 	Input.set_custom_mouse_cursor(CUSTOM_CURSOR)
 	
 	
-func _on_augment_clicked(a: Augment) -> void:
-	if enchance_state:
-		a.enhance()
-		GameEvents.augment_enhanced.emit()
-		disable_enhance()
-		
+func enhance_augment(a: Augment) -> void:
+	a.enhance()
+	disable_enhance()
+	
+func is_enhancing() -> bool:
+	return enchance_state
+
 
 func _unhandled_input(event: InputEvent) -> void:
-	print (event)
 	if enchance_state:
 		if event is InputEventMouseButton and event.pressed:
 			disable_enhance()
+		

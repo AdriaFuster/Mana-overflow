@@ -35,7 +35,7 @@ static func calculate_tick_modifiers():
 	
 	_delete_mod(Stats.tick_modifiers_mps)
 	
-	Stats.mana += final_mps
+	Stats.add_mana(final_mps)
 	
 	
 

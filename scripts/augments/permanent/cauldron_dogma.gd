@@ -1,9 +1,8 @@
 extends PermanentAugment
 class_name CauldronDogma
 
-@export var increment: float = -0.5
-@export var click_increment: float = 0.8
-	
+@export var increment: float
+@export var click_increment: float
 
 func _augment_efect() -> void:
 	super._augment_efect()
@@ -18,3 +17,13 @@ func _calculate_value() -> float:
 	#print("increment = ", m_mps.toAmericanName())
 	
 	return m_mps
+
+
+func enhance() -> void:
+	if !enhanced:
+		enhanced = true
+		click_increment = 7
+		d_replacements["C_INC_P"][1] = true
+		super.enhance()
+	else:
+		print("augment ",name, " already enhanced")

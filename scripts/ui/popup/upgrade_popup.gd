@@ -5,7 +5,7 @@ const lvl_prefix = "LVL "
 
 
 func _ready() -> void:
-	GameEvents.update_info.connect(_on_update_info)
+	GameEvents.update_upgrade_info.connect(_on_update_info)
 
 func _set_value(item: Upgrade) -> void:
 	

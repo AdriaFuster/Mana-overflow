@@ -46,5 +46,6 @@ func _on_mouse_exited() -> void:
 	PopupManager.hide_popup()
 
 func _on_button_pressed() -> void:
-	GameEvents.augment_clicked.emit(augment)
+	if AugmentEnhanceManager.is_enhancing():
+		AugmentEnhanceManager.enhance_augment(augment)
 	

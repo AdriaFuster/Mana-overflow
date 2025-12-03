@@ -23,6 +23,7 @@ signal boss_end()
 #AUGMENTS
 signal augment_clicked(a:Augment)
 signal augment_enhanced()
+signal update_augment_info(augment: Augment)
 
 
 #MENU
@@ -31,4 +32,4 @@ signal reward_selected()
 signal shop_disabled(d: bool)
 
 #UPGRADE
-signal update_info(upgrade: Upgrade)
+signal update_upgrade_info(upgrade: Upgrade)
