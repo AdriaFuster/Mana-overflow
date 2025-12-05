@@ -18,5 +18,9 @@ func _on_mana_spended(mana_cost: float) -> void:
 func _augment_efect() -> void:
 	pass
 	
-
+func enhance() -> void:
+	enhanced = true
+	refund = 0.1
+	d_replacements["REFUND_P"][1] = true
+	super.enhance()
 	

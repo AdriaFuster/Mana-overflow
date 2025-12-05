@@ -2,12 +2,21 @@ extends Augment
 class_name TickAugment
 
 var _active: bool = false
-@export var cd: float
+var cd_cont: int
+var active_cont: int
+
+@export var cd: int
 @export var duration: float = 0.1
 
 func on_equip() -> void:
 	super.on_equip()
 	cd_cont = int(cd / GameTick.tick_interval)
+	
+func reset() -> void:
+	super.reset()
+	cd_cont = int(cd / GameTick.tick_interval)
+	active_cont	= int(duration / GameTick.tick_interval)
+	_active = false
 	
 func tick() -> void:	
 	if !_active:
@@ -39,8 +48,4 @@ func _augment_efect() -> void:
 func _enter_cd() -> void:
 	_active = false
 	
-
-func reset() -> void:
-	super.reset()
-	_active = false
 	

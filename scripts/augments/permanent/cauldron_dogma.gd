@@ -20,10 +20,7 @@ func _calculate_value() -> float:
 
 
 func enhance() -> void:
-	if !enhanced:
-		enhanced = true
-		click_increment = 7
-		d_replacements["C_INC_P"][1] = true
-		super.enhance()
-	else:
-		print("augment ",name, " already enhanced")
+	enhanced = true
+	click_increment = 7
+	d_replacements["C_INC_P"][1] = true
+	super.enhance()

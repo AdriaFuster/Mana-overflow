@@ -19,6 +19,7 @@ signal change_scene(scene: GlobalEnum.GAME_SCENE)
 #BOSS
 signal boss_start()
 signal boss_end()
+signal update_boss_hp(hp:float)
 
 #AUGMENTS
 signal augment_clicked(a:Augment)

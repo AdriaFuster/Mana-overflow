@@ -1,7 +1,7 @@
 extends PermanentAugment
 class_name ManaTree
 
-@export var increment: float = 0.05
+@export var increment: float
 	
 func _calculate_value() -> float:
 	var b_mps = Stats.mod_mps
@@ -10,4 +10,9 @@ func _calculate_value() -> float:
 	
 	return b_mps
 	
-	
+
+func enhance() -> void:
+	enhanced = true
+	increment = 0.5
+	d_replacements["INC_P"][1] = true
+	super.enhance()

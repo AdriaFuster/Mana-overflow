@@ -13,6 +13,8 @@ const BOSS_HP_RATE: float = 3
 var hp: float
 signal dead
 
+func _ready() -> void:
+	GameEvents.update_boss_hp.connect(_on_update_boss_hp)
 
 func _setup() -> void:
 	var boss_range:float = BossSpawner.get_spawn_range()
@@ -63,3 +65,8 @@ func _update_ui() -> void:
 	else:
 		hp_label.text = "HP:"+ Big.new(hp).sufix()
 		
+
+func _on_update_boss_hp(new_hp: float) -> void:
+	hp = new_hp
+		
+	_update_ui()

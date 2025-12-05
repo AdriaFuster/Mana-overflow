@@ -110,5 +110,4 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("2_6e2ps")
 theme_override_colors/font_shadow_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
-text = "Extra info"
 fit_content = true

@@ -3,8 +3,6 @@ class_name Augment
 
 @export var type: GlobalEnum.AugmentType
 
-var cd_cont: int
-var active_cont: int
 var enhanced: bool = false
 const ENHANCE_COLOR: Color = Color("#a7a1dc")
 
@@ -26,8 +24,7 @@ func on_equip() -> void:
 	pass
 	
 func reset() -> void:
-	cd_cont = 0
-	active_cont = 0
+	pass
 	
 	
 func _augment_efect() -> void:
@@ -41,6 +38,7 @@ func _calculate_value() -> float:
 
 
 func enhance() -> void:
+	reset()
 	GameEvents.augment_enhanced.emit()
 	GameEvents.update_augment_info.emit(self)
 		

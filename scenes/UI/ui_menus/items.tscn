@@ -12,7 +12,7 @@ bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa0qy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpn5g"]
-bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.21176471)
 
 [node name="Items" type="CanvasLayer"]
 script = ExtResource("1_hgbuu")
@@ -25,7 +25,7 @@ custom_minimum_size = Vector2(145, 0)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -120.0
+offset_left = -145.0
 grow_horizontal = 0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_wa0qy")
@@ -38,7 +38,14 @@ scroll_vertical_custom_step = 694.717
 horizontal_scroll_mode = 0
 scroll_deadzone = -10
 
-[node name="UpgradeList" type="VBoxContainer" parent="UpgradeContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UpgradeContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="UpgradeList" type="VBoxContainer" parent="UpgradeContainer/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
@@ -49,21 +56,28 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 3
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 120.0
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="AugmentContainer" type="PanelContainer" parent="AugmentInventory"]
-custom_minimum_size = Vector2(20, 30)
+custom_minimum_size = Vector2(120, 35)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hpn5g")
 
-[node name="AugmentList" type="HBoxContainer" parent="AugmentInventory/AugmentContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="AugmentInventory/AugmentContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AugmentList" type="HBoxContainer" parent="AugmentInventory/AugmentContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2

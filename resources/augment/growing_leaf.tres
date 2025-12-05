@@ -9,6 +9,6 @@ increment = 0.45
 cd = 5.0
 duration = 0.0
 name = "Growing leaf"
-description = "$INC_P$ mps every $CD$ secons if no cauldron click into"
+description = "$INC_P$ MPS every $CD$ secons if no cauldron click"
 icon = ExtResource("1_30sjb")
 metadata/_custom_type_script = "uid://cgios64ye71ob"

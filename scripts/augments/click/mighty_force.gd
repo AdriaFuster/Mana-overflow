@@ -1,7 +1,7 @@
 extends ClickAugment
 class_name MightyForce
 
-@export var increment: float = 1
+@export var increment: float
 	
 
 #Each 10 clicks, next one +100% click power
@@ -18,3 +18,11 @@ func _augment_efect() -> void:
 	Stats.add_mana(value)
 	
 	cd_cont = int(cd)
+
+func enhance() -> void:
+	enhanced = true
+	cd = 8
+	increment = 3
+	d_replacements["N_CLICKS"][1] = true
+	d_replacements["INC_P"][1] = true
+	super.enhance()

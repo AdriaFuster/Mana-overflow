@@ -10,8 +10,8 @@ const POPUP_X_SIZE: int = 300
 const POPUP_MARGINS: int = 20
 const HORIZONTAL_X_PADDING: int = -2
 const HORIZONTAL_Y_PADDING: int = 4
-const VERTICAL_X_PADDING: int = 0#20
-const VERTICAL_Y_PADDING: int = 0#-5
+const VERTICAL_X_PADDING: int = 30
+const VERTICAL_Y_PADDING: int = 0
 
 	
 func item_popup(slot:Rect2i, item: InventoryItem, mode: GlobalEnum.DISTRIBUTION_MODE) -> void:

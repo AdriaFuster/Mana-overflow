@@ -36,7 +36,15 @@ func add_augment(a_name: String) -> void:
 			
 			a.on_equip()
 			GameEvents.inventory_changed.emit()
-	
+
+func remove_augment(a_name: String) -> void:
+	if !augments.has(a_name):
+		print("Augment ",a_name , "isn't in the inventory")
+	else:
+		augments.erase(a_name)
+		ResourceManager.set_augment_location(a_name, GlobalEnum.LOCATION.MANAGER)
+		GameEvents.inventory_changed.emit()
+
 func get_n_augments(type: GlobalEnum.AugmentType) -> int:
 	var cont: int = 0
 	for a_name in augments.keys():

@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 			cd.text = str(snapped(augment.cd,1))
 		else:
 			cd.text = str(snapped(augment.cd_cont*GameTick.tick_interval,1))
-	else:
+	elif augment is ClickAugment:
 		cd.text = str(augment.cd_cont)
 
 func _show_popup() -> void:
