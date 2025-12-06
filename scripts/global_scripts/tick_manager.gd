@@ -11,6 +11,8 @@ func _on_tick() -> void:
 	
 	Inventory._on_tick_permanent_a()
 	
+	GameEvents.update_mps_label.emit()
+	
 	#Calculem MPS amb modifiers permanents
 	ManaCalculator.calculate_permanent_modifiers()
 	

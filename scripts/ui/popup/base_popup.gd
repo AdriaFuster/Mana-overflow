@@ -10,13 +10,11 @@ const POPUP_X_SIZE: int = 300
 const POPUP_MARGINS: int = 20
 const HORIZONTAL_X_PADDING: int = -2
 const HORIZONTAL_Y_PADDING: int = 4
-const VERTICAL_X_PADDING: int = 30
-const VERTICAL_Y_PADDING: int = 0
+const VERTICAL_X_PADDING: int = 15
+const VERTICAL_Y_PADDING: int = -4
 
 	
-func item_popup(slot:Rect2i, item: InventoryItem, mode: GlobalEnum.DISTRIBUTION_MODE) -> void:
-	if item == null:
-		return
+func item_popup(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE, item: Variant) -> void:
 
 	_set_value(item)
 		
@@ -46,9 +44,10 @@ func _calculate_popup_position(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE) 
 func _correction(i_size: Vector2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector2i:
 	var mouse_pos = get_global_mouse_position()
 	var correction: Vector2
-	
+	print ("i_size = ",i_size)
 	if mode == GlobalEnum.DISTRIBUTION_MODE.VERTICAL:
 		if mouse_pos.x <= get_viewport_rect().size.x/2:
+			print("part esquerra de la pantalla")
 			correction = Vector2i(i_size.x + VERTICAL_X_PADDING, VERTICAL_Y_PADDING)
 		else:
 			correction = -Vector2(size.x + VERTICAL_X_PADDING, VERTICAL_Y_PADDING)

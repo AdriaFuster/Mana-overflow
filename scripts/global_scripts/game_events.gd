@@ -34,3 +34,6 @@ signal shop_disabled(d: bool)
 
 #UPGRADE
 signal update_upgrade_info(upgrade: Upgrade)
+
+
+signal update_mps_label()

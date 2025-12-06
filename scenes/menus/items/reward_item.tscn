@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvo6qlj00vaqk"]
+[gd_scene load_steps=4 format=3 uid="uid://dvo6qlj00vaqk"]
 
 [ext_resource type="Texture2D" uid="uid://crroycicyhuq4" path="res://assets/sprites/bosses/boss_rewards/reward_slot.png" id="1_0mni4"]
-[ext_resource type="Script" uid="uid://bi2v46cs6mecp" path="res://scripts/menu/reward_item.gd" id="1_q3prj"]
+[ext_resource type="Script" uid="uid://bi2v46cs6mecp" path="res://scripts/menu/items/reward_item.gd" id="1_q3prj"]
+[ext_resource type="PackedScene" uid="uid://5gg6gmog06l6" path="res://scenes/components/popup_component.tscn" id="3_rsat7"]
 
 [node name="RewardItem" type="Button"]
 custom_minimum_size = Vector2(34, 34)
@@ -25,3 +26,9 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 17.0
 offset_bottom = 17.0
+
+[node name="PopupComponent" parent="." node_paths=PackedStringArray("node") instance=ExtResource("3_rsat7")]
+layout_mode = 1
+node = NodePath("..")
+popup_type = 2
+distribution_mode = 1

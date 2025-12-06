@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func setup(a: Augment) -> void:
 	augment = a
-	icon.texture = a.icon
+	icon.texture = augment.icon
 	
 	if augment is PermanentAugment:
 		cd.hide()
@@ -22,7 +22,10 @@ func setup(a: Augment) -> void:
 	else:
 		cd.show()
 		permanent.hide()
-	
+
+func get_item() -> Variant:
+	return augment
+
 func _process(_delta: float) -> void:
 	if augment is TickAugment:
 		if snapped(augment.cd_cont*GameTick.tick_interval,1) == 0:
@@ -31,19 +34,6 @@ func _process(_delta: float) -> void:
 			cd.text = str(snapped(augment.cd_cont*GameTick.tick_interval,1))
 	elif augment is ClickAugment:
 		cd.text = str(augment.cd_cont)
-
-func _show_popup() -> void:
-	PopupManager.show_popup(GlobalEnum.POPUP_TYPE.AUGMENT,
-	Rect2i(Vector2i(global_position), Vector2i(size)), 
-	augment, 
-	GlobalEnum.DISTRIBUTION_MODE.HORIZONTAL)
-
-func _on_mouse_entered() -> void:
-	_show_popup()
-	
-
-func _on_mouse_exited() -> void:
-	PopupManager.hide_popup()
 
 func _on_button_pressed() -> void:
 	if AugmentEnhanceManager.is_enhancing():

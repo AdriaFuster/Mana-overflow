@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://eco7aeo6qdrx"]
+
+[ext_resource type="Script" uid="uid://bype7x6gudtos" path="res://scripts/ui/ui_manager.gd" id="1_61ox6"]
+[ext_resource type="PackedScene" uid="uid://du1067w156ryn" path="res://scenes/ui/ui_canvas/items.tscn" id="2_yp0ob"]
+[ext_resource type="PackedScene" uid="uid://dg51toimrq3jy" path="res://scenes/ui/ui_canvas/display_click_canvas.tscn" id="3_ybivm"]
+[ext_resource type="PackedScene" uid="uid://beg5g7jkr7bat" path="res://scenes/ui/ui_canvas/display_boss_canvas.tscn" id="4_di16j"]
+[ext_resource type="PackedScene" uid="uid://blpmjmqeg517i" path="res://scenes/ui/ui_canvas/player_hp.tscn" id="5_eb6af"]
+
+[node name="UIManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_61ox6")
+
+[node name="Items" parent="." instance=ExtResource("2_yp0ob")]
+unique_name_in_owner = true
+
+[node name="DisplayClickCanvas" parent="." instance=ExtResource("3_ybivm")]
+unique_name_in_owner = true
+
+[node name="DisplayBossCanvas" parent="." instance=ExtResource("4_di16j")]
+unique_name_in_owner = true
+
+[node name="PlayerHP" parent="." instance=ExtResource("5_eb6af")]

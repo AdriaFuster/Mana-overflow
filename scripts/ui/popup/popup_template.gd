@@ -13,10 +13,10 @@ func _ready() -> void:
 	hide_popup()
 
 
-func show_popup(popup: BasePopup, slot:Rect2i, item: InventoryItem, mode: GlobalEnum.DISTRIBUTION_MODE) -> void:
+func show_popup(popup: BasePopup, slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE,item: InventoryItem) -> void:
 
 	show()
-	popup.item_popup(slot, item, mode)
+	popup.item_popup(slot, mode, item)
 	
 		
 func hide_popup() -> void:

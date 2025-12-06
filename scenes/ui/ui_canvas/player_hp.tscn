@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blpmjmqeg517i"]
 
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="1_haypw"]
-[ext_resource type="Script" uid="uid://buj50snb1qp7o" path="res://scripts/ui/ui_menus/player_hp.gd" id="1_j07p4"]
+[ext_resource type="Script" uid="uid://buj50snb1qp7o" path="res://scripts/ui/ui_canvas/player_hp.gd" id="1_j07p4"]
 
 [node name="PlayerHP" type="CanvasLayer"]
 script = ExtResource("1_j07p4")

@@ -24,6 +24,9 @@ func setup(u:Upgrade) -> void:
 	u.update_cost.connect(_on_update_cost)
 	u.update_amount.connect(_on_update_amount)
 
+func get_item() -> Variant:
+	return upgrade
+
 func _process(_delta: float) -> void:
 	_set_state()
 
@@ -57,13 +60,3 @@ func _on_update_cost(new_cost: float) -> void:
 func _on_update_amount(new_amount: int) -> void:
 	amount.text = TextUtils.bold(str(new_amount))
 	
-
-func _on_texture_button_mouse_entered() -> void:
-	PopupManager.show_popup(GlobalEnum.POPUP_TYPE.UPGRADE,
-	Rect2i(Vector2i(global_position), Vector2i(size)), 
-	upgrade, 
-	GlobalEnum.DISTRIBUTION_MODE.VERTICAL)
-
-
-func _on_texture_button_mouse_exited() -> void:
-	PopupManager.hide_popup()

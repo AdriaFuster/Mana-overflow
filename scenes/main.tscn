@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmj1ok141etdy" path="res://scripts/scenes/scene_manager.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b5y886tdja0cd" path="res://scenes/game_scenes/game.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://dct8in6qo848g" path="res://scenes/test/boss_test_scene.tscn" id="2_tefeu"]
-[ext_resource type="PackedScene" uid="uid://eco7aeo6qdrx" path="res://scenes/UI/inventory_ui.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://eco7aeo6qdrx" path="res://scenes/ui/ui_manager.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://b88e3jpqkx1at" path="res://scripts/ui/camera_shake.gd" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://di87u0qxxsxpb" path="res://scenes/game_scenes/boss/boss_scene.tscn" id="4_jyhfs"]
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="5_tbgi4"]

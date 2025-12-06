@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://5gg6gmog06l6"]
+
+[ext_resource type="Script" uid="uid://berr32ly7ahnu" path="res://scripts/components/popup_component.gd" id="1_kbo12"]
+
+[node name="PopupComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kbo12")

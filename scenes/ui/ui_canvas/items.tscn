@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://du1067w156ryn"]
 
-[ext_resource type="Script" uid="uid://bfcrln3ahqjlp" path="res://scripts/ui/ui_menus/items_ui_manager.gd" id="1_hgbuu"]
-[ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/UI/augments/augment_ui.tscn" id="2_ikrnt"]
-[ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/UI/upgrades/upgrade_ui.tscn" id="3_ordqu"]
+[ext_resource type="Script" uid="uid://bfcrln3ahqjlp" path="res://scripts/ui/ui_canvas/items_ui_manager.gd" id="1_hgbuu"]
+[ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/menus/items/augment_item.tscn" id="2_ikrnt"]
+[ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/menus/items/upgrade_item.tscn" id="3_ordqu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa0qy"]
 bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)

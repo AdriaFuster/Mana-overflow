@@ -4,7 +4,8 @@ var popup_template: PopupTemplate
 var popup_template_type = {
  	GlobalEnum.POPUP_TYPE.AUGMENT: preload("uid://domlquui4goku"),
 	GlobalEnum.POPUP_TYPE.UPGRADE: preload("uid://cwvodr0lwmw07"),
-	GlobalEnum.POPUP_TYPE.REWARD: preload("uid://rab4w4idww15")
+	GlobalEnum.POPUP_TYPE.REWARD: preload("uid://rab4w4idww15"),
+	GlobalEnum.POPUP_TYPE.MPS: preload("uid://k1cgxgtlmwbv")
 }
 
 func _ready() -> void:
@@ -18,7 +19,7 @@ func _setup_popup_parent() -> void:
 	if popup_template.get_parent() != popup_layer:
 		popup_layer.add_child(popup_template)
 
-func show_popup(type: GlobalEnum.POPUP_TYPE, slot:Rect2i, item: InventoryItem, mode: GlobalEnum.DISTRIBUTION_MODE) -> void:
+func show_popup(type: GlobalEnum.POPUP_TYPE, slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE, item: Variant) -> void:
 	var scene: PackedScene = popup_template_type.get(type)
 	if scene == null:
 		push_error("Popup type not registered: %s" % GlobalEnum.enum_to_string(GlobalEnum.POPUP_TYPE,type))
@@ -30,7 +31,7 @@ func show_popup(type: GlobalEnum.POPUP_TYPE, slot:Rect2i, item: InventoryItem, m
 	
 	popup_template.add_child(popup)
 		
-	popup_template.show_popup(popup, slot, item, mode)
+	popup_template.show_popup(popup, slot, mode, item)
 	
 func hide_popup() -> void:
 	popup_template.hide()

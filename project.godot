@@ -53,6 +53,10 @@ folder_colors={
 "res://tools/": "pink"
 }
 
+[global]
+
+screen_scale=4
+
 [global_group]
 
 AltarMenu=""

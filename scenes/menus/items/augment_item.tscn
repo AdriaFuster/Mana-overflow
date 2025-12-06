@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8dnhp81ld2hm"]
+
+[ext_resource type="Script" uid="uid://cin7dgf4ioo7d" path="res://scripts/menu/items/augment_item.gd" id="1_ao81n"]
+[ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/ui/AugmentUI.png" id="2_vvsft"]
+[ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_qgypg"]
+[ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/ui/infinite.png" id="4_2sws8"]
+[ext_resource type="PackedScene" uid="uid://5gg6gmog06l6" path="res://scenes/components/popup_component.tscn" id="5_e2y51"]
+
+[sub_resource type="Theme" id="Theme_h8gh8"]
+default_font = ExtResource("3_qgypg")
+default_font_size = 8
+
+[node name="AugmentItem" type="Control"]
+custom_minimum_size = Vector2(20, 25)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1260.0
+offset_bottom = -695.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ao81n")
+
+[node name="Button" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+mouse_filter = 1
+texture_normal = ExtResource("2_vvsft")
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 17.0
+offset_bottom = 17.0
+
+[node name="Cd" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 18.0
+offset_right = 17.0
+offset_bottom = 26.0
+theme = SubResource("Theme_h8gh8")
+text = "10"
+
+[node name="permanent" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 29.0
+texture = ExtResource("4_2sws8")
+
+[node name="PopupComponent" parent="." node_paths=PackedStringArray("node") instance=ExtResource("5_e2y51")]
+layout_mode = 1
+node = NodePath("..")
+distribution_mode = 1

@@ -6,7 +6,6 @@ class_name ManaPotion
 func _calculate_value() -> float:
 	var b_mps = Stats.mod_mps
 	b_mps *= increment
-
 	return b_mps
 
 func enhance() -> void:
