@@ -8,13 +8,13 @@ var location = GlobalEnum.LOCATION.INVENTORY
 func _ready() -> void:
 	_add_upgrades()
 	
-	#add_augment("Growing leaf")
-	add_augment("Mana potion")
-	add_augment("Mana tree")
+	add_augment("Growing leaf")
+	#add_augment("Mana potion")
+	#add_augment("Mana tree")
 	#add_augment("Mighty force")
 	#add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
-	
+	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)	
 
 func _add_upgrades() -> void:
 
@@ -54,7 +54,16 @@ func get_n_augments(type: GlobalEnum.AugmentType) -> int:
 	
 	return cont
 
-
+func get_augments_by_type(type: Object) -> Array:
+	var augment_of_type: Array = []
+	
+	for a_name:String in augments.keys():
+		var a: Augment = augments[a_name]
+		if is_instance_of(a, type):
+			augment_of_type.append(augments[a_name])
+	
+	return augment_of_type
+	
 #UPGRADES
 func add_upgrade(u_name: String) -> void:
 	if !upgrades.has(u_name):
@@ -64,12 +73,6 @@ func add_upgrade(u_name: String) -> void:
 			#print("afegim upgrade ", u_name)
 			GameEvents.inventory_changed.emit()
 
-
-func _on_tick_permanent_a() -> void:
-	for a_name:String in augments.keys():
-		var a: Augment = augments[a_name]
-		if a is PermanentAugment:
-			a.tick()
 
 func _on_tick_tick_a() -> void:
 	for a_name:String in augments.keys():

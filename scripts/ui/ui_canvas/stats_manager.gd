@@ -9,8 +9,7 @@ func _ready() -> void:
 	GameEvents.update_mps_label.connect(_display_values)
 
 func _display_values():
-	
-	mana_label.text = "Mana = " + Big.new(Stats.mana).sufix(true,0,3)
+	mana_label.text = "Mana = " + Big.new(Stats.mana).sufix(true,2,3)
 	mps_label.text = "MPS = " + Big.new(Stats.mod_mps).sufix()
 	mps_label.update_minimum_size()
 

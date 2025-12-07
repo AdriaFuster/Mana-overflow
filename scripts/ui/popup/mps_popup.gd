@@ -6,6 +6,9 @@ func _set_value(_item: Variant) -> void:
 func set_mps_string_value() -> String:
 	var base_mps: String = Big.new(Stats.mps).sufix()
 	var extra_mps: String = ManaCalculator.get_permanent_modifiers_mps()
-
-	var total_mps: String = base_mps + "(%s)"% extra_mps
+	var total_mps: String = base_mps
+	
+	if extra_mps != "":
+		total_mps += "(%s)"% extra_mps
+	
 	return total_mps

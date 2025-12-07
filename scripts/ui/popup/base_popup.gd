@@ -44,10 +44,8 @@ func _calculate_popup_position(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE) 
 func _correction(i_size: Vector2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector2i:
 	var mouse_pos = get_global_mouse_position()
 	var correction: Vector2
-	print ("i_size = ",i_size)
 	if mode == GlobalEnum.DISTRIBUTION_MODE.VERTICAL:
 		if mouse_pos.x <= get_viewport_rect().size.x/2:
-			print("part esquerra de la pantalla")
 			correction = Vector2i(i_size.x + VERTICAL_X_PADDING, VERTICAL_Y_PADDING)
 		else:
 			correction = -Vector2(size.x + VERTICAL_X_PADDING, VERTICAL_Y_PADDING)

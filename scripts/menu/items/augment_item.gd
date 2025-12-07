@@ -5,6 +5,7 @@ class_name AugmentUI
 @onready var button: TextureButton = $Button
 @onready var cd: Label = $Cd
 @onready var permanent: TextureRect = $permanent
+@onready var anim_player: AnimationPlayer = %AnimationPlayer
 
 
 var augment: Augment
@@ -14,6 +15,7 @@ func _ready() -> void:
 
 func setup(a: Augment) -> void:
 	augment = a
+	augment.augment_activated.connect(_on_augment_activated)
 	icon.texture = augment.icon
 	
 	if augment is PermanentAugment:
@@ -38,4 +40,6 @@ func _process(_delta: float) -> void:
 func _on_button_pressed() -> void:
 	if AugmentEnhanceManager.is_enhancing():
 		AugmentEnhanceManager.enhance_augment(augment)
-	
+
+func _on_augment_activated() -> void:
+	anim_player.play("activate")

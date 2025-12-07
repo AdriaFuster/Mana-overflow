@@ -6,6 +6,8 @@ class_name Augment
 var enhanced: bool = false
 const ENHANCE_COLOR: Color = Color("#a7a1dc")
 
+signal augment_activated
+
 #REPLACE STRING [var_name, enhanced]
 var d_replacements: Dictionary = {
 	"INC_P": ["increment", false],
@@ -27,9 +29,9 @@ func reset() -> void:
 	pass
 	
 	
-func _augment_efect() -> void:
+func augment_efect() -> float:
 	#assert(false, ("No esta definida la funció _augment_efect per l'augment " + name))
-	pass
+	return 0
 
 
 func _calculate_value() -> float:

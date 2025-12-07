@@ -18,7 +18,6 @@ func _show_popup() -> void:
 	item)
 
 func _on_mouse_entered() -> void:
-	print("mouse entered")
 	_show_popup()
 	
 

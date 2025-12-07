@@ -5,10 +5,9 @@
 
 [resource]
 script = ExtResource("2_nyp0r")
-increment = 0.45
-cd = 5.0
-duration = 0.0
+increment = 0.2
+cd = 5
 name = "Growing leaf"
-description = "$INC_P$ MPS every $CD$ secons if no cauldron click"
+description = "+$INC_P$ MPS every $CD$ secons if no cauldron click"
 icon = ExtResource("1_30sjb")
 metadata/_custom_type_script = "uid://cgios64ye71ob"

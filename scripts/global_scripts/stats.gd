@@ -4,7 +4,7 @@ enum MODIFIER_TYPE {
 	MANA,
 	MPS
 }
-var mana: float = 0
+var mana: float = 100
 var mana_spent: float = 0
 var mps: float = 0
 var mod_mps: float = 0
@@ -72,8 +72,10 @@ func add_tick_modifier(m_name: String, value: float, type: MODIFIER_TYPE) -> voi
 
 func add_permanent_modifier(m_name: String, value: float, type: MODIFIER_TYPE) -> void:
 	#print ("add to permanent modifier ",m_name )
-	if type == MODIFIER_TYPE.MPS:	
-		permanent_modifiers_mps[m_name] = value
+	if type == MODIFIER_TYPE.MPS:
+		if permanent_modifiers_mps.has(m_name):
+			
+			permanent_modifiers_mps[m_name] = value
 
 func add_cauldron_modifier(m_name: String, value: float) -> void:
 	cauldron_modifiers[m_name] = value
@@ -107,7 +109,6 @@ func _on_calculate_mps() -> void:
 			total_mps += u.mps*u.amount
 	
 	mps = total_mps
-
 
 func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
 	if scene == GlobalEnum.GAME_SCENE.BOSS:

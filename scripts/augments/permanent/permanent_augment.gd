@@ -2,15 +2,13 @@ extends Augment
 class_name PermanentAugment
 
 
+var tick_mps_increment: float
+
+
 func on_equip() -> void:
 	super.on_equip()
-	_augment_efect()
+	#_augment_efect()
 
 
-func tick() -> void:
-	_augment_efect()
-
-
-func _augment_efect() -> void:
-	var value: float = _calculate_value()
-	Stats.add_permanent_modifier(name,value,Stats.MODIFIER_TYPE.MPS)
+func augment_efect() -> float:
+	return _calculate_value()
