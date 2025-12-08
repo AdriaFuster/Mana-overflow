@@ -39,8 +39,15 @@ static func get_permanent_modifiers_mps() -> String:
 	var extra_mps := ""	
 
 	for p:PermanentAugment in Inventory.get_augments_by_type(PermanentAugment):
-		extra_mps += str(p.tick_mps_increment)
-		extra_mps += ", "
+		#print(p.name, " ", p.tick_mps_increment)
+		var mps_increment: float = p.tick_mps_increment
+		if Comp.greater(mps_increment, 0):
+			extra_mps += "+" + Big.new(mps_increment).sufix(true, 2, 3)
+			extra_mps += ", "
+		elif Comp.less(mps_increment, 0):
+			#No need to add - since the negetive increment already has it
+			extra_mps += Big.new(mps_increment).sufix(true, 2, 3)
+			extra_mps += ", "
 	
 	extra_mps = extra_mps.rstrip(", ")
 	

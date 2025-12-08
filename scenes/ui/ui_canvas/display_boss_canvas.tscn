@@ -26,18 +26,24 @@ script = ExtResource("1_02sd0")
 
 [node name="CauldronPower" type="RichTextLabel" parent="DisplayBossValuesContainer/MarginContainer/DisplayBossValues"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme = ExtResource("2_ky45h")
 text = "CP: <value>"
+fit_content = true
 
 [node name="Mana" type="RichTextLabel" parent="DisplayBossValuesContainer/MarginContainer/DisplayBossValues"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme = ExtResource("2_ky45h")
 text = "Mana: <value>"
+fit_content = true
 
 [node name="MPS" type="RichTextLabel" parent="DisplayBossValuesContainer/MarginContainer/DisplayBossValues"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme = ExtResource("2_ky45h")
 text = "MPS: <value>"
+fit_content = true

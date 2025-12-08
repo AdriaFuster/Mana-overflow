@@ -6,6 +6,7 @@ func _ready() -> void:
 
 
 func _on_tick() -> void:
+	#print("----------------------")
 	ManaCalculator.reset_mod_values()
 	
 	ManaCalculator.calculate_cauldron_modifiers()

@@ -7,8 +7,11 @@ var tick_mps_increment: float
 
 func on_equip() -> void:
 	super.on_equip()
-	#_augment_efect()
+	setup_description()
 
 
 func augment_efect() -> float:
-	return _calculate_value()
+	var value: float = _calculate_value()
+	tick_mps_increment = value
+
+	return value

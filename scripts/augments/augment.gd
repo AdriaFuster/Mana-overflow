@@ -2,6 +2,7 @@ extends InventoryItem
 class_name Augment
 
 @export var type: GlobalEnum.AugmentType
+@export var cd_indicator: bool
 
 var enhanced: bool = false
 const ENHANCE_COLOR: Color = Color("#a7a1dc")
@@ -10,13 +11,15 @@ signal augment_activated
 
 #REPLACE STRING [var_name, enhanced]
 var d_replacements: Dictionary = {
-	"INC_P": ["increment", false],
-	"INC_F": ["increment", false],
-	"CD": ["cd", false],
-	"C_INC_P": ["click_increment", false],
-	"C_INC_F": ["click_increment", false],
-	"N_CLICKS": ["cd", false],
-	"REFUND_P": ["refund", false],	
+	"CD": [null, false],
+	"ARG1": [null, false],
+	"ARG1P": [null, false],
+	"ARG2": [null, false],
+	"ARG2P": [null, false],
+	"ARG3": [null, false],
+	"ARG3P": [null, false],
+	"ARG4": [null, false],
+	"ARG4P": [null, false],	
 }
 
 func setup() -> void:
@@ -27,7 +30,9 @@ func on_equip() -> void:
 	
 func reset() -> void:
 	pass
-	
+
+func setup_description() -> void:
+	pass
 	
 func augment_efect() -> float:
 	#assert(false, ("No esta definida la funció _augment_efect per l'augment " + name))
@@ -38,6 +43,8 @@ func _calculate_value() -> float:
 	#assert(false, ("No esta definida la funció _calculate_value per l'augment " + name))
 	return 0
 
+func is_activated() -> bool:
+	return true
 
 func enhance() -> void:
 	reset()
@@ -50,10 +57,13 @@ func get_description() -> String:
 	var d: String = description 
 	for r in d_replacements:
 		var a: Array = d_replacements[r]
-		#if enhanced, we paint the number
-		if a[1]:
-			d = TextUtils.replace_augment_string(r, a[0], d, self,ENHANCE_COLOR)
-		else:
-			d = TextUtils.replace_augment_string(r, a[0], d, self)
+		
+		#only take into account the ones that the augment use
+		if a[0] != null:
+			#if enhanced, we paint the number
+			if a[1]:
+				d = TextUtils.replace_augment_string(r, a[0], d, self,ENHANCE_COLOR)
+			else:
+				d = TextUtils.replace_augment_string(r, a[0], d, self)
 	
 	return d

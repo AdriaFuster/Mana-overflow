@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LuckyCoin" load_steps=3 format=3 uid="uid://c7twstpkrry8w"]
+
+[ext_resource type="Texture2D" uid="uid://im2wy0dsd0pb" path="res://assets/sprites/augments/lucky_coin.png" id="1_3nd4g"]
+[ext_resource type="Script" uid="uid://c1fj34k0kmtom" path="res://scripts/augments/click/lucky_coin.gd" id="1_rf6vv"]
+
+[resource]
+script = ExtResource("1_rf6vv")
+increment = 0.2
+type = 1
+name = "Lucky coin"
+description = "Every click, you flip a coin. You can gain 0 Mana or get +$ARG1P$ extra Mana"
+icon = ExtResource("1_3nd4g")
+metadata/_custom_type_script = "uid://c1fj34k0kmtom"

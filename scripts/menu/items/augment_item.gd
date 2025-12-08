@@ -6,21 +6,22 @@ class_name AugmentUI
 @onready var cd: Label = $Cd
 @onready var permanent: TextureRect = $permanent
 @onready var anim_player: AnimationPlayer = %AnimationPlayer
+@onready var audio: AudioStreamPlayer = $AnimationPlayer/AudioStreamPlayer
 
 
 var augment: Augment
 
 func _ready() -> void:
 	button.pressed.connect(_on_button_pressed)
+	GameTick	.tick.connect(_on_tick)
 
 func setup(a: Augment) -> void:
 	augment = a
 	augment.augment_activated.connect(_on_augment_activated)
 	icon.texture = augment.icon
 	
-	if augment is PermanentAugment:
+	if !augment.cd_indicator:
 		cd.hide()
-		permanent.show()
 	else:
 		cd.show()
 		permanent.hide()
@@ -28,12 +29,14 @@ func setup(a: Augment) -> void:
 func get_item() -> Variant:
 	return augment
 
-func _process(_delta: float) -> void:
+func _on_tick() -> void:
 	if augment is TickAugment:
-		if snapped(augment.cd_cont*GameTick.tick_interval,1) == 0:
-			cd.text = str(snapped(augment.cd,1))
+		var ceil_cd_cont = int(ceil(augment.cd_cont / 10.0))                            
+		if ceil_cd_cont == 0:
+			cd.text = str(augment.cd)
 		else:
-			cd.text = str(snapped(augment.cd_cont*GameTick.tick_interval,1))
+			cd.text = str(ceil_cd_cont)
+
 	elif augment is ClickAugment:
 		cd.text = str(augment.cd_cont)
 
@@ -43,3 +46,9 @@ func _on_button_pressed() -> void:
 
 func _on_augment_activated() -> void:
 	anim_player.play("activate")
+	play_hit_sound()
+	pass
+
+
+func play_hit_sound() -> void:
+	audio.play()

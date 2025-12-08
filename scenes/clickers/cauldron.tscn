@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbmln6jfoerjj"]
+[gd_scene load_steps=13 format=3 uid="uid://dbmln6jfoerjj"]
 
 [ext_resource type="Texture2D" uid="uid://dk54fer0prtr7" path="res://assets/sprites/clickers/Cauldron.png" id="1_8jqlm"]
 [ext_resource type="Script" uid="uid://cmekwn4bp2ik0" path="res://scripts/clickers/cauldron.gd" id="2_l3ke8"]
 [ext_resource type="Script" uid="uid://x81y23lhnyu8" path="res://scripts/animations/cauldron_animations.gd" id="3_l3ke8"]
 [ext_resource type="AudioStream" uid="uid://dodxlfuxmky5s" path="res://assets/sounds/cauldron_click.wav" id="4_au12p"]
+[ext_resource type="PackedScene" uid="uid://bg4oe2gohqs1f" path="res://scenes/components/interactible_component.tscn" id="4_iw2mi"]
+[ext_resource type="Shader" uid="uid://cqsd7xibxsf0q" path="res://scripts/shaders/interactible_component.gdshader" id="5_q23c5"]
 
 [sub_resource type="Animation" id="Animation_7mkqr"]
 length = 0.001
@@ -121,6 +123,11 @@ script = ExtResource("3_l3ke8")
 libraries = {
 &"": SubResource("AnimationLibrary_re3ld")
 }
+
+[node name="InteractibleComponent" parent="TextureButton" node_paths=PackedStringArray("button") instance=ExtResource("4_iw2mi")]
+button = NodePath("..")
+outline_shader = ExtResource("5_q23c5")
+outline_thickness = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true

@@ -7,6 +7,11 @@ class_name ManaBlessing
 func on_equip() -> void:
 	super.on_equip()
 	GameEvents.deduce_mana.connect(_on_mana_spended)
+	
+func setup_description() -> void:
+	d_replacements["ARG1P"][0] = "refund"
+
+
 
 
 func _on_mana_spended(mana_cost: float) -> void:
@@ -21,6 +26,6 @@ func _augment_efect() -> void:
 func enhance() -> void:
 	enhanced = true
 	refund = 0.1
-	d_replacements["REFUND_P"][1] = true
+	d_replacements["ARG1P"][1] = true
 	super.enhance()
 	

@@ -17,7 +17,7 @@ func disable_enhance() -> void:
 	
 	
 func enhance_augment(a: Augment) -> void:
-	if !a.enhanced:
+	if a.enhanced:
 		print("augment ",a.name, " already enhanced")
 	else:
 		a.enhance()

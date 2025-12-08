@@ -8,12 +8,13 @@ var location = GlobalEnum.LOCATION.INVENTORY
 func _ready() -> void:
 	_add_upgrades()
 	
-	add_augment("Growing leaf")
+	#add_augment("Growing leaf")
 	#add_augment("Mana potion")
 	#add_augment("Mana tree")
 	#add_augment("Mighty force")
 	#add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
+	add_augment("Lucky coin")
 	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)	
 
 func _add_upgrades() -> void:
@@ -45,6 +46,12 @@ func remove_augment(a_name: String) -> void:
 		ResourceManager.set_augment_location(a_name, GlobalEnum.LOCATION.MANAGER)
 		GameEvents.inventory_changed.emit()
 
+
+func reset_augments() -> void:
+	for a_name in augments:
+		var a: Augment = augments[a_name]
+		a.reset()
+		
 func get_n_augments(type: GlobalEnum.AugmentType) -> int:
 	var cont: int = 0
 	for a_name in augments.keys():

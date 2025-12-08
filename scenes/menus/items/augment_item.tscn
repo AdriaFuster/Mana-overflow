@@ -1,14 +1,77 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8dnhp81ld2hm"]
+[gd_scene load_steps=12 format=3 uid="uid://c8dnhp81ld2hm"]
 
 [ext_resource type="Script" uid="uid://cin7dgf4ioo7d" path="res://scripts/menu/items/augment_item.gd" id="1_ao81n"]
 [ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/ui/AugmentUI.png" id="2_vvsft"]
+[ext_resource type="PackedScene" uid="uid://bg4oe2gohqs1f" path="res://scenes/components/interactible_component.tscn" id="3_2df6u"]
 [ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_qgypg"]
 [ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/ui/infinite.png" id="4_2sws8"]
 [ext_resource type="PackedScene" uid="uid://5gg6gmog06l6" path="res://scenes/components/popup_component.tscn" id="5_e2y51"]
+[ext_resource type="AudioStream" uid="uid://70mjetn76cgj" path="res://assets/sounds/augment_efect.wav" id="7_puaiw"]
 
 [sub_resource type="Theme" id="Theme_h8gh8"]
 default_font = ExtResource("3_qgypg")
 default_font_size = 8
+
+[sub_resource type="Animation" id="Animation_puaiw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2df6u"]
+resource_name = "activate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333333),
+"transitions": PackedFloat32Array(1, 2.2191393, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Button:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.1317338, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dgb6v"]
+_data = {
+&"RESET": SubResource("Animation_puaiw"),
+&"activate": SubResource("Animation_2df6u")
+}
 
 [node name="AugmentItem" type="Control"]
 custom_minimum_size = Vector2(20, 25)
@@ -25,34 +88,38 @@ script = ExtResource("1_ao81n")
 [node name="Button" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 0
-offset_right = 18.0
-offset_bottom = 18.0
+offset_right = 20.0
+offset_bottom = 20.0
+pivot_offset = Vector2(9, 9)
 mouse_filter = 1
 texture_normal = ExtResource("2_vvsft")
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 17.0
-offset_bottom = 17.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+
+[node name="InteractibleComponent" parent="Button" node_paths=PackedStringArray("button") instance=ExtResource("3_2df6u")]
+button = NodePath("..")
 
 [node name="Cd" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 18.0
-offset_right = 17.0
-offset_bottom = 26.0
+offset_left = 3.0
+offset_top = 21.0
+offset_right = 19.0
+offset_bottom = 29.0
 theme = SubResource("Theme_h8gh8")
 text = "10"
 
 [node name="permanent" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_top = 19.0
+offset_top = 21.0
 offset_right = 20.0
-offset_bottom = 29.0
+offset_bottom = 31.0
 texture = ExtResource("4_2sws8")
 
 [node name="PopupComponent" parent="." node_paths=PackedStringArray("node") instance=ExtResource("5_e2y51")]
@@ -62,3 +129,10 @@ distribution_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_dgb6v")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("7_puaiw")
+volume_db = -10.947

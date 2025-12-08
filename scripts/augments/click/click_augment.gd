@@ -7,6 +7,7 @@ var cd_cont: int
 
 func on_equip() -> void:
 	super.on_equip()
+	setup_description()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	cd_cont = cd
 
@@ -15,7 +16,12 @@ func reset() -> void:
 	cd_cont = cd
 
 func _on_cauldron_click() -> void:
-	cd_cont -= 1
+	if cd_cont != 0:
+		cd_cont -= 1
 	#print ("augment ", name, " click and have ", cd_cont, "cd")
 	if cd_cont == 0:
 		augment_efect()
+		if is_activated():
+			augment_activated.emit()
+		
+		
