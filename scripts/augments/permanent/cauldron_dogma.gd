@@ -22,6 +22,6 @@ func _calculate_value() -> float:
 
 func enhance() -> void:
 	enhanced = true
-	click_increment = 7
+	click_increment = 5
 	d_replacements["ARG2P"][1] = true
 	super.enhance()

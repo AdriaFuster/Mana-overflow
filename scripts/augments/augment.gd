@@ -23,7 +23,8 @@ var d_replacements: Dictionary = {
 }
 
 func setup() -> void:
-	pass
+	setup_description()
+
 
 func on_equip() -> void:
 	pass

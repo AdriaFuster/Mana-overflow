@@ -7,7 +7,6 @@ var cd_cont: int
 
 func on_equip() -> void:
 	super.on_equip()
-	setup_description()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	cd_cont = cd
 

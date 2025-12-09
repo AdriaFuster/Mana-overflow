@@ -8,6 +8,6 @@ script = ExtResource("1_rf6vv")
 increment = 0.2
 type = 1
 name = "Lucky coin"
-description = "Every click, you flip a coin. You can gain 0 Mana or get +$ARG1P$ extra Mana"
+description = "Every cauldron click, you flip a coin. You can gain 0 Mana or get +$ARG1P$ extra Mana"
 icon = ExtResource("1_3nd4g")
 metadata/_custom_type_script = "uid://c1fj34k0kmtom"

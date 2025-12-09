@@ -15,7 +15,6 @@ func _calculate_value() -> float:
 	succes_flip = coin_flip < luck_rate
 	if succes_flip:
 		value = mod_cp*increment
-	print(succes_flip)
 	return value
 
 func augment_efect() -> float:

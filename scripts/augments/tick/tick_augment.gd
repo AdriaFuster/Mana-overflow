@@ -10,7 +10,6 @@ var active_cont: float
 
 func on_equip() -> void:
 	super.on_equip()
-	setup_description()
 	cd_cont = int(cd / GameTick.tick_interval)
 	#print("cd = ", cd)
 	

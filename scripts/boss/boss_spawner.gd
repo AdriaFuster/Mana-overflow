@@ -7,7 +7,7 @@ var _current_range: int = 0
 
 func _ready() -> void:
 	GameTick.tick.connect(_on_tick)
-	#spawn_ranges.append(100)
+	spawn_ranges.append(300)
 	#spawn_ranges.append(150)
 	
 	for i in range(1, 10):

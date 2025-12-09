@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_38dh3")
 increment = 2.0
+cd = 10
 type = 1
 cd_indicator = true
 name = "Mighty force"

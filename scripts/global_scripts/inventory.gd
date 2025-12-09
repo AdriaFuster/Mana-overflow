@@ -14,12 +14,13 @@ func _ready() -> void:
 	#add_augment("Mighty force")
 	#add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
-	add_augment("Lucky coin")
+	#add_augment("Lucky coin")
 	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)	
 
 func _add_upgrades() -> void:
 
 	for u_name in ResourceManager.upgrades.keys():
+		print("u_name ", u_name)
 		var u: Upgrade = ResourceManager.upgrades[u_name].resource
 		add_upgrade(u.name)
 		ResourceManager.set_upgrade_location(u.name, location)

@@ -4,10 +4,10 @@ class_name Boss
 @onready var hp_label: RichTextLabel = %Hp
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
-const MIN_HIT_ANIM_DURATION: float = 1#2
-const MAX_HIT_ANIM_DURATION: float = 1#5
-const MIN_HITS: float =1#3
-const MAX_HITS: float =1#8
+const MIN_HIT_ANIM_DURATION: float = 2
+const MAX_HIT_ANIM_DURATION: float = 5
+const MIN_HITS: float =3
+const MAX_HITS: float =8
 const BOSS_HP_RATE: float = 3
 
 var hp: float
@@ -19,7 +19,7 @@ func _ready() -> void:
 func _setup() -> void:
 	var boss_range:float = BossSpawner.get_spawn_range()
 	hp = round(boss_range/BOSS_HP_RATE)
-	hp = 1
+	#hp = 1
 	_update_ui()
 
 	

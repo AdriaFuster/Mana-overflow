@@ -8,6 +8,7 @@ var all_scenes: Array = ["boss", "click"]
 func _ready() -> void:
 	setup_augment_autocomplete()
 	Console.pause_enabled = true
+	Console.enable_on_release_build = true
 	#STATS
 	Console.add_command("add_mana", console_add_mana,["mana"], 1)
 	Console.add_command("deduce_mana", console_deduce_mana,["mana"], 1)

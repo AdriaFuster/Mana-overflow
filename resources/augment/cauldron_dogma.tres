@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_in24u")
 increment = -0.8
-click_increment = 5.0
+click_increment = 3.0
 type = 1
 name = "Cauldron dogma"
 description = "$ARG1P$ MPS but $ARG2P$ cauldron power"
