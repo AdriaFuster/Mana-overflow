@@ -20,7 +20,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [node name="ItemPopUp" type="Panel"]
-offset_right = 478.0
+offset_right = 180.0
 offset_bottom = 75.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b5l2p")
 script = ExtResource("1_levhv")
@@ -58,7 +58,7 @@ autowrap_mode = 2
 
 [node name="Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 24)
+custom_minimum_size = Vector2(150, 24)
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_ahbpa")

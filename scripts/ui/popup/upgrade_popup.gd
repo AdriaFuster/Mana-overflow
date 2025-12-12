@@ -12,6 +12,8 @@ func _set_value(item: Upgrade) -> void:
 	if item.locked:
 		name_label.text = TextUtils.bold(item.locked_name)
 		description_label.text = item.locked_description
+	
+		#print("description_label.text ",description_label.text)
 		lvl.hide()
 	else:
 		name_label.text = TextUtils.bold(item.name)

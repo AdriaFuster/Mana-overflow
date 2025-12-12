@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8dnhp81ld2hm"]
 
 [ext_resource type="Script" uid="uid://cin7dgf4ioo7d" path="res://scripts/menu/items/augment_item.gd" id="1_ao81n"]
-[ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/ui/AugmentUI.png" id="2_vvsft"]
+[ext_resource type="Texture2D" uid="uid://c0lh2lei7q187" path="res://assets/sprites/UI/AugmentUI.png" id="2_vvsft"]
 [ext_resource type="PackedScene" uid="uid://bg4oe2gohqs1f" path="res://scenes/components/interactible_component.tscn" id="3_2df6u"]
 [ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_qgypg"]
-[ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/ui/infinite.png" id="4_2sws8"]
+[ext_resource type="Texture2D" uid="uid://dujdei48lw2xu" path="res://assets/sprites/UI/infinite.png" id="4_2sws8"]
 [ext_resource type="PackedScene" uid="uid://5gg6gmog06l6" path="res://scenes/components/popup_component.tscn" id="5_e2y51"]
 [ext_resource type="AudioStream" uid="uid://70mjetn76cgj" path="res://assets/sounds/augment_efect.wav" id="7_puaiw"]
 

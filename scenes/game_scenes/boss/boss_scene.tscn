@@ -12,6 +12,7 @@ script = ExtResource("1_kjmux")
 
 [node name="GameCanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="Background" type="ColorRect" parent="GameCanvasLayer"]
 anchors_preset = 15
@@ -31,7 +32,6 @@ anchor_left = 0.55
 anchor_top = 0.02
 anchor_right = 0.55
 anchor_bottom = 0.02
-mouse_filter = 2
 
 [node name="StartTimerCounter" type="RichTextLabel" parent="GameCanvasLayer"]
 unique_name_in_owner = true
@@ -113,5 +113,4 @@ unique_name_in_owner = true
 
 [node name="RewardMenu" parent="." instance=ExtResource("4_ru37o")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1

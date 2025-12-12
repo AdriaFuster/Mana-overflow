@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://brhxubq1qd225"]
+
+[ext_resource type="Script" uid="uid://dm7pittr3nog3" path="res://scripts/ui/ui_canvas/augment_canvas.gd" id="1_4dtfg"]
+[ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/menus/items/augment_item.tscn" id="2_fe7ec"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmd0w"]
+bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.21176471)
+
+[node name="AugmentCanvas" type="CanvasLayer"]
+script = ExtResource("1_4dtfg")
+a_ui_scene = ExtResource("2_fe7ec")
+
+[node name="AugmentInventory" type="Control" parent="."]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AugmentContainer" type="PanelContainer" parent="AugmentInventory"]
+custom_minimum_size = Vector2(120, 35)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmd0w")
+
+[node name="MarginContainer" type="MarginContainer" parent="AugmentInventory/AugmentContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AugmentList" type="HBoxContainer" parent="AugmentInventory/AugmentContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2

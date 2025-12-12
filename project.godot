@@ -66,8 +66,7 @@ AltarMenu=""
 [gui]
 
 common/snap_controls_to_pixels=false
-theme/custom_font="uid://b330csyhlvagr"
-common/custom_font=""
+theme/custom_font="uid://dpbw6imuj8awb"
 common/custom=""
 common/size/viewport_height=648
 common/size/viewport_width=1152

@@ -1,9 +1,12 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtps5mnet6rm8"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dtps5mnet6rm8"]
 
-[ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_g21bd"]
-[ext_resource type="FontFile" uid="uid://b0w5kfsv5kjkv" path="res://assets/fonts/PixelOperator8.ttf" id="2_hl2eg"]
+[ext_resource type="FontFile" uid="uid://bfuyhg05cj6i0" path="res://assets/fonts/beaver/beaver_upper_bold.ttf" id="1_2hiie"]
+[ext_resource type="FontFile" uid="uid://bnaeyhyn26e0l" path="res://assets/fonts/beaver/beaver_mono.ttf" id="2_q1ljl"]
+[ext_resource type="FontFile" uid="uid://dpbw6imuj8awb" path="res://assets/fonts/beaver/beaver.ttf" id="3_ourbb"]
 
 [resource]
-default_font = ExtResource("2_hl2eg")
+default_font = ExtResource("3_ourbb")
 default_font_size = 16
-RichTextLabel/fonts/bold_font = ExtResource("1_g21bd")
+RichTextLabel/fonts/bold_font = ExtResource("1_2hiie")
+RichTextLabel/fonts/mono_font = ExtResource("2_q1ljl")
+RichTextLabel/fonts/normal_font = ExtResource("3_ourbb")

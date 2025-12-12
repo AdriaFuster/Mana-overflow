@@ -2,8 +2,8 @@ extends Node
 
 var popup_template: PopupTemplate
 var popup_template_type = {
- 	GlobalEnum.POPUP_TYPE.AUGMENT: preload("uid://domlquui4goku"),
-	GlobalEnum.POPUP_TYPE.UPGRADE: preload("uid://cwvodr0lwmw07"),
+ 	GlobalEnum.POPUP_TYPE.AUGMENT: preload("uid://clsmjujjlvqug"),
+	GlobalEnum.POPUP_TYPE.UPGRADE: preload("uid://bacv0ndf8joaa"),
 	GlobalEnum.POPUP_TYPE.REWARD: preload("uid://rab4w4idww15"),
 	GlobalEnum.POPUP_TYPE.MPS: preload("uid://k1cgxgtlmwbv")
 }

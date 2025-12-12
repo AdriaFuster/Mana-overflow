@@ -6,44 +6,33 @@ class_name BasePopup
 @onready var description_label: RichTextLabel = %Description
 
 
-const POPUP_X_SIZE: int = 300
+#const POPUP_X_SIZE: int = 120
 const POPUP_MARGINS: int = 20
-const HORIZONTAL_X_PADDING: int = -2
-const HORIZONTAL_Y_PADDING: int = 4
-const VERTICAL_X_PADDING: int = 15
-const VERTICAL_Y_PADDING: int = -4
+const HORIZONTAL_X_PADDING: int = 0
+const HORIZONTAL_Y_PADDING: int = 5
+const VERTICAL_X_PADDING: int = 5
+const VERTICAL_Y_PADDING: int = 0
 
 	
 func item_popup(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE, item: Variant) -> void:
-
 	_set_value(item)
-		
-	#Wait 2 times for rich label
-	#await get_tree().process_frame
-	#await get_tree().process_frame
+
+	call_deferred("_calculate_popup_position",slot,mode)
 	
-	var content_y_size = v_box_container.get_combined_minimum_size().y
-	size = Vector2(POPUP_X_SIZE + POPUP_MARGINS, content_y_size + POPUP_MARGINS)	
-	
-	position = _calculate_popup_position(slot, mode)
 	show()
 	
 	
-func _calculate_popup_position(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector2:
+func _calculate_popup_position(slot:Rect2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> void:
 	var correction: Vector2
-
 	correction = _correction(slot.size, mode)
-	var sub_container = get_tree().root.get_node("Main/SceneManager/CanvasLayer/SubViewportContainer")
-	var container_scale = sub_container.size / Vector2(320, 180)
-	var global_container_pos = sub_container.get_global_position()
-
-	var final_pos = (global_container_pos + (Vector2(slot.position) * container_scale)) + correction
+	var final_pos = (Vector2(slot.position)) + correction
 	
-	return final_pos
+	position = final_pos
 
 func _correction(i_size: Vector2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector2i:
 	var mouse_pos = get_global_mouse_position()
 	var correction: Vector2
+	
 	if mode == GlobalEnum.DISTRIBUTION_MODE.VERTICAL:
 		if mouse_pos.x <= get_viewport_rect().size.x/2:
 			correction = Vector2i(i_size.x + VERTICAL_X_PADDING, VERTICAL_Y_PADDING)

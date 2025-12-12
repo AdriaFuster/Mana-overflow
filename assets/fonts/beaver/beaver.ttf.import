@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b0w5kfsv5kjkv"
-path="res://.godot/imported/PixelOperator8.ttf-6f9f01766aff16f52046b880ffb8d367.fontdata"
+uid="uid://dpbw6imuj8awb"
+path="res://.godot/imported/beaver.ttf-5d46ca2d3c827547b474534fdcaefa39.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/PixelOperator8.ttf"
-dest_files=["res://.godot/imported/PixelOperator8.ttf-6f9f01766aff16f52046b880ffb8d367.fontdata"]
+source_file="res://assets/fonts/beaver/beaver.ttf"
+dest_files=["res://.godot/imported/beaver.ttf-5d46ca2d3c827547b474534fdcaefa39.fontdata"]
 
 [params]
 

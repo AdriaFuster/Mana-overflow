@@ -13,7 +13,7 @@ func _show_popup() -> void:
 	if node.has_method("get_item"):
 		item = node.get_item()
 	PopupManager.show_popup(popup_type,
-	Rect2i(Vector2i(node.global_position), Vector2i(node.size)*ProjectSettings.get_setting("global/screen_scale")),  
+	Rect2i(Vector2i(node.global_position), Vector2i(node.size)),  
 	distribution_mode,
 	item)
 

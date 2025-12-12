@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var button: TextureButton = %button
 var shop_opened: bool = false

@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvhs60koe8pqx"]
+[gd_scene load_steps=9 format=3 uid="uid://bvhs60koe8pqx"]
 
 [ext_resource type="Script" uid="uid://dc86vw3bltcsn" path="res://scripts/menu/items/upgrade_item.gd" id="1_6jegm"]
-[ext_resource type="Shader" uid="uid://cqsd7xibxsf0q" path="res://scripts/shaders/interactible_component.gdshader" id="2_gpp4s"]
 [ext_resource type="Texture2D" uid="uid://cx0kjlgo3byif" path="res://assets/sprites/upgrades/upgrade_button.png" id="2_us0at"]
 [ext_resource type="Shader" uid="uid://bfls0ka3u10vc" path="res://scripts/shaders/upgrade_ui.gdshader" id="3_8hi8n"]
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="3_gfosq"]
 [ext_resource type="PackedScene" uid="uid://bg4oe2gohqs1f" path="res://scenes/components/interactible_component.tscn" id="5_gfosq"]
-[ext_resource type="Texture2D" uid="uid://qotwwuwh1juj" path="res://assets/sprites/upgrades/bat.png" id="5_lco34"]
+[ext_resource type="Texture2D" uid="uid://qotwwuwh1juj" path="res://assets/sprites/upgrades/Bat.png" id="5_lco34"]
 [ext_resource type="PackedScene" uid="uid://5gg6gmog06l6" path="res://scenes/components/popup_component.tscn" id="7_uap5a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6jegm"]
@@ -17,25 +16,22 @@ shader_parameter/use_silhouette = false
 [node name="UpgradeUi" type="Control"]
 custom_minimum_size = Vector2(112, 20)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1168.0
-offset_bottom = -700.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 116.0
+offset_bottom = 24.0
 mouse_filter = 1
 script = ExtResource("1_6jegm")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(54, 20)
-layout_mode = 0
+layout_mode = 1
 offset_right = 116.0
 offset_bottom = 24.0
 mouse_filter = 1
 action_mode = 0
 texture_normal = ExtResource("2_us0at")
+metadata/_edit_use_anchors_ = true
 
 [node name="Cost" type="RichTextLabel" parent="TextureButton"]
 unique_name_in_owner = true
@@ -77,7 +73,6 @@ horizontal_alignment = 1
 
 [node name="InteractibleComponent" parent="TextureButton" node_paths=PackedStringArray("button") instance=ExtResource("5_gfosq")]
 button = NodePath("..")
-outline_shader = ExtResource("2_gpp4s")
 
 [node name="PopupComponent" parent="." node_paths=PackedStringArray("node") instance=ExtResource("7_uap5a")]
 layout_mode = 1

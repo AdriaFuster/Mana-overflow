@@ -1,10 +1,6 @@
 extends Control
 class_name PopupTemplate
 
-@export var augment_popup_scene:PackedScene = preload("uid://domlquui4goku")
-@export var upgrade_popup_scene:PackedScene = preload("uid://cwvodr0lwmw07")
-@export var reward_popup_scene:PackedScene = preload("uid://domlquui4goku")
-
 var augment_scene: BasePopup
 var upgrade_scene: BasePopup
 var reward_scene: BasePopup

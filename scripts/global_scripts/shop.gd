@@ -47,7 +47,7 @@ func _get_valid_augments() -> Dictionary:
 func _setup_ui() -> void:
 	shop_menu = shop_menu_scene.instantiate()
 	
-	var ui_layer = get_tree().root.get_node("Main/SceneManager/CanvasLayer/SubViewportContainer/SubViewport/Game")
+	var ui_layer = get_tree().root.get_node("Main/SceneManager/CanvasLayer/Game")
 	ui_layer.add_child(shop_menu)
 	shop_menu.call_deferred("hide_menu")
 	

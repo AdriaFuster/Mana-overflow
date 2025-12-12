@@ -14,44 +14,83 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_pgsqd")
 
-[node name="BackgroundGroup" type="Node2D" parent="."]
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="Background" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(158, 88)
-scale = Vector2(1.38889, 1)
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_u5sy4")
 
-[node name="Bookshelve" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(73, 47)
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 71.0
+offset_right = 147.0
+offset_bottom = 135.0
+mouse_filter = 2
 texture = ExtResource("3_gee14")
 
-[node name="Bookshelve2" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(115, 47)
+[node name="TextureRect3" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 71.0
+offset_right = 188.0
+offset_bottom = 135.0
+mouse_filter = 2
 texture = ExtResource("3_gee14")
 
-[node name="Bookshelve3" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(140, 47)
+[node name="TextureRect4" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 71.0
+offset_right = 227.0
+offset_bottom = 135.0
+mouse_filter = 2
 texture = ExtResource("3_gee14")
 
-[node name="Bookshelve5" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(37, 47)
+[node name="TextureRect5" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 71.0
+offset_right = 268.0
+offset_bottom = 135.0
+mouse_filter = 2
 texture = ExtResource("3_gee14")
 
-[node name="Wizard" type="Sprite2D" parent="BackgroundGroup"]
-position = Vector2(102, 63)
+[node name="Mage" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 96.0
+offset_right = 211.0
+offset_bottom = 136.0
+mouse_filter = 2
 texture = ExtResource("4_0tnpc")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 90)
-
 [node name="AugmentAltar" parent="." instance=ExtResource("7_u5sy4")]
-position = Vector2(15, 68)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 104.0
+offset_right = 90.0
+offset_bottom = 104.0
 
 [node name="Cauldron" parent="." instance=ExtResource("5_iywne")]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 84.0
-offset_right = 75.0
-offset_bottom = 84.0
+offset_left = 151.0
+offset_top = 143.0
+offset_right = 151.0
+offset_bottom = 143.0
