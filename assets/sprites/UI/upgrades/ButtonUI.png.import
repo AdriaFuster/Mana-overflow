@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2xa7toyel7d7"
-path="res://.godot/imported/bat.png-fa4626ca6b4b85cdd471c2de23e4aa13.ctex"
+uid="uid://b0oa3p1q41u2q"
+path="res://.godot/imported/ButtonUI.png-bb76d03a062c6b45b9078cb721dab052.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/upgrades/bat.png"
-dest_files=["res://.godot/imported/bat.png-fa4626ca6b4b85cdd471c2de23e4aa13.ctex"]
+source_file="res://assets/sprites/UI/upgrades/ButtonUI.png"
+dest_files=["res://.godot/imported/ButtonUI.png-bb76d03a062c6b45b9078cb721dab052.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
