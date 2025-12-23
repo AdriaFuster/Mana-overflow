@@ -10,8 +10,9 @@
 layout_mode = 3
 anchor_top = 0.6
 anchor_bottom = 0.6
+offset_top = -32.000015
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 7.9999695
 mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="DisplayClickValuesContainer"]

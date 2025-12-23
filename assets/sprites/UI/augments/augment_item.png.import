@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dujdei48lw2xu"
-path="res://.godot/imported/infinite.png-52b284549b483b09d376bfc5de17986f.ctex"
+uid="uid://buw4hu60hq2nf"
+path="res://.godot/imported/augment_item.png-769735128c2833e12025a174a83ebf37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/UI/infinite.png"
-dest_files=["res://.godot/imported/infinite.png-52b284549b483b09d376bfc5de17986f.ctex"]
+source_file="res://assets/sprites/UI/augments/augment_item.png"
+dest_files=["res://.godot/imported/augment_item.png-769735128c2833e12025a174a83ebf37.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

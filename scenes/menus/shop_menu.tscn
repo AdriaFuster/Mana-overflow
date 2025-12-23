@@ -21,7 +21,7 @@ menu_icon = ExtResource("2_ml0fi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-layer = 1000
+layer = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 unique_name_in_owner = true

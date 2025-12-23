@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ltdiy4htkki4"
-path="res://.godot/imported/growing_leaf.png-b321f9b3038577e28ee99ffbb448682e.ctex"
+uid="uid://c0lh2lei7q187"
+path="res://.godot/imported/AugmentUI.png-31f1c2fa677d0fc1d084a844c7de3b34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/augments/growing_leaf.png"
-dest_files=["res://.godot/imported/growing_leaf.png-b321f9b3038577e28ee99ffbb448682e.ctex"]
+source_file="res://assets/sprites/UI/augments/AugmentUI.png"
+dest_files=["res://.godot/imported/AugmentUI.png-31f1c2fa677d0fc1d084a844c7de3b34.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

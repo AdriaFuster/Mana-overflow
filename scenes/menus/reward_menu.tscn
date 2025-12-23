@@ -21,7 +21,7 @@ menu_icon = ExtResource("3_iqtch")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-layer = 1000
+layer = 2
 visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]

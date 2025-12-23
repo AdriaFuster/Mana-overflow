@@ -2,10 +2,10 @@ extends Node
 
 var popup_template: PopupTemplate
 var popup_template_type = {
- 	GlobalEnum.POPUP_TYPE.AUGMENT: preload("uid://clsmjujjlvqug"),
-	GlobalEnum.POPUP_TYPE.UPGRADE: preload("uid://bacv0ndf8joaa"),
-	GlobalEnum.POPUP_TYPE.REWARD: preload("uid://rab4w4idww15"),
-	GlobalEnum.POPUP_TYPE.MPS: preload("uid://k1cgxgtlmwbv")
+ 	GlobalEnum.POPUP_TYPE.AUGMENT: preload("uid://du2am65aqcfmp"),
+	GlobalEnum.POPUP_TYPE.UPGRADE: preload("uid://cew40o5pdse8p"),
+	GlobalEnum.POPUP_TYPE.REWARD: preload("uid://c8vpu0tuwecp5"),
+	GlobalEnum.POPUP_TYPE.MPS: preload("uid://dcmy13o0b56c1")
 }
 
 func _ready() -> void:

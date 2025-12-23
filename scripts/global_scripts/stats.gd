@@ -26,7 +26,6 @@ signal player_dead()
 
 func _ready() -> void:
 	GameEvents.calculate_mps.connect(_on_calculate_mps)
-	GameEvents.change_scene.connect(_on_change_scene)
 	GameEvents.add_mana.connect(_on_add_mana)
 	GameEvents.deduce_mana.connect(_on_deduced_mana)
 
@@ -42,7 +41,8 @@ func deduce_mana(n_mana: float) -> void:
 		mana = 0
 	else:
 		mana -= n_mana
-
+	print(mana)
+	
 func add_mps(a_mps) -> void:
 	mps += a_mps
 
@@ -110,7 +110,7 @@ func _on_calculate_mps() -> void:
 	
 	mps = total_mps
 
-func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
+func change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
 	if scene == GlobalEnum.GAME_SCENE.BOSS:
 		#Save mana value o tick mana
 		tick_mana = mana

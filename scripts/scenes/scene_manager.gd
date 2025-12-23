@@ -14,6 +14,9 @@ func _ready() -> void:
 
 
 func _on_change_scene(scene: GlobalEnum.GAME_SCENE) -> void:
+	Stats.change_scene(scene)
+	GameEvents.update_stats_labels.emit()
+
 	if scene == GlobalEnum.GAME_SCENE.BOSS:
 		boss_scene.activate_scene()
 		game_scene.desactivate_scene()

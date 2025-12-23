@@ -19,4 +19,4 @@ func _on_tick() -> void:
 	ManaCalculator.calculate_mana()
 	
 	#ManaCalculator.calculate_tick_modifiers()
-	GameEvents.update_mps_label.emit()
+	GameEvents.update_stats_labels.emit()

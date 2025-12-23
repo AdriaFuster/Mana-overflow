@@ -1,66 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bacv0ndf8joaa"]
+[gd_scene load_steps=4 format=3 uid="uid://cew40o5pdse8p"]
 
 [ext_resource type="Script" uid="uid://oc3escgfxj88" path="res://scripts/ui/popup/upgrade_popup.gd" id="1_11sc0"]
+[ext_resource type="PackedScene" uid="uid://uiynn7c5ds0c" path="res://scenes/UI/popup/base_popup.tscn" id="1_q6b3l"]
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="1_qfums"]
 
-[node name="ItemPopUp" type="PanelContainer"]
-custom_minimum_size = Vector2(100, 0)
-offset_right = 100.0
-offset_bottom = 48.0
+[node name="ItemPopUp" instance=ExtResource("1_q6b3l")]
 script = ExtResource("1_11sc0")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+[node name="Name" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+size_flags_stretch_ratio = 75.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Name" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Lvl" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-size_flags_stretch_ratio = 65.0
-theme = ExtResource("1_qfums")
-bbcode_enabled = true
-text = "Name"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Lvl" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-size_flags_stretch_ratio = 35.0
+size_flags_stretch_ratio = 25.0
 theme = ExtResource("1_qfums")
 bbcode_enabled = true
 text = "Lvl 1"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
-
-[node name="Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("1_qfums")
-bbcode_enabled = true
-text = "Description"
-fit_content = true
-autowrap_mode = 2

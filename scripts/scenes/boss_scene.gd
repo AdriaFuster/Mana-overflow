@@ -37,7 +37,6 @@ func activate_scene() -> void:
 	show()
 	game_canvas_layer.show()
 	reward_menu.hide_menu()
-	
 	_setup_countdown()
 	boss._setup()	
 

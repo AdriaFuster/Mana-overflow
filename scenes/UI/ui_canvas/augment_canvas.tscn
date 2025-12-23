@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://brhxubq1qd225"]
+[gd_scene load_steps=5 format=3 uid="uid://brhxubq1qd225"]
 
 [ext_resource type="Script" uid="uid://dm7pittr3nog3" path="res://scripts/ui/ui_canvas/augment_canvas.gd" id="1_4dtfg"]
 [ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/menus/items/augment_item.tscn" id="2_fe7ec"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmd0w"]
-bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.21176471)
+[ext_resource type="Theme" uid="uid://dpvah33big1c7" path="res://assets/sprites/UI/augments/augment_container.tres" id="3_apdwe"]
+[ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="4_4qxop"]
 
 [node name="AugmentCanvas" type="CanvasLayer"]
 script = ExtResource("1_4dtfg")
@@ -19,24 +18,37 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="AugmentContainer" type="PanelContainer" parent="AugmentInventory"]
-custom_minimum_size = Vector2(120, 35)
+custom_minimum_size = Vector2(124, 62)
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -30.0
-grow_horizontal = 2
+offset_top = -62.0
+offset_right = 124.0
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_rmd0w")
+theme = ExtResource("3_apdwe")
 
-[node name="MarginContainer" type="MarginContainer" parent="AugmentInventory/AugmentContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="AugmentInventory/AugmentContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="AugmentInventory/AugmentContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("4_4qxop")
+text = "AUGMENTS"
+
+[node name="MarginContainer" type="MarginContainer" parent="AugmentInventory/AugmentContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="AugmentList" type="HBoxContainer" parent="AugmentInventory/AugmentContainer/MarginContainer"]
+[node name="AugmentList" type="HBoxContainer" parent="AugmentInventory/AugmentContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2

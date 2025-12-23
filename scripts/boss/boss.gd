@@ -45,6 +45,7 @@ func take_damage(dmg: float) -> void:
 		if is_alive():
 			hp -= dmg_per_hit
 			Stats.deduce_mana(dmg_per_hit)
+			GameEvents.update_stats_labels.emit()
 			_update_ui()
 			await animation_player.play_hit_animation(single_anim_duration)
 		

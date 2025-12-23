@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://ciiglkj28ucmk"]
 
-[ext_resource type="FontFile" uid="uid://b330csyhlvagr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p1y8d"]
+[ext_resource type="FontFile" uid="uid://bfuyhg05cj6i0" path="res://assets/fonts/beaver/beaver_upper_bold.ttf" id="1_p1y8d"]
 [ext_resource type="FontFile" uid="uid://dpbw6imuj8awb" path="res://assets/fonts/beaver/beaver.ttf" id="2_p1y8d"]
 
 [resource]

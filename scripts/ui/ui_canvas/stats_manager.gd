@@ -6,7 +6,7 @@ extends Control
 
 func _ready() -> void:
 	_display_values()
-	GameEvents.update_mps_label.connect(_display_values)
+	GameEvents.update_stats_labels.connect(_display_values)
 
 func _display_values():
 	mana_label.text = "Mana = " + Big.new(Stats.mana).sufix(true,1,3, false)

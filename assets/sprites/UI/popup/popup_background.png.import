@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ltdiy4htkki4"
-path="res://.godot/imported/growing_leaf.png-b321f9b3038577e28ee99ffbb448682e.ctex"
+uid="uid://btuakacmbdjw1"
+path="res://.godot/imported/popup_background.png-1755ec83ce7dc4e0433852ae6d79be7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/augments/growing_leaf.png"
-dest_files=["res://.godot/imported/growing_leaf.png-b321f9b3038577e28ee99ffbb448682e.ctex"]
+source_file="res://assets/sprites/UI/popup/popup_background.png"
+dest_files=["res://.godot/imported/popup_background.png-1755ec83ce7dc4e0433852ae6d79be7b.ctex"]
 
 [params]
 
