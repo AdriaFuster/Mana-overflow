@@ -1,0 +1,85 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cig04o1ft8tvk"]
+
+[ext_resource type="Texture2D" uid="uid://cm0gki5qmpcfj" path="res://assets/sprites/UI/upgrades/upgrade_inventory.png" id="1_1s7q3"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_1s7q3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s7q3"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58vtq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.7490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrdf6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.45911753, 0.85933423, 0.4186871, 0.7490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm30u"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp6jl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 0.18431373, 0.7490196)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dln77"]
+texture = ExtResource("1_1s7q3")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[resource]
+HScrollBar/icons/decrement = SubResource("ImageTexture_1s7q3")
+HScrollBar/icons/decrement_highlight = SubResource("ImageTexture_1s7q3")
+HScrollBar/icons/decrement_pressed = SubResource("ImageTexture_1s7q3")
+HScrollBar/icons/increment = SubResource("ImageTexture_1s7q3")
+HScrollBar/icons/increment_highlight = SubResource("ImageTexture_1s7q3")
+HScrollBar/icons/increment_pressed = SubResource("ImageTexture_1s7q3")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_1s7q3")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_58vtq")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_vrdf6")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_dm30u")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_vp6jl")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_dln77")

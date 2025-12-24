@@ -8,7 +8,7 @@ var location = GlobalEnum.LOCATION.INVENTORY
 func _ready() -> void:
 	_add_upgrades()
 	
-	add_augment("Growing leaf")
+	#add_augment("Growing leaf")
 	add_augment("Mana potion")
 	add_augment("Mana tree")
 	#add_augment("Mighty force")

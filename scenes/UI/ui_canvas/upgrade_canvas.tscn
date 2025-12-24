@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6e7x5w5i0h16" path="res://scripts/ui/ui_canvas/upgrade_canvas.gd" id="1_1vi1f"]
 [ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/menus/items/upgrade_item.tscn" id="2_14qxa"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4h5j"]
-bg_color = Color(0.43137255, 0.43137255, 0.43137255, 0.5137255)
+[ext_resource type="Theme" uid="uid://cig04o1ft8tvk" path="res://assets/sprites/UI/upgrades/upgrade_inventory.tres" id="3_6c5i5"]
 
 [sub_resource type="Theme" id="Theme_1vi1f"]
 
@@ -16,15 +14,15 @@ u_ui_scene = ExtResource("2_14qxa")
 
 [node name="UpgradeContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(145, 0)
+custom_minimum_size = Vector2(200, 0)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -145.0
+offset_left = -199.0
 offset_bottom = 226.0
 grow_horizontal = 0
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_f4h5j")
+theme = ExtResource("3_6c5i5")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UpgradeContainer"]
 layout_mode = 2
@@ -32,6 +30,7 @@ theme = SubResource("Theme_1vi1f")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_14qxa")
 scroll_vertical_custom_step = 694.717
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 scroll_deadzone = -10
 
 [node name="MarginContainer" type="MarginContainer" parent="UpgradeContainer/ScrollContainer"]
@@ -51,4 +50,16 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="UpgradeUi2" parent="UpgradeContainer/ScrollContainer/MarginContainer/UpgradeList" instance=ExtResource("2_14qxa")]
+layout_mode = 2
+
+[node name="UpgradeUi3" parent="UpgradeContainer/ScrollContainer/MarginContainer/UpgradeList" instance=ExtResource("2_14qxa")]
+layout_mode = 2
+
+[node name="UpgradeUi4" parent="UpgradeContainer/ScrollContainer/MarginContainer/UpgradeList" instance=ExtResource("2_14qxa")]
+layout_mode = 2
+
+[node name="UpgradeUi5" parent="UpgradeContainer/ScrollContainer/MarginContainer/UpgradeList" instance=ExtResource("2_14qxa")]
+layout_mode = 2
+
+[node name="UpgradeUi6" parent="UpgradeContainer/ScrollContainer/MarginContainer/UpgradeList" instance=ExtResource("2_14qxa")]
 layout_mode = 2

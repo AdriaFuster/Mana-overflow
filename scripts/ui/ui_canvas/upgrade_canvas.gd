@@ -19,7 +19,7 @@ func _setup_upgrades_ui() -> void:
 	#Upgrade inventory
 	
 	#upgrade_inventory.custom_minimum_size.x = ui_scene_size.x
-	upgrade_container.custom_minimum_size.y = ui_scene_size.y * 7
+	upgrade_container.custom_minimum_size.y = ui_scene_size.y * 5
 	upgrade_container.size.y = upgrade_container.custom_minimum_size.y
 	#Upgrade container
 	#upgrade_container.size.x = ui_scene_size.x
