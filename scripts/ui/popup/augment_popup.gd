@@ -14,7 +14,7 @@ func _set_value(item: Augment) -> void:
 	type_label.text = TextUtils.bold(_set_type_effect(
 		GlobalEnum.enum_to_string(GlobalEnum.AugmentType, item.type), 
 		item))
-	extra_info.text = ""
+	extra_info.text = item.get_extra().strip_edges()
 	name_label.update_minimum_size()
 	description_label.update_minimum_size()
 	type_label.update_minimum_size()

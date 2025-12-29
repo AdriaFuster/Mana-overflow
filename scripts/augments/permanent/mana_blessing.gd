@@ -9,23 +9,18 @@ func on_equip() -> void:
 	GameEvents.deduce_mana.connect(_on_mana_spended)
 	
 func setup_description() -> void:
-	d_replacements["ARG1P"][0] = "refund"
-
-
-
+	description_replacements["ARG1P"][0] = "refund"
 
 func _on_mana_spended(mana_cost: float) -> void:
 	var refunded_mana: float = mana_cost
 	refunded_mana *= refund
 	#print("fem refund de ", refunded_mana.toAmericanName())
 	Stats.add_mana(refunded_mana)
-	
-func _augment_efect() -> void:
-	pass
+
 	
 func enhance() -> void:
 	enhanced = true
 	refund = 0.1
-	d_replacements["ARG1P"][1] = true
+	description_replacements["ARG1P"][1] = true
 	super.enhance()
 	

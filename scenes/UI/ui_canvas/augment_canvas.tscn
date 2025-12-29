@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm7pittr3nog3" path="res://scripts/ui/ui_canvas/augment_canvas.gd" id="1_4dtfg"]
 [ext_resource type="PackedScene" uid="uid://c8dnhp81ld2hm" path="res://scenes/menus/items/augment_item.tscn" id="2_fe7ec"]
-[ext_resource type="Theme" uid="uid://dpvah33big1c7" path="res://assets/sprites/UI/augments/augment_inventory.tres" id="3_apdwe"]
+[ext_resource type="Theme" uid="uid://dpvah33big1c7" path="res://assets/sprites/UI/themes/augment_inventory.tres" id="3_apdwe"]
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="4_4qxop"]
 
 [node name="AugmentCanvas" type="CanvasLayer"]

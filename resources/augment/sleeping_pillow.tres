@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SleepingPillow" load_steps=2 format=3 uid="uid://c1ytpm4fq1y0o"]
+
+[ext_resource type="Script" uid="uid://ttae0divlga4" path="res://scripts/augments/permanent/sleeping_pillow.gd" id="1_b0hej"]
+
+[resource]
+script = ExtResource("1_b0hej")
+increment = 1.0
+enhanced_increment = 3.0
+max_seconds = 40
+extra = "total increment: $ARG1P$
+seconds: $ARG1$"
+name = "Sleeping pillow"
+description = "Your Cauldron Power (CP) gains $ARG1P$ for each second you click the cauldron (max $ARG1$ seconds). "
+metadata/_custom_type_script = "uid://ttae0divlga4"

@@ -5,8 +5,8 @@ class_name MightyForce
 	
 
 func setup_description() -> void:
-	d_replacements["CD"][0] = "cd"
-	d_replacements["ARG1P"][0] = "increment"
+	description_replacements["CD"][0] = "cd"
+	description_replacements["ARG1P"][0] = "increment"
 
 func _calculate_value() -> float:
 	var b_mps = Stats.mod_cauldron_power
@@ -14,19 +14,18 @@ func _calculate_value() -> float:
 	
 	return b_mps
 
-func augment_efect() -> float:
+func augment_efect() -> void:
 	
 	var value: float = _calculate_value()
 	
 	Stats.add_mana(value)
 	
 	cd_cont = int(cd)
-	return value
 
 func enhance() -> void:
 	enhanced = true
 	cd = 8
 	increment = 3
-	d_replacements["CD"][1] = true
-	d_replacements["ARG1P"][1] = true
+	description_replacements["CD"][1] = true
+	description_replacements["ARG1P"][1] = true
 	super.enhance()

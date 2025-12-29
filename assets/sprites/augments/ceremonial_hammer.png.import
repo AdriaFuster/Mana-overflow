@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d08anfeyyys47"
-path="res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"
+uid="uid://bqmlphqoe8e5t"
+path="res://.godot/imported/ceremonial_hammer.png-a82639d106b1502eb8225d34194d8808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"]
+source_file="res://assets/sprites/augments/ceremonial_hammer.png"
+dest_files=["res://.godot/imported/ceremonial_hammer.png-a82639d106b1502eb8225d34194d8808.ctex"]
 
 [params]
 

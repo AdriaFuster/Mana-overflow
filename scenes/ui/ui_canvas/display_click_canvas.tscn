@@ -1,25 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg51toimrq3jy"]
+[gd_scene load_steps=5 format=3 uid="uid://dg51toimrq3jy"]
 
 [ext_resource type="Script" uid="uid://7qbem0nwms84" path="res://scripts/ui/ui_canvas/stats_manager.gd" id="1_a4y2n"]
 [ext_resource type="Theme" uid="uid://ciiglkj28ucmk" path="res://assets/fonts/game_font.tres" id="2_5114j"]
 [ext_resource type="PackedScene" uid="uid://5gg6gmog06l6" path="res://scenes/components/popup_component.tscn" id="3_5fn8c"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e1hr"]
+
 [node name="DisplayClickCanvas" type="CanvasLayer"]
 
-[node name="DisplayClickValuesContainer" type="Control" parent="."]
-layout_mode = 3
-anchor_top = 0.6
-anchor_bottom = 0.6
-offset_top = -32.000015
-offset_right = 40.0
-offset_bottom = 7.9999695
+[node name="DisplayClickValuesContainer" type="PanelContainer" parent="."]
+offset_right = 80.0
+offset_bottom = 61.0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4e1hr")
 
 [node name="MarginContainer" type="MarginContainer" parent="DisplayClickValuesContainer"]
-layout_mode = 0
-offset_right = 93.0
-offset_bottom = 32.0
-theme_override_constants/margin_left = 5
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
 
 [node name="DisplayClickValues" type="VBoxContainer" parent="DisplayClickValuesContainer/MarginContainer"]
 unique_name_in_owner = true
@@ -31,7 +29,6 @@ script = ExtResource("1_a4y2n")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("2_5114j")
 text = "CP: <value>"
@@ -42,7 +39,6 @@ scroll_active = false
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
-size_flags_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("2_5114j")
 text = "Mana: <value>"
@@ -54,7 +50,6 @@ autowrap_mode = 0
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
-size_flags_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("2_5114j")
 text = "MPS: <value>"
@@ -66,3 +61,12 @@ autowrap_mode = 0
 layout_mode = 0
 node = NodePath("..")
 popup_type = 3
+
+[node name="HP" type="RichTextLabel" parent="DisplayClickValuesContainer/MarginContainer/DisplayClickValues"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5114j")
+text = "Player HP: <hp>
+"
+fit_content = true

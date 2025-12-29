@@ -8,10 +8,15 @@ signal calculate_mps
 
 signal inventory_changed
 
-signal new_upgrade_bought
-
+#STATS
 signal add_mana(mana:float)
 signal deduce_mana (mana: float)
+
+#UPGRADES
+signal new_upgrade_bought
+signal upgrade_bought(upgrade: Upgrade)
+signal update_upgrade_info(upgrade: Upgrade)
+signal update_stats_labels()
 
 #SCENE
 signal change_scene(scene: GlobalEnum.GAME_SCENE)
@@ -26,14 +31,7 @@ signal augment_clicked(a:Augment)
 signal augment_enhanced()
 signal update_augment_info(augment: Augment)
 
-
 #MENU
 signal augment_bought(augment: Augment)
 signal reward_selected()
 signal shop_disabled(d: bool)
-
-#UPGRADE
-signal update_upgrade_info(upgrade: Upgrade)
-
-
-signal update_stats_labels()

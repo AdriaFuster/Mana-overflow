@@ -24,7 +24,7 @@ unique_name_in_owner = true
 layer = 2
 visible = false
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Container" type="PanelContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 90)
 anchors_preset = 8
@@ -41,16 +41,11 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_to2pc")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container"]
+layout_mode = 2
 mouse_filter = 2
 
-[node name="ItemList" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="ItemList" type="HBoxContainer" parent="CanvasLayer/Container/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -59,7 +54,7 @@ size_flags_vertical = 8
 mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="MenuIcon" type="TextureRect" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="MenuIcon" type="TextureRect" parent="CanvasLayer/Container/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

@@ -49,10 +49,10 @@ func _set_active() -> void:
 	if (active_cont == 0):
 		_enter_cd()
 
-func augment_efect() -> float:
+func augment_efect() -> void:
 	augment_activated.emit()
-	return _calculate_value()
-	
+	var add_mana: float = _calculate_value()
+	Stats.add_mana(add_mana)
 
 
 func _enter_cd() -> void:

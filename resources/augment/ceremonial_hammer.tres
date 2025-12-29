@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CeremonialHammer" load_steps=3 format=3 uid="uid://gpvvea17k50q"]
+
+[ext_resource type="Texture2D" uid="uid://bqmlphqoe8e5t" path="res://assets/sprites/augments/ceremonial_hammer.png" id="1_4dkgy"]
+[ext_resource type="Script" uid="uid://cuxoktsbw6ntk" path="res://scripts/augments/permanent/ceremonial_hammer.gd" id="1_gycbn"]
+
+[resource]
+script = ExtResource("1_gycbn")
+increment = 0.2
+enhanced_increment = 0.35
+name = "Ceremonial hammer"
+description = "Increase CP by $ARG1P$"
+icon = ExtResource("1_4dkgy")
+metadata/_custom_type_script = "uid://cuxoktsbw6ntk"

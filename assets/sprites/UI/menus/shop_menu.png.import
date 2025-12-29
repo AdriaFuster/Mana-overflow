@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d08anfeyyys47"
-path="res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"
+uid="uid://d2kxqjqicnv7"
+path="res://.godot/imported/shop_menu.png-999039f53e7f725e4aabbb406ea71be8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"]
+source_file="res://assets/sprites/UI/menus/shop_menu.png"
+dest_files=["res://.godot/imported/shop_menu.png-999039f53e7f725e4aabbb406ea71be8.ctex"]
 
 [params]
 

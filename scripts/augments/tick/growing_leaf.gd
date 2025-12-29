@@ -8,8 +8,8 @@ func on_equip() -> void:
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
 	
 func setup_description() -> void:
-	d_replacements["ARG1P"][0] = "increment"
-	d_replacements["CD"][0] = "cd"
+	description_replacements["ARG1P"][0] = "increment"
+	description_replacements["CD"][0] = "cd"
 	
 func _calculate_value() -> float:
 	var b_mps = Stats.mod_mps
@@ -27,6 +27,6 @@ func enhance() -> void:
 	enhanced = true
 	increment = 0.6
 	cd = 3
-	d_replacements["ARG1P"][1] = true
-	d_replacements["CD"][1] = true
+	description_replacements["ARG1P"][1] = true
+	description_replacements["CD"][1] = true
 	super.enhance()

@@ -29,7 +29,7 @@ static func replace_augment_string(replace_string: String, var_name: String,
 		#var_value = int(var_value)
 	#Decimal
 	
-	var string_value = Big.new(number_value).sufix(false,1)
+	var string_value = Big.new(number_value).sufix(false,2)
 	if replace_string.ends_with("P"):
 		string_value += "%"
 	
@@ -40,7 +40,6 @@ static func replace_augment_string(replace_string: String, var_name: String,
 	
 		
 		var sign_pos: int = has_plus_or_minus_sign (new_text, dollar_replaced_string) 
-		print(sign_pos) 
 		if sign_pos != -1:
 			var sign_with_color: String = set_color(new_text[sign_pos], color)
 			sign_with_color = bold(sign_with_color)

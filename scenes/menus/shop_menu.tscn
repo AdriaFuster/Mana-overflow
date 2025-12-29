@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xe3n7kl3jn8q" path="res://scripts/menu/shop_menu.gd" id="1_emcnj"]
 [ext_resource type="Texture2D" uid="uid://dsd8d1x8piitj" path="res://assets/sprites/clickers/augment_altar.png" id="2_ml0fi"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to2pc"]
-bg_color = Color(0.30151466, 0.27550647, 0.26199958, 1)
+[ext_resource type="Theme" uid="uid://b0jdpg8j4y73v" path="res://assets/sprites/UI/themes/shop_menu.tres" id="3_ml0fi"]
 
 [node name="ShopMenu" type="Control"]
 z_index = 1
@@ -23,7 +21,7 @@ menu_icon = ExtResource("2_ml0fi")
 unique_name_in_owner = true
 layer = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Container" type="PanelContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 90)
 anchors_preset = 8
@@ -31,24 +29,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -45.0
-offset_right = 90.0
-offset_bottom = 45.0
+offset_left = -125.0
+offset_top = -59.0
+offset_right = 125.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_to2pc")
+theme = ExtResource("3_ml0fi")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container"]
+layout_mode = 2
 mouse_filter = 2
 
-[node name="ItemList" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="ItemList" type="HBoxContainer" parent="CanvasLayer/Container/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
@@ -57,7 +50,7 @@ size_flags_vertical = 8
 mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="MenuIcon" type="TextureRect" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="MenuIcon" type="TextureRect" parent="CanvasLayer/Container/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

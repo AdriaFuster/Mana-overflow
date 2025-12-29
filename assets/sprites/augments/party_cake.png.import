@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d08anfeyyys47"
-path="res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"
+uid="uid://b4ur22thxhbi8"
+path="res://.godot/imported/party_cake.png-debc8d982eefaad39e3e9f722877950e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"]
+source_file="res://assets/sprites/augments/party_cake.png"
+dest_files=["res://.godot/imported/party_cake.png-debc8d982eefaad39e3e9f722877950e.ctex"]
 
 [params]
 

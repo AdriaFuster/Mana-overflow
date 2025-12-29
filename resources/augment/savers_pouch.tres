@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SaversPouch" load_steps=3 format=3 uid="uid://6futlawkbk8k"]
+
+[ext_resource type="Script" uid="uid://bjn812qka0bq6" path="res://scripts/augments/permanent/savers_pouch.gd" id="1_2a6k4"]
+[ext_resource type="Texture2D" uid="uid://d05fnwo4nxosa" path="res://assets/sprites/augments/savers_pouch.png" id="1_resqx"]
+
+[resource]
+script = ExtResource("1_2a6k4")
+increment = 0.01
+enchanced_increment = 0.05
+name = "Saver's pouch"
+description = "Gain MPS equal to $ARG1P$ of the Mana spent on Upgrades."
+icon = ExtResource("1_resqx")
+metadata/_custom_type_script = "uid://bjn812qka0bq6"

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cig04o1ft8tvk"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cig04o1ft8tvk"]
 
 [ext_resource type="Texture2D" uid="uid://cm0gki5qmpcfj" path="res://assets/sprites/UI/upgrades/upgrade_inventory.png" id="1_1s7q3"]
 
@@ -63,6 +63,13 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77iiy"]
+texture = ExtResource("1_1s7q3")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dln77"]
 texture = ExtResource("1_1s7q3")
 texture_margin_left = 15.0
@@ -82,4 +89,5 @@ HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_58vtq")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_vrdf6")
 HScrollBar/styles/scroll = SubResource("StyleBoxFlat_dm30u")
 HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_vp6jl")
+Panel/styles/panel = SubResource("StyleBoxTexture_77iiy")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_dln77")

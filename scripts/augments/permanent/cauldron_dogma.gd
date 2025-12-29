@@ -6,8 +6,8 @@ class_name CauldronDogma
 
 
 func setup_description() -> void:
-	d_replacements["ARG1P"][0] = "increment"
-	d_replacements["ARG2P"][0] = "click_increment"
+	description_replacements["ARG1P"][0] = "increment"
+	description_replacements["ARG2P"][0] = "click_increment"
 
 func _calculate_value() -> float:
 	var new_cauldron_power: float = Stats.cauldron_power
@@ -18,10 +18,15 @@ func _calculate_value() -> float:
 	m_mps *= increment
 		
 	return m_mps
-
+	
+func apply_effect() -> void:
+	var add_mps_value: float = _calculate_value()
+	set_tick_mps_increment(add_mps_value)
+	Stats.mod_mps += add_mps_value
+	
 
 func enhance() -> void:
 	enhanced = true
 	click_increment = 5
-	d_replacements["ARG2P"][1] = true
+	description_replacements["ARG2P"][1] = true
 	super.enhance()

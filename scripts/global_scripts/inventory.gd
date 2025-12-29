@@ -10,11 +10,16 @@ func _ready() -> void:
 	
 	#add_augment("Growing leaf")
 	add_augment("Mana potion")
-	add_augment("Mana tree")
+	#add_augment("Mana tree")
 	#add_augment("Mighty force")
-	add_augment("Cauldron dogma")
+	#add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
 	#add_augment("Lucky coin")
+	add_augment("Party cake")
+	add_augment("Ceremonial hammer")
+	#add_augment("Saver's pouch")
+	add_augment("Sleeping pillow")
+
 	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)	
 
 func _add_upgrades() -> void:
@@ -85,8 +90,8 @@ func add_upgrade(u_name: String) -> void:
 func _on_tick_tick_a() -> void:
 	for a_name:String in augments.keys():
 		var a: Augment = augments[a_name]
-		if a is TickAugment:
-			a.tick()
+		#if a is TickAugment:
+		a.tick()
 	
 	
 	

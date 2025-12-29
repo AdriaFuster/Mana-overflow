@@ -47,8 +47,6 @@ func _correction(i_size: Vector2i, mode: GlobalEnum.DISTRIBUTION_MODE) -> Vector
 	return correction
 	
 	
-
-	
 func _set_name_effect(item_name:String) -> String:
 	var text: String = item_name
 	

@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b0jdpg8j4y73v"]
+
+[ext_resource type="Texture2D" uid="uid://d2kxqjqicnv7" path="res://assets/sprites/UI/menus/shop_menu.png" id="1_wfwf4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dln77"]
+texture = ExtResource("1_wfwf4")
+texture_margin_left = 21.0
+texture_margin_top = 15.0
+texture_margin_right = 21.0
+texture_margin_bottom = 15.0
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_dln77")

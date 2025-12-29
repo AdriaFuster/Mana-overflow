@@ -4,7 +4,7 @@ enum MODIFIER_TYPE {
 	MANA,
 	MPS
 }
-var mana: float = 100000
+var mana: float = 0
 var mana_spent: float = 0
 var mps: float = 0
 var mod_mps: float = 0
@@ -41,7 +41,6 @@ func deduce_mana(n_mana: float) -> void:
 		mana = 0
 	else:
 		mana -= n_mana
-	print(mana)
 	
 func add_mps(a_mps) -> void:
 	mps += a_mps
@@ -102,11 +101,15 @@ func _on_deduced_mana(mana_deduced: float):
 	
 	
 func _on_calculate_mps() -> void:
+	#print("--------------")
 	var total_mps: float = 0
 	for u_name:String in Inventory.upgrades.keys():
 		var u: Upgrade = Inventory.upgrades[u_name]
 		if (u.amount > 0):
+			#print(u.name, " ",u.mps, " ", u.amount )
+			#print ("u.mps*u.amount ", u.mps*u.amount)
 			total_mps += u.mps*u.amount
+			#print ("total_mps ", total_mps)
 	
 	mps = total_mps
 

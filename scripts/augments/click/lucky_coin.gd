@@ -6,7 +6,7 @@ var luck_rate: float = 0.5
 var succes_flip: bool = false
 
 func setup_description() -> void:
-	d_replacements["ARG1P"][0] = "increment"
+	description_replacements["ARG1P"][0] = "increment"
 
 func _calculate_value() -> float:
 	var value: float = 0
@@ -17,18 +17,17 @@ func _calculate_value() -> float:
 		value = mod_cp*increment
 	return value
 
-func augment_efect() -> float:
+func augment_efect() -> void:
 	var value: float = _calculate_value()
 	
 	Stats.add_mana(value)
 	
 	cd_cont = int(cd)
-	return value
 
 func enhance() -> void:
 	enhanced = true
 	increment = 0.4
-	d_replacements["ARG1P"][1] = true
+	description_replacements["ARG1P"][1] = true
 	super.enhance()
 	
 func is_activated() -> bool:

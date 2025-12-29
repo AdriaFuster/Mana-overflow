@@ -9,8 +9,9 @@ func on_equip() -> void:
 	super.on_equip()
 
 
-func augment_efect() -> float:
-	var value: float = _calculate_value()
-	tick_mps_increment = value
+func augment_efect() -> void:
+	apply_effect()
 
-	return value
+
+func set_tick_mps_increment(value: float) -> void:
+	tick_mps_increment = value

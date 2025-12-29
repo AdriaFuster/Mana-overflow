@@ -1,22 +1,24 @@
 extends PermanentAugment
-class_name ManaPotion
+class_name CeremonialHammer
 
 @export var increment: float
+@export var enhanced_increment: float
 
 func setup_description() -> void:
 	description_replacements["ARG1P"][0] = "increment"
 
-func _calculate_value() -> float:
-	var b_mps = Stats.mod_mps
-	b_mps *= increment
-	
-	return b_mps
-
 
 func apply_effect() -> void:
-	var add_mps_value: float = _calculate_value()
-	set_tick_mps_increment(add_mps_value)
-	Stats.mod_mps += add_mps_value
+	var cp_add_value: float = _calculate_value()
+	Stats.mod_cauldron_power += cp_add_value
+	set_tick_mps_increment(0)
+
+
+func _calculate_value() -> float:
+	var b_cp = Stats.cauldron_power
+	b_cp *= increment
+	
+	return b_cp
 
 func enhance() -> void:
 	enhanced = true

@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="2_6e2ps"]
 
 [node name="ItemPopUp" instance=ExtResource("1_fncxn")]
-custom_minimum_size = Vector2(130, 0)
+custom_minimum_size = Vector2(150, 0)
 script = ExtResource("1_v8oy4")
 
 [node name="Enhanced" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0"]
@@ -40,10 +40,11 @@ autowrap_mode = 2
 
 [node name="ExtraInfo" type="RichTextLabel" parent="MarginContainer/VBoxContainer" index="2"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("2_6e2ps")
-theme_override_colors/font_shadow_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+theme_override_colors/default_color = Color(0.7121294, 0.7121294, 0.71212935, 1)
+bbcode_enabled = true
+text = "Extra info"
 fit_content = true
 autowrap_mode = 2

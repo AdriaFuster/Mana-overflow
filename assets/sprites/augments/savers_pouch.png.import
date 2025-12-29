@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d08anfeyyys47"
-path="res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"
+uid="uid://d05fnwo4nxosa"
+path="res://.godot/imported/savers_pouch.png-a1ce3e6ee28a0cc46142018e757a4659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"]
+source_file="res://assets/sprites/augments/savers_pouch.png"
+dest_files=["res://.godot/imported/savers_pouch.png-a1ce3e6ee28a0cc46142018e757a4659.ctex"]
 
 [params]
 

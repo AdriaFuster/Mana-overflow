@@ -20,11 +20,11 @@ static func calculate_augments() -> void:
 		var a: Augment = Inventory.augments[a_name]
 		
 		if a is PermanentAugment:	
-			Stats.mod_mps += a.augment_efect()
+			a.augment_efect()
 		elif a is TickAugment:
 			#print("augment ", a.name, " active = ",a.is_active())
 			if a.is_active():
-				Stats.add_mana(a.augment_efect())
+				a.augment_efect()
 		
 	
 static func calculate_mana() -> void:

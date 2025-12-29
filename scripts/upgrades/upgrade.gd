@@ -41,7 +41,7 @@ func _increase_amount() -> void:
 func _increase_lvl() -> void:
 	if amount%10 == 0:
 		lvl += 1
-		mps *= MPS_INCREMENT
+		mps = snappedf(MPS_INCREMENT*mps, 0.01)
 	
 	
 func upgrade_click() -> void:
@@ -49,6 +49,7 @@ func upgrade_click() -> void:
 	_increase_lvl()
 	
 	GameEvents.deduce_mana.emit(cost)
+	GameEvents.upgrade_bought.emit(self)
 	Stats.spend_mana(cost)
 	
 	_increase_cost()

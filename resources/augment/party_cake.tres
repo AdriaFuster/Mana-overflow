@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PartyCake" load_steps=3 format=3 uid="uid://b6w16onx8amea"]
+
+[ext_resource type="Texture2D" uid="uid://b4ur22thxhbi8" path="res://assets/sprites/augments/party_cake.png" id="1_7p83r"]
+[ext_resource type="Script" uid="uid://bpxjyiqhivhbh" path="res://scripts/augments/permanent/party_cake.gd" id="1_ahjc3"]
+
+[resource]
+script = ExtResource("1_ahjc3")
+increment = 0.25
+enchanced_increment = 0.5
+name = "Party cake"
+description = "$ARG1P$ MPS. Every $ARG1$ upgrades bought adds $ARG2$ to the increment "
+icon = ExtResource("1_7p83r")
+metadata/_custom_type_script = "uid://bpxjyiqhivhbh"

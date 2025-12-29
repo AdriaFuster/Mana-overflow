@@ -1,7 +1,7 @@
 @abstract class_name BaseMenu extends Control
 
 @onready var canvas_layer: CanvasLayer = %CanvasLayer
-@onready var panel: Panel = %Panel
+@onready var panel: PanelContainer = %Container
 @onready var item_list: HBoxContainer = %ItemList
 @onready var icon: TextureRect = %MenuIcon
 
