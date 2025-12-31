@@ -3,51 +3,55 @@ extends Node
 var upgrades: Dictionary = {}
 var augments: Dictionary = {}
 
+var max_n_augment: int = 5
+var n_augments: int = 0
 var location = GlobalEnum.LOCATION.INVENTORY
 
 func _ready() -> void:
 	_add_upgrades()
 	
 	#add_augment("Growing leaf")
-	add_augment("Mana potion")
+	#add_augment("Mana potion")
 	#add_augment("Mana tree")
 	#add_augment("Mighty force")
 	#add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
 	#add_augment("Lucky coin")
-	add_augment("Party cake")
-	add_augment("Ceremonial hammer")
+	#add_augment("Party cake")
+	#add_augment("Ceremonial hammer")
 	#add_augment("Saver's pouch")
-	add_augment("Sleeping pillow")
+	#add_augment("Sleeping pillow")
+	#add_augment("Magic bag")
+	#add_augment("Spell book")
+	#add_augment("Golden chain")
+	add_augment("Discount ticket")
 
-	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)	
 
-func _add_upgrades() -> void:
-
-	for u_name in ResourceManager.upgrades.keys():
-		#print("u_name ", u_name)
-		var u: Upgrade = ResourceManager.upgrades[u_name].resource
-		add_upgrade(u.name)
-		ResourceManager.set_upgrade_location(u.name, location)
-		
+	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)			
 
 #AUGMENTS
 func add_augment(a_name: String) -> void:
-	if !augments.has(a_name):
-		var r: ResourceManager.ResourceEntry = ResourceManager.get_augment(a_name, location)
-		if r != null:
-			var a: Augment = r.resource
-			augments[a_name] = a
-			ResourceManager.set_augment_location(a_name, location) 
-			print("afegim augment ", a_name)
-			
-			a.on_equip()
-			GameEvents.inventory_changed.emit()
+		if !augments.has(a_name):
+			var r: ResourceManager.ResourceEntry = ResourceManager.get_augment(a_name, location)
+			if r != null:
+				var a: Augment = r.resource
+				augments[a_name] = a
+				ResourceManager.set_augment_location(a_name, location) 
+				
+				if n_augments + a.weight < max_n_augment:
+					increase_augments(a.weight)
+					print("afegim augment ", a_name)
+					a.on_equip()
+					
+				GameEvents.inventory_changed.emit()
+		
 
 func remove_augment(a_name: String) -> void:
 	if !augments.has(a_name):
 		print("Augment ",a_name , "isn't in the inventory")
 	else:
+		increase_augments(-augments[a_name].weight)
+		augments[a_name].on_unequip()
 		augments.erase(a_name)
 		ResourceManager.set_augment_location(a_name, GlobalEnum.LOCATION.MANAGER)
 		GameEvents.inventory_changed.emit()
@@ -76,8 +80,24 @@ func get_augments_by_type(type: Object) -> Array:
 			augment_of_type.append(augments[a_name])
 	
 	return augment_of_type
+
+
+func increase_max_augments(n: int) -> void:
+	max_n_augment += n
+
+func increase_augments(weight: int) -> void:
+	n_augments += weight
+
 	
 #UPGRADES
+func _add_upgrades() -> void:
+
+	for u_name in ResourceManager.upgrades.keys():
+		#print("u_name ", u_name)
+		var u: Upgrade = ResourceManager.upgrades[u_name].resource
+		add_upgrade(u.name)
+		ResourceManager.set_upgrade_location(u.name, location)
+
 func add_upgrade(u_name: String) -> void:
 	if !upgrades.has(u_name):
 		var u: Upgrade = ResourceManager.get_upgrade(u_name, location)
@@ -86,6 +106,14 @@ func add_upgrade(u_name: String) -> void:
 			#print("afegim upgrade ", u_name)
 			GameEvents.inventory_changed.emit()
 
+func add_upgrade_discount (augment_name: String, discount: float) -> void:
+	for u:Upgrade in upgrades.values():
+		u.add_discount(augment_name, discount)
+
+func remove_upgrade_discount (augment_name: String) -> void:
+	for u:Upgrade in upgrades.values():
+		u.remove_discount(augment_name)
+	
 
 func _on_tick_tick_a() -> void:
 	for a_name:String in augments.keys():

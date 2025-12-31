@@ -2,19 +2,26 @@ extends BasePopup
 
 @onready var type_label: RichTextLabel = %Type
 @onready var extra_info: RichTextLabel = %ExtraInfo
+var current_augment: Augment
 
 func _ready() -> void:
 	GameEvents.update_augment_info.connect(_on_update_info)
 
 func _set_value(item: Augment) -> void:
-
+	current_augment = item
 	
 	name_label.text = TextUtils.bold(_set_name_effect(item.name))
 	description_label.text = item.get_description().strip_edges()
 	type_label.text = TextUtils.bold(_set_type_effect(
 		GlobalEnum.enum_to_string(GlobalEnum.AugmentType, item.type), 
 		item))
-	extra_info.text = item.get_extra().strip_edges()
+	
+	if item.get_extra() != "": 
+		extra_info.show()
+		extra_info.text = item.get_extra().strip_edges()
+	else:
+		extra_info.hide()
+		
 	name_label.update_minimum_size()
 	description_label.update_minimum_size()
 	type_label.update_minimum_size()
@@ -37,7 +44,8 @@ func _set_type_effect(item_name:String, item: InventoryItem) -> String:
 
 
 func _on_update_info(a: Augment) -> void:
-	_set_value(a)
+	if current_augment == a:
+		_set_value(a)
 	
 	
 	

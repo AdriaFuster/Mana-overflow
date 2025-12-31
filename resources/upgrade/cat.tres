@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_g844k")
 order = 5
+base_cost = 100000.0
 cost = 100000.0
 mps = 500.0
-icon = ExtResource("1_ubq47")
 name = "Cat"
-locked = true
+icon = ExtResource("1_ubq47")
 metadata/_custom_type_script = "uid://d0nmxvu0gpoa1"

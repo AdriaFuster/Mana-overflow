@@ -4,10 +4,11 @@ enum MODIFIER_TYPE {
 	MANA,
 	MPS
 }
-var mana: float = 0
+var mana: float = 1000
 var mana_spent: float = 0
 var mps: float = 0
 var mod_mps: float = 0
+var final_mps: float
 
 var tick_mana: float
 var hp: int = 3
@@ -50,7 +51,11 @@ func deduce_mps(d_mps) -> void:
 		mps = 0
 	else:
 		mps -= d_mps
-	
+
+func set_final_mps() -> void:
+	final_mps = mod_mps
+
+
 func add_hp(p_hp: int) -> void:
 	if (hp + p_hp) == 0:
 		hp = 0

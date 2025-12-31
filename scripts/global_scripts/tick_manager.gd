@@ -16,6 +16,8 @@ func _on_tick() -> void:
 	#Calculem MPS amb modifiers permanents
 	ManaCalculator.calculate_augments()
 	
+	Stats.set_final_mps()
+	
 	ManaCalculator.calculate_mana()
 	
 	#ManaCalculator.calculate_tick_modifiers()

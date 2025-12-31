@@ -3,11 +3,17 @@ class_name Upgrade
 
 
 @export var order: int
-@export var cost: float
+@export var base_cost: float
+var cost: float:
+	get:
+		return get_cost()
 
 @export var mps: float = 1
 @export var amount: int = 0
 var lvl: int = 1
+
+#augment_name, discount
+var discounts: Dictionary = {}
 
 var locked_name: String = "????"
 var locked_description: String = "??????"
@@ -69,7 +75,27 @@ func get_lvl(prefix: String) -> String:
 	var c: Color = UpgradeLvl.get_lvl_color(lvl)
 	return TextUtils.set_color(prefix+str(lvl),c)
 		
+func get_cost() -> float:
+	var final_cost = base_cost
 	
+	#Hauriem d'agafar els augment en l'ordre del inventory. Que Inventory tingui una funcio
+	#que et retorni l'ordre dels augments, aixi tot pot funcionar igual, simplement que només hem de
+	#canviar l'ordre d'execucció
+	for d in discounts.keys():
+		final_cost += final_cost*discounts[d]
+	
+	return final_cost	
+
+func add_discount(augment_name: String, discount: float) -> void:
+		discounts[augment_name] = discount
+		update_cost.emit(cost)
+	
+func remove_discount(augment_name: String) -> void:
+	if discounts.has(augment_name):
+		discounts.erase(augment_name)
+	
+	update_cost.emit(cost)
+
 func _on_tick() -> void:
 	var upgrade_unlock_cost: float = cost * UNLOCK_PERCENT
 	

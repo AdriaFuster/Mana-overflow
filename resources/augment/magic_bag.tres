@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MagicBag" load_steps=3 format=3 uid="uid://dvit4l81swegk"]
+
+[ext_resource type="Texture2D" uid="uid://dw51og0k5blw8" path="res://assets/sprites/augments/magic_bag.png" id="1_1dhsd"]
+[ext_resource type="Script" uid="uid://cp5mno640dd2n" path="res://scripts/augments/permanent/magic_bag.gd" id="1_o2kj4"]
+
+[resource]
+script = ExtResource("1_o2kj4")
+extra_space = 1
+enhanced_extra_space = 2
+name = "Magic bag"
+icon = ExtResource("1_1dhsd")
+description = "Increase augment limit by $ARG1$"
+metadata/_custom_type_script = "uid://cp5mno640dd2n"

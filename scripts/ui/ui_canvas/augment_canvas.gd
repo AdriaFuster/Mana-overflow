@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var augment_list: HBoxContainer = %AugmentList
 
 @export var a_ui_scene: PackedScene
+@onready var augments_cont: Label = %AugmentsCont
 
 
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 
 func _on_inventory_changed() -> void:
 	_queue_free_children()
+	
+	augments_cont.text = str(Inventory.n_augments) + "/" + str(Inventory.max_n_augment)
 	
 	for i_name in Inventory.augments.keys():
 		var aug: Augment = Inventory.augments[i_name]

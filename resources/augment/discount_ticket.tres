@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DiscountTicket" load_steps=3 format=3 uid="uid://cea1vvlr6ki7e"]
+
+[ext_resource type="Script" uid="uid://cjrcg3wo43l0c" path="res://scripts/augments/permanent/discount_ticket.gd" id="1_b5geq"]
+[ext_resource type="Texture2D" uid="uid://d13u3h62w8ny8" path="res://assets/sprites/augments/discount_ticket.png" id="1_nkii1"]
+
+[resource]
+script = ExtResource("1_b5geq")
+cost_decrement = 0.05
+enhanced_cost_decrement = 0.1
+name = "Discount ticket"
+icon = ExtResource("1_nkii1")
+description = "Decrease upgrades costs by $ARG1P$"
+metadata/_custom_type_script = "uid://cjrcg3wo43l0c"

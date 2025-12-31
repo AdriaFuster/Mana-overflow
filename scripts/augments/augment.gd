@@ -3,6 +3,7 @@ class_name Augment
 
 @export var type: GlobalEnum.AugmentType
 @export var cd_indicator: bool
+@export var weight: int = 1
 @export_multiline var extra: String
 
 var enhanced: bool = false
@@ -42,6 +43,9 @@ func setup() -> void:
 
 
 func on_equip() -> void:
+	pass
+
+func on_unequip() -> void:
 	pass
 	
 func reset() -> void:

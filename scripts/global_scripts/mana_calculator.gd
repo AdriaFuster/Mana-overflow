@@ -28,7 +28,7 @@ static func calculate_augments() -> void:
 		
 	
 static func calculate_mana() -> void:
-	var tick_mps = Stats.mod_mps
+	var tick_mps = Stats.final_mps
 	#tick mps
 	tick_mps *= GameTick.tick_interval
 	

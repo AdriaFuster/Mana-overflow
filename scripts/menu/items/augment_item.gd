@@ -46,7 +46,7 @@ func _on_button_pressed() -> void:
 
 func _on_augment_activated() -> void:
 	anim_player.play("activate")
-	play_hit_sound()
+	#play_hit_sound()
 	pass
 
 

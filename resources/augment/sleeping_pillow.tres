@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SleepingPillow" load_steps=2 format=3 uid="uid://c1ytpm4fq1y0o"]
+[gd_resource type="Resource" script_class="SleepingPillow" load_steps=3 format=3 uid="uid://c1ytpm4fq1y0o"]
 
+[ext_resource type="Texture2D" uid="uid://c51bxxca2q4wy" path="res://assets/sprites/augments/sleeping_pillow.png" id="1_0ald3"]
 [ext_resource type="Script" uid="uid://ttae0divlga4" path="res://scripts/augments/permanent/sleeping_pillow.gd" id="1_b0hej"]
 
 [resource]
@@ -10,5 +11,6 @@ max_seconds = 40
 extra = "total increment: $ARG1P$
 seconds: $ARG1$"
 name = "Sleeping pillow"
-description = "Your Cauldron Power (CP) gains $ARG1P$ for each second you click the cauldron (max $ARG1$ seconds). "
+icon = ExtResource("1_0ald3")
+description = "Your Cauldron Power (CP) gains $ARG1P$ for each second you don't click the cauldron (max $ARG1$ seconds). "
 metadata/_custom_type_script = "uid://ttae0divlga4"

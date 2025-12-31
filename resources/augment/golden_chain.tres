@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GoldenChain" load_steps=2 format=3 uid="uid://bur6jm0y5ahen"]
+
+[ext_resource type="Script" uid="uid://dfpaqb6bulci" path="res://scripts/augments/permanent/golden_chain.gd" id="1_o8nvk"]
+
+[resource]
+script = ExtResource("1_o8nvk")
+cost_increment = 0.1
+enhanced_cost_increment = 0.08
+mps_increment = 1.0
+name = "Golden chain"
+description = "Doubles your MPS, but upgrade costs increase by $ARG1P$"
+metadata/_custom_type_script = "uid://dfpaqb6bulci"

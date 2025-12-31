@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpellBook" load_steps=3 format=3 uid="uid://c5ilr7rj5vwcd"]
+
+[ext_resource type="Script" uid="uid://de7jylq4b4l54" path="res://scripts/augments/permanent/spell_book.gd" id="1_h08ar"]
+[ext_resource type="Texture2D" uid="uid://58pbrym2lbxr" path="res://assets/sprites/augments/spell_book.png" id="1_opjxq"]
+
+[resource]
+script = ExtResource("1_h08ar")
+mps_increment = 0.1
+enhanced_mps_increment = 0.2
+cp_increment = -0.1
+enhanced_cp_increment = -0.1
+name = "Spell book"
+icon = ExtResource("1_opjxq")
+description = "Gain $ARG1P$ MPS but lose $ARG2P$ CP"
+metadata/_custom_type_script = "uid://de7jylq4b4l54"
