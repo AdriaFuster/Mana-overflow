@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BargainRune" load_steps=3 format=3 uid="uid://bgdn0kig23v4t"]
+
+[ext_resource type="Texture2D" uid="uid://gle1awi3hwmf" path="res://assets/sprites/augments/bargain_rune.png" id="1_8akdd"]
+[ext_resource type="Script" uid="uid://snhepm6cjekj" path="res://scripts/augments/permanent/bargain_rune.gd" id="2_655dy"]
+
+[resource]
+script = ExtResource("2_655dy")
+cost_reduction = 0.9
+chance = 0.5
+enhanced_chance = 0.8
+extra = "Lucky times: $ARG1$"
+name = "Bargain rune"
+icon = ExtResource("1_8akdd")
+description = "When you purchase an upgrade, there is a $ARG1P$ chance its cost is reduced by $ARG2P$"
+metadata/_custom_type_script = "uid://snhepm6cjekj"

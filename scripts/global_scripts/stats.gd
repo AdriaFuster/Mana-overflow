@@ -4,7 +4,7 @@ enum MODIFIER_TYPE {
 	MANA,
 	MPS
 }
-var mana: float = 1000
+var mana: float = 100
 var mana_spent: float = 0
 var mps: float = 0
 var mod_mps: float = 0

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RecyclingMachine" load_steps=3 format=3 uid="uid://cul8ovy4m0i5m"]
+
+[ext_resource type="Script" uid="uid://lc1lfm82ntdw" path="res://scripts/augments/permanent/recycling_machine.gd" id="1_0qg0i"]
+[ext_resource type="Texture2D" uid="uid://dmmdoj5lvjchf" path="res://assets/sprites/augments/recycling_machine.png" id="1_vdtok"]
+
+[resource]
+script = ExtResource("1_0qg0i")
+increment = 0.02
+enhanced_increment = 0.05
+mana_to_spend = 1000.0
+extra = "Increment: $ARG1P$"
+name = "Recycling machine"
+icon = ExtResource("1_vdtok")
+description = "For each $ARG1$ mana spended, gain $ARG1P$ mps"
+metadata/_custom_type_script = "uid://lc1lfm82ntdw"

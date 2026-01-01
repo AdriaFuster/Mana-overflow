@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("2_8bghb")
 increment = 0.2
+enhanced_increment = 0.35
 name = "Mana potion"
-description = "+$ARG1P$ MPS"
 icon = ExtResource("1_r4sx0")
+description = "+$ARG1P$ MPS"
 metadata/_custom_type_script = "uid://c7n5h5gu7d6sd"

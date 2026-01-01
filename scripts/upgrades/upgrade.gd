@@ -35,7 +35,7 @@ func setup() -> void:
 	
 	
 func _increase_cost() -> void:
-	cost *= MULTIPLIER_RATE
+	base_cost *= MULTIPLIER_RATE
 	update_cost.emit(cost)
 	
 func _increase_amount() -> void:

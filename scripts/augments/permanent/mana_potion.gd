@@ -2,6 +2,7 @@ extends PermanentAugment
 class_name ManaPotion
 
 @export var increment: float
+@export var enhanced_increment: float
 
 func setup_description() -> void:
 	description_replacements["ARG1P"][0] = "increment"
@@ -20,7 +21,7 @@ func apply_effect() -> void:
 
 func enhance() -> void:
 	enhanced = true
-	increment = 0.35
+	increment = enhanced_increment
 	description_replacements["ARG1P"][1] = true
 	super.enhance()	
 	

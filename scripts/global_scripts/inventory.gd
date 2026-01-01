@@ -24,7 +24,9 @@ func _ready() -> void:
 	#add_augment("Magic bag")
 	#add_augment("Spell book")
 	#add_augment("Golden chain")
-	add_augment("Discount ticket")
+	#add_augment("Discount ticket")
+	#add_augment("Recycling machine")
+	add_augment("Bargain rune")
 
 
 	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)			
