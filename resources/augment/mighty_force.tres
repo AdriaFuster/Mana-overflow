@@ -6,10 +6,12 @@
 [resource]
 script = ExtResource("2_38dh3")
 increment = 2.0
+enhanced_increment = 3.0
+enhanced_cd = 8.0
 cd = 10
 type = 1
 cd_indicator = true
 name = "Mighty force"
-description = "Every $CD$ clicks, gain +$ARG1P$ CP"
 icon = ExtResource("1_jtejt")
+description = "Every $CD$ clicks, gain +$ARG1P$ CP"
 metadata/_custom_type_script = "uid://oernwsi72kdj"

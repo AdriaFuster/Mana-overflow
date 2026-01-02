@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://uiynn7c5ds0c"]
 
-[ext_resource type="Theme" uid="uid://emw2pm8pljxu" path="res://assets/sprites/UI/popup/popup_theme.tres" id="1_yp2no"]
+[ext_resource type="Theme" uid="uid://0pyer7bakegb" path="res://assets/sprites/UI/themes/base_theme.tres" id="1_yp2no"]
 [ext_resource type="Theme" uid="uid://dtps5mnet6rm8" path="res://assets/fonts/UI_font.tres" id="2_jbmnj"]
 
 [node name="ItemPopUp" type="PanelContainer"]
@@ -8,6 +8,7 @@ custom_minimum_size = Vector2(100, 0)
 offset_right = 80.0
 offset_bottom = 68.0
 theme = ExtResource("1_yp2no")
+theme_type_variation = &"BasePopup"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

@@ -3,14 +3,21 @@ class_name SaversPouch
 
 @export var increment: float
 @export var enchanced_increment: float
+var _current_increment: float
+
 var _mana_saved: float = 0
+
+func setup() -> void:
+	_current_increment = increment
+	super.setup()
 
 func on_equip() -> void:
 	GameEvents.upgrade_bought.connect(_on_upgrade_bought)
 	super.on_equip()
 
 func setup_description() -> void:
-	description_replacements["ARG1P"][0] = "increment"
+	description_replacements["ARG1P"].variable = "increment"
+	description_replacements["ARG1P"].enhanced_variable = "enchanced_increment"
 	
 
 func _calculate_value() -> float:
@@ -23,14 +30,14 @@ func apply_effect() -> void:
 
 func enhance() -> void:
 	enhanced = true
-	increment = enchanced_increment
-	description_replacements["ARG1P"][1] = true
+	_current_increment = enchanced_increment
+	description_replacements["ARG1P"].enhanced = true
 	super.enhance()
 
 
 func _on_upgrade_bought(u: Upgrade) -> void:
 	var u_cost: float = u.cost
-	var extra_mps: float = u_cost * increment 
+	var extra_mps: float = u_cost * _current_increment 
 	_mana_saved += extra_mps
 	
 	

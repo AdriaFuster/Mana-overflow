@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://0pyer7bakegb"]
+
+[ext_resource type="Texture2D" uid="uid://d2d7nm3yq6nxx" path="res://assets/sprites/UI/augments/augment_inventory.png" id="1_0u6ol"]
+[ext_resource type="Texture2D" uid="uid://btuakacmbdjw1" path="res://assets/sprites/UI/popup/popup_background.png" id="1_gsu6g"]
+[ext_resource type="Texture2D" uid="uid://b821f7qwdcr04" path="res://assets/sprites/UI/popup/boss_reward_popup_background.png" id="2_fs1wi"]
+[ext_resource type="Texture2D" uid="uid://d2kxqjqicnv7" path="res://assets/sprites/UI/menus/shop_menu.png" id="3_fs1wi"]
+[ext_resource type="Texture2D" uid="uid://cm0gki5qmpcfj" path="res://assets/sprites/UI/upgrades/upgrade_inventory.png" id="4_d3sw5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3nfk5"]
+texture = ExtResource("1_0u6ol")
+texture_margin_left = 22.0
+texture_margin_top = 20.0
+texture_margin_right = 22.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3sw5"]
+texture = ExtResource("1_gsu6g")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsu6g"]
+texture = ExtResource("2_fs1wi")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0u6ol"]
+texture = ExtResource("3_fs1wi")
+texture_margin_left = 21.0
+texture_margin_top = 15.0
+texture_margin_right = 21.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rusql"]
+texture = ExtResource("4_d3sw5")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[resource]
+AugmentInventory/base_type = &"PanelContainer"
+AugmentInventory/styles/panel = SubResource("StyleBoxTexture_3nfk5")
+BasePopup/base_type = &"PanelContainer"
+BasePopup/styles/panel = SubResource("StyleBoxTexture_d3sw5")
+RewardPopup/base_type = &"PanelContainer"
+RewardPopup/styles/panel = SubResource("StyleBoxTexture_gsu6g")
+ShopMenu/base_type = &"PanelContainer"
+ShopMenu/styles/panel = SubResource("StyleBoxTexture_0u6ol")
+UpgradeInventory/base_type = &"PanelContainer"
+UpgradeInventory/styles/panel = SubResource("StyleBoxTexture_rusql")

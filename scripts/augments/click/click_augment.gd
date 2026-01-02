@@ -3,12 +3,12 @@ class_name ClickAugment
 
 @export var cd: int
 var cd_cont: int
-
+var current_cd: int
 
 func on_equip() -> void:
 	super.on_equip()
 	GameEvents.cauldron_click.connect(_on_cauldron_click)
-	cd_cont = cd
+	cd_cont = current_cd
 
 func reset() -> void:
 	super.reset()

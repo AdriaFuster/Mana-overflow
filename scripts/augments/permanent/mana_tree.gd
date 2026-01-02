@@ -2,14 +2,21 @@ extends PermanentAugment
 class_name ManaTree
 
 @export var increment: float
-	
+@export var enhanced_variable: float
+var _current_increment: float
+
+func setup() -> void:
+	_current_increment = increment
+	super.setup()
+
 func setup_description() -> void:
-	description_replacements["ARG1P"][0] = "increment"
+	description_replacements["ARG1P"].variable = "increment"
+	description_replacements["ARG1P"].enhanced_variable = "enhanced_variable"
 
 func _calculate_value() -> float:
 	var b_mps = Stats.mod_mps
 	var idle_aug_amount: int = Inventory.get_n_augments(GlobalEnum.AugmentType.IDLE)
-	b_mps *= (increment*idle_aug_amount)
+	b_mps *= (_current_increment*idle_aug_amount)
 	return b_mps
 	
 
@@ -21,6 +28,6 @@ func apply_effect() -> void:
 
 func enhance() -> void:
 	enhanced = true
-	increment = 0.5
-	description_replacements["ARG1P"][1] = true
+	_current_increment = enhanced_variable
+	description_replacements["ARG1P"].enhanced = true
 	super.enhance()

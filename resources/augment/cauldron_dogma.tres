@@ -7,8 +7,9 @@
 script = ExtResource("2_in24u")
 increment = -0.8
 click_increment = 3.0
+enhanced_click_increment = 5.0
 type = 1
 name = "Cauldron dogma"
-description = "$ARG1P$ MPS but $ARG2P$ cauldron power"
 icon = ExtResource("1_ab8fq")
+description = "$ARG1P$ MPS but $ARG2P$ cauldron power"
 metadata/_custom_type_script = "uid://cc0resesqv4ip"

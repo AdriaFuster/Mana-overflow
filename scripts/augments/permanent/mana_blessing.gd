@@ -1,26 +1,32 @@
 extends PermanentAugment
 class_name ManaBlessing
 
-@export var refund: float = 0.05
+@export var refund: float
+@export var enhanced_refund: float
+var _current_refund: float
 	
+func setup() -> void:
+	_current_refund = refund
+	super.setup()
 
 func on_equip() -> void:
-	super.on_equip()
 	GameEvents.deduce_mana.connect(_on_mana_spended)
+	super.on_equip()
 	
 func setup_description() -> void:
-	description_replacements["ARG1P"][0] = "refund"
+	description_replacements["ARG1P"].variable = "refund"
+	description_replacements["ARG1P"].enhanced_variable = "enhanced_refund"
 
 func _on_mana_spended(mana_cost: float) -> void:
 	var refunded_mana: float = mana_cost
-	refunded_mana *= refund
+	refunded_mana *= _current_refund
 	#print("fem refund de ", refunded_mana.toAmericanName())
 	Stats.add_mana(refunded_mana)
 
 	
 func enhance() -> void:
 	enhanced = true
-	refund = 0.1
-	description_replacements["ARG1P"][1] = true
+	_current_refund = enhanced_refund
+	description_replacements["ARG1P"].enhanced = true
 	super.enhance()
 	

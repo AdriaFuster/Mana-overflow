@@ -5,13 +5,13 @@ class_name ManaCalculator
 static var permanent_modifiers:Array = []
 	
 static func reset_mod_values() -> void:
-	Stats.mod_cauldron_power = Stats.cauldron_power
+	Stats.mod_cp = Stats.cp
 	Stats.mod_mps = Stats.mps
 
 static func calculate_cauldron_modifiers() -> void:
 	
 	for m_name in Stats.cauldron_modifiers.keys():
-		Stats.mod_cauldron_power += Stats.cauldron_modifiers[m_name]
+		Stats.mod_cp += Stats.cauldron_modifiers[m_name]
 		
 	_delete_mod(Stats.cauldron_modifiers)
 

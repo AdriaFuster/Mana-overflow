@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("2_ar2sp")
 increment = 0.3
+enhanced_variable = 0.5
 name = "Mana tree"
-description = "+$ARG1P$ MPS per IDLE augment"
 icon = ExtResource("1_ar2sp")
+description = "+$ARG1P$ MPS per IDLE augment"
 metadata/_custom_type_script = "uid://el3pbaf1dw4g"

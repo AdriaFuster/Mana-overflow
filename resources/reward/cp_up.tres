@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CPUp" load_steps=3 format=3 uid="uid://m86fjbxlmoy2"]
+
+[ext_resource type="Script" uid="uid://3mhq1mdvsbos" path="res://scripts/rewards/cp_up.gd" id="1_mo17v"]
+[ext_resource type="Texture2D" uid="uid://d0r5s2pxcb7yr" path="res://assets/sprites/rewards/cp_up.png" id="1_y8o4n"]
+
+[resource]
+script = ExtResource("1_mo17v")
+name = "CP up"
+icon = ExtResource("1_y8o4n")
+description = "Multiply by 2 the current CP"
+metadata/_custom_type_script = "uid://3mhq1mdvsbos"

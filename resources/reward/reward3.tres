@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Reward" load_steps=2 format=3 uid="uid://7uuaxx5mnd5i"]
-
-[ext_resource type="Script" uid="uid://bmj2dvkd7nrgc" path="res://scripts/rewards/reward.gd" id="1_ikknr"]
-
-[resource]
-script = ExtResource("1_ikknr")
-name = "reward3"
-description = "Reward3"
-metadata/_custom_type_script = "uid://bmj2dvkd7nrgc"

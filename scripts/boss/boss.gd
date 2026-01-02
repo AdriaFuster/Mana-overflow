@@ -18,10 +18,11 @@ func _ready() -> void:
 
 func _setup() -> void:
 	var boss_range:float = BossSpawner.get_spawn_range()
-	hp = round(boss_range/BOSS_HP_RATE)
-	#hp = 1
-	_update_ui()
+	set_boss_hp (round(boss_range/BOSS_HP_RATE))
 
+func set_boss_hp(new_hp: float) -> void:
+	hp = new_hp
+	_update_ui()
 	
 func take_damage(dmg: float) -> void:
 	var ratio :float = FloatUtils.clamp(dmg, hp)
@@ -68,6 +69,6 @@ func _update_ui() -> void:
 		
 
 func _on_update_boss_hp(new_hp: float) -> void:
-	hp = new_hp
+	set_boss_hp(new_hp)
 		
-	_update_ui()
+	

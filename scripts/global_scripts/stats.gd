@@ -4,7 +4,7 @@ enum MODIFIER_TYPE {
 	MANA,
 	MPS
 }
-var mana: float = 100
+var mana: float = 10000000000000
 var mana_spent: float = 0
 var mps: float = 0
 var mod_mps: float = 0
@@ -13,8 +13,8 @@ var final_mps: float
 var tick_mana: float
 var hp: int = 3
 
-var cauldron_power: float = 1
-var mod_cauldron_power: float = 1
+var cp: float = 1
+var mod_cp: float = 1
 
 #MODIFIERS
 var tick_modifiers_mps: Dictionary = {}
@@ -55,6 +55,8 @@ func deduce_mps(d_mps) -> void:
 func set_final_mps() -> void:
 	final_mps = mod_mps
 
+func add_cp(p_cp: float) -> void:
+	cp += p_cp
 
 func add_hp(p_hp: int) -> void:
 	if (hp + p_hp) == 0:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xe3n7kl3jn8q" path="res://scripts/menu/shop_menu.gd" id="1_emcnj"]
 [ext_resource type="Texture2D" uid="uid://dsd8d1x8piitj" path="res://assets/sprites/clickers/augment_altar.png" id="2_ml0fi"]
-[ext_resource type="Theme" uid="uid://b0jdpg8j4y73v" path="res://assets/sprites/UI/themes/shop_menu.tres" id="3_ml0fi"]
+[ext_resource type="Theme" uid="uid://0pyer7bakegb" path="res://assets/sprites/UI/themes/base_theme.tres" id="3_ml0fi"]
 
 [node name="ShopMenu" type="Control"]
 z_index = 1
@@ -23,7 +23,7 @@ layer = 2
 
 [node name="Container" type="PanelContainer" parent="CanvasLayer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 90)
+custom_minimum_size = Vector2(250, 118)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -36,6 +36,7 @@ offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_ml0fi")
+theme_type_variation = &"ShopMenu"
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container"]
 layout_mode = 2

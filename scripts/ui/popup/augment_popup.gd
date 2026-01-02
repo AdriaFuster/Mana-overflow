@@ -11,17 +11,22 @@ func _set_value(item: Augment) -> void:
 	current_augment = item
 	
 	name_label.text = TextUtils.bold(_set_name_effect(item.name))
+	
 	description_label.text = item.get_description().strip_edges()
+	
 	type_label.text = TextUtils.bold(_set_type_effect(
 		GlobalEnum.enum_to_string(GlobalEnum.AugmentType, item.type), 
 		item))
 	
-	if item.get_extra() != "": 
-		extra_info.show()
-		extra_info.text = item.get_extra().strip_edges()
+	if ResourceManager.get_augment_location(item.name) == GlobalEnum.LOCATION.INVENTORY:
+		if item.get_extra() != "": 
+			extra_info.show()
+			extra_info.text = item.get_extra().strip_edges()
+		else:
+			extra_info.hide()
 	else:
 		extra_info.hide()
-		
+	
 	name_label.update_minimum_size()
 	description_label.update_minimum_size()
 	type_label.update_minimum_size()

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var cauldron_power: RichTextLabel = %CauldronPower
+@onready var cp: RichTextLabel = %CauldronPower
 @onready var mana_label: RichTextLabel = %Mana
 @onready var mps_label: RichTextLabel = %MPS
 @onready var hp: RichTextLabel = %HP
@@ -17,7 +17,7 @@ func _display_values():
 	mps_label.text = "MPS = " + Big.new(Stats.final_mps).sufix()
 	mps_label.update_minimum_size()
 
-	cauldron_power.text = "CP = " + Big.new(Stats.mod_cauldron_power).sufix()
+	cp.text = "CP = " + Big.new(Stats.mod_cp).sufix()
 	
 
 func _on_update_player_health(new_hp: int) -> void:

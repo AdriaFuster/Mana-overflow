@@ -11,29 +11,35 @@ const ENHANCE_COLOR: Color = Color("#a7a1dc")
 
 signal augment_activated
 
-#REPLACE STRING [var_name, enhanced]
-var description_replacements: Dictionary = {
-	"CD": [null, false],
-	"ARG1": [null, false],
-	"ARG1P": [null, false],
-	"ARG2": [null, false],
-	"ARG2P": [null, false],
-	"ARG3": [null, false],
-	"ARG3P": [null, false],
-	"ARG4": [null, false],
-	"ARG4P": [null, false],	
+class ReplacementData:
+	var variable: String = ""
+	var enhanced_variable: String = ""
+	var enhanced: bool = false
+	
+
+#REPLACE STRING [var_name,enhanced_var_name, enhanced]
+var description_replacements: Dictionary[String, ReplacementData] = {
+	"CD": ReplacementData.new(),
+	"ARG1": ReplacementData.new(),
+	"ARG1P": ReplacementData.new(),
+	"ARG2": ReplacementData.new(),
+	"ARG2P": ReplacementData.new(),
+	"ARG3": ReplacementData.new(),
+	"ARG3P": ReplacementData.new(),
+	"ARG4": ReplacementData.new(),
+	"ARG4P": ReplacementData.new(),	
 }
 
-var extra_replacements: Dictionary = {
-	"CD": [null, false],
-	"ARG1": [null, false],
-	"ARG1P": [null, false],
-	"ARG2": [null, false],
-	"ARG2P": [null, false],
-	"ARG3": [null, false],
-	"ARG3P": [null, false],
-	"ARG4": [null, false],
-	"ARG4P": [null, false],	
+var extra_replacements: Dictionary[String, ReplacementData] = {
+	"CD": ReplacementData.new(),
+	"ARG1": ReplacementData.new(),
+	"ARG1P": ReplacementData.new(),
+	"ARG2": ReplacementData.new(),
+	"ARG2P": ReplacementData.new(),
+	"ARG3": ReplacementData.new(),
+	"ARG3P": ReplacementData.new(),
+	"ARG4": ReplacementData.new(),
+	"ARG4P": ReplacementData.new(),	
 }
 
 func setup() -> void:
@@ -80,30 +86,33 @@ func enhance() -> void:
 		
 func get_description() -> String:
 	var d: String = description 
-	for r in description_replacements:
-		var a: Array = description_replacements[r]
-		
+	for r_name in description_replacements.keys():
+		var a: ReplacementData = description_replacements[r_name]
 		#only take into account the ones that the augment use
-		if a[0] != null:
-			#if enhanced, we paint the number
-			if a[1]:
-				d = TextUtils.replace_augment_string(r, a[0], d, self,ENHANCE_COLOR)
+		if a.variable != null:
+			
+			if AugmentEnhanceManager.is_enhancing():
+				d = TextUtils.replace_augment_string_enhancing(r_name,a.variable, a.enhanced_variable, d, self,ENHANCE_COLOR)
 			else:
-				d = TextUtils.replace_augment_string(r, a[0], d, self)
-	
+				#if enhanced, we paint the number
+				if a.enhanced:
+					d = TextUtils.replace_augment_string(r_name, a.enhanced_variable, d, self,ENHANCE_COLOR)
+				else:
+					d = TextUtils.replace_augment_string(r_name, a.variable, d, self)
+		
 	return d
 
 func get_extra() -> String:
 	var e: String = extra 
-	for r in extra_replacements:
-		var a: Array = extra_replacements[r]
+	for r_name in extra_replacements:
+		var a: ReplacementData = extra_replacements[r_name]
 		
 		#only take into account the ones that the augment use
-		if a[0] != null:
+		if a.variable != null:
 			#if enhanced, we paint the number
-			if a[1]:
-				e = TextUtils.replace_augment_string(r, a[0], e, self,ENHANCE_COLOR)
+			if a.enhanced:
+				e = TextUtils.replace_augment_string(r_name, a.enhanced_variable, e, self,ENHANCE_COLOR)
 			else:
-				e = TextUtils.replace_augment_string(r, a[0], e, self)
+				e = TextUtils.replace_augment_string(r_name, a.variable, e, self)
 	
 	return e

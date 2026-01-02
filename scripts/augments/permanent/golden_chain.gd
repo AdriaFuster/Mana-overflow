@@ -3,17 +3,24 @@ class_name GoldenChain
 
 @export var cost_increment: float
 @export var enhanced_cost_increment: float
+var _current_cost_increment: float
+
 @export var mps_increment: float
 
+func setup() -> void:
+	_current_cost_increment = cost_increment
+	super.setup()
+
 func on_equip() -> void:
-	Inventory.add_upgrade_discount(name, cost_increment)
+	Inventory.add_upgrade_discount(name, _current_cost_increment)
 	super.on_equip()
 
 func on_unequip() -> void:
 	Inventory.remove_upgrade_discount(name)
 
 func setup_description() -> void:
-	description_replacements["ARG1P"][0] = "cost_increment"
+	description_replacements["ARG1P"].variable = "cost_increment"
+	description_replacements["ARG1P"].enhanced_variable = "enhanced_cost_increment"
 
 func _calculate_value() -> float:
 	var b_mps = Stats.mod_mps
@@ -29,8 +36,8 @@ func apply_effect() -> void:
 
 func enhance() -> void:
 	enhanced = true
-	cost_increment = enhanced_cost_increment
-	description_replacements["ARG1P"][1] = true
-	Inventory.add_upgrade_discount(name, cost_increment)
+	_current_cost_increment = enhanced_cost_increment
+	description_replacements["ARG1P"].enhanced = true
+	Inventory.add_upgrade_discount(name, _current_cost_increment)
 	super.enhance()	
 	

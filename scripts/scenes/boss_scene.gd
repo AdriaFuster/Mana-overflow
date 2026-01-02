@@ -13,8 +13,8 @@ class_name BossScene
 
 @onready var boss: Boss = %Boss
 
-var _start_countdown: int = 1
-var _fight_countdown: int = 2
+var _start_countdown: int = 3
+var _fight_countdown: int = 5
 
 var _timer_counter: int
 

@@ -20,8 +20,9 @@ func enhance_augment(a: Augment) -> void:
 	if a.enhanced:
 		print("augment ",a.name, " already enhanced")
 	else:
-		a.enhance()
 		disable_enhance()
+		a.enhance()
+		
 	
 func is_enhancing() -> bool:
 	return enchance_state

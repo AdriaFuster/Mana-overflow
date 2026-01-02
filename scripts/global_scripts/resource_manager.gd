@@ -49,6 +49,8 @@ func get_upgrade(u_name: String, loc: GlobalEnum.LOCATION) -> Upgrade:
 func set_augment_location(a_name: String, loc: GlobalEnum.LOCATION) -> void:
 	augments[a_name].location = loc
 
+func get_augment_location(a_name: String) -> GlobalEnum.LOCATION:
+	return augments[a_name].location
 
 func set_upgrade_location(u_name: String, loc: GlobalEnum.LOCATION) -> void:
 	upgrades[u_name].location = loc

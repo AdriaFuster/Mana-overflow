@@ -8,14 +8,16 @@ var active_cont: float
 @export var cd: int
 @export var duration: int
 
+var _current_cd: float
+
 func on_equip() -> void:
+	_current_cd = cd
+	cd_cont = int(_current_cd / GameTick.tick_interval)
 	super.on_equip()
-	cd_cont = int(cd / GameTick.tick_interval)
-	#print("cd = ", cd)
 	
 func reset() -> void:
 	super.reset()
-	cd_cont = int(cd / GameTick.tick_interval)
+	cd_cont = int(_current_cd / GameTick.tick_interval)
 	_active = false
 
 func is_active() -> bool:
@@ -57,7 +59,7 @@ func augment_efect() -> void:
 
 func _enter_cd() -> void:
 	_active = false
-	cd_cont = int(cd / GameTick.tick_interval)
+	cd_cont = int(_current_cd / GameTick.tick_interval)
 
 	
 	

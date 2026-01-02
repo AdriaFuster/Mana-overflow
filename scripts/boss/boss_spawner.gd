@@ -7,12 +7,12 @@ var _current_range: int = 0
 
 func _ready() -> void:
 	GameTick.tick.connect(_on_tick)
-	#spawn_ranges.append(100)
-	#spawn_ranges.append(150)
+	spawn_ranges.append(5000)
+	spawn_ranges.append(150000)
 	
-	for i in range(1, 10):
-		var new_range: float = i*1000
-		spawn_ranges.append(new_range)
+	#for i in range(1, 10):
+		#var new_range: float = i*1000
+		#spawn_ranges.append(new_range)
 	
 
 func _on_tick() -> void:
@@ -21,7 +21,7 @@ func _on_tick() -> void:
 		if  Comp.greater_equal(Stats.mana_spent, spawn_ranges[_current_range]) :
 			#print("hem arribat a ", spawn_ranges[_current_range], 
 			#" i per tant spawneem el boss d'aquest tier")
-			#GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.BOSS)
+			GameEvents.change_scene.emit(GlobalEnum.GAME_SCENE.BOSS)
 			_current_range += 1
 
 func get_spawn_range() -> float:

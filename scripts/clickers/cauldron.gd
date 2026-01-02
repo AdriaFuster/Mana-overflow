@@ -8,7 +8,7 @@ func _ready() -> void:
 	
 
 func _on_pressed() -> void:
-	Stats.add_mana(Stats.mod_cauldron_power)
+	Stats.add_mana(Stats.mod_cp)
 	GameEvents.cauldron_click.emit()
 	cauldron.cauldron_click_anim()
 

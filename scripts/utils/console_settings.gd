@@ -22,7 +22,7 @@ func _ready() -> void:
 	Console.add_command_autocomplete_list("remove_augment", all_augments)
 	Console.add_command("enhance_augment", console_enhance_augment, ["augment name"], 1)
 	Console.add_command_autocomplete_list("enhance_augment", all_augments)
-
+	Console.add_command("enhancing", console_enhancing)
 	#SCENE
 	Console.add_command("load_scene", console_load_scene, ["scene_name"], 1)
 	Console.add_command_autocomplete_list("load_scene", all_scenes)
@@ -71,6 +71,12 @@ func console_enhance_augment(augment_name: String) -> void:
 			var a:Augment = Inventory.augments[augment.name]
 			a.enhance()
 			#Inventory.remove_augment(augment.name)
+
+func console_enhancing() -> void:
+	if 	!AugmentEnhanceManager.is_enhancing():
+		AugmentEnhanceManager.start_enhancing()
+	else:
+		AugmentEnhanceManager.disable_enhance()		
 
 func console_load_scene(scene_name: String) -> void:
 	var scene: GlobalEnum.GAME_SCENE

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6e7x5w5i0h16" path="res://scripts/ui/ui_canvas/upgrade_canvas.gd" id="1_1vi1f"]
 [ext_resource type="PackedScene" uid="uid://bvhs60koe8pqx" path="res://scenes/menus/items/upgrade_item.tscn" id="2_14qxa"]
-[ext_resource type="Theme" uid="uid://cig04o1ft8tvk" path="res://assets/sprites/UI/themes/upgrade_inventory.tres" id="3_6c5i5"]
+[ext_resource type="Theme" uid="uid://0pyer7bakegb" path="res://assets/sprites/UI/themes/base_theme.tres" id="3_6c5i5"]
 
 [sub_resource type="Theme" id="Theme_1vi1f"]
 
@@ -23,6 +23,7 @@ offset_bottom = 226.0
 grow_horizontal = 0
 mouse_filter = 1
 theme = ExtResource("3_6c5i5")
+theme_type_variation = &"UpgradeInventory"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UpgradeContainer"]
 layout_mode = 2
