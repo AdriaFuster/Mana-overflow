@@ -4,6 +4,7 @@ extends Control
 @onready var mana_label: RichTextLabel = %Mana
 @onready var mps_label: RichTextLabel = %MPS
 @onready var hp: RichTextLabel = %HP
+@onready var mana_spended: RichTextLabel = %ManaSpended
 
 func _ready() -> void:
 	_display_values()
@@ -18,7 +19,7 @@ func _display_values():
 	mps_label.update_minimum_size()
 
 	cp.text = "CP = " + Big.new(Stats.mod_cp).sufix()
-	
+	mana_spended.text = "Mana spent =  "+Big.new(Stats.mana_spent).sufix(true,1,3,false)
 
 func _on_update_player_health(new_hp: int) -> void:
 	hp.text = "Player HP = "+str(new_hp)

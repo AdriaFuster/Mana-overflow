@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ltdiy4htkki4"
-path="res://.godot/imported/growing_leaf.png-b321f9b3038577e28ee99ffbb448682e.ctex"
+path="res://.godot/imported/Growing_leaf.png-0bd8ab7b9a31f6d2d96d99938d3b858e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/augments/growing_leaf.png"
-dest_files=["res://.godot/imported/growing_leaf.png-b321f9b3038577e28ee99ffbb448682e.ctex"]
+source_file="res://assets/sprites/augments/Growing_leaf.png"
+dest_files=["res://.godot/imported/Growing_leaf.png-0bd8ab7b9a31f6d2d96d99938d3b858e.ctex"]
 
 [params]
 

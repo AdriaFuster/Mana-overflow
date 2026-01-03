@@ -8,7 +8,7 @@ class_name BossScene
 @onready var text_announces_label: RichTextLabel = %TextAnnounces
 @onready var start_button: Button = %StartButton
 
-@onready var big_cauldron: Cauldron = %BigCauldron
+@onready var cauldron: Cauldron = %Cauldron
 @onready var timer: Timer = %Timer
 
 @onready var boss: Boss = %Boss
@@ -48,8 +48,8 @@ func desactivate_scene() -> void:
 
 func _setup_countdown() -> void:
 	scene_state = STATE.COUNTDOWN
-	big_cauldron.show_cauldron(true)
-	big_cauldron.disable_button(true)
+	cauldron.show_cauldron(true)
+	cauldron.disable_button(true)
 
 	
 	_show_start_button(true)
@@ -72,8 +72,8 @@ func _setup_countdow_timer() -> void:
 func _setup_fight() -> void:
 	scene_state = STATE.FIGHT
 	GameEvents.boss_start.emit()
-	big_cauldron.disable_button(false)
-	big_cauldron.show_cauldron(true)
+	cauldron.disable_button(false)
+	cauldron.show_cauldron(true)
 	_setup_timer_counter_label()
 	
 	_setup_fight_timer()
@@ -89,7 +89,7 @@ func _setup_fight_timer() -> void:
 func _setup_hurt_boss() -> void:
 	scene_state = STATE.HURT_BOSS
 	GameEvents.boss_end.emit()
-	big_cauldron.disable_button(true)
+	cauldron.disable_button(true)
 	_apply_damage()
 
 func _apply_damage() -> void:

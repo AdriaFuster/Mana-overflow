@@ -18,7 +18,7 @@ func on_equip() -> void:
 
 func setup_description() -> void:
 	description_replacements["ARG1P"].variable = "chance"
-	description_replacements["ARG1P"].variable = "enhanced_chance"
+	description_replacements["ARG1P"].enhanced_variable = "enhanced_chance"
 	description_replacements["ARG2P"].variable = "cost_reduction"
 
 func setup_extra() -> void:
@@ -34,5 +34,9 @@ func _on_upgrade_bought(u: Upgrade) -> void:
 	var rand: float = randf()
 	if rand <= _current_chance:
 		lucky_times += 1
+		var saved_mana: float = u.cost*cost_reduction
+		Stats.spend_mana(-saved_mana)
 		GameEvents.add_mana.emit(u.cost*cost_reduction)
+		augment_activated.emit()
+		
 		

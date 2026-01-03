@@ -6,8 +6,7 @@
 [resource]
 script = ExtResource("1_17elv")
 order = 4
-base_cost = 12000.0
-cost = 12000.0
+base_cost = 3000.0
 mps = 150.0
 name = "Raven"
 icon = ExtResource("1_3xbbk")

@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_655dy")
 cost_reduction = 0.9
-chance = 0.05
-enhanced_chance = 0.08
+chance = 0.1
+enhanced_chance = 0.15
 extra = "Lucky times: $ARG1$"
 name = "Bargain rune"
 icon = ExtResource("1_8akdd")

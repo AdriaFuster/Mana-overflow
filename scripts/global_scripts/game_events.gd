@@ -17,6 +17,7 @@ signal new_upgrade_bought
 signal upgrade_bought(upgrade: Upgrade)
 signal update_upgrade_info(upgrade: Upgrade)
 signal update_stats_labels()
+signal upgrade_lvl_up
 
 #SCENE
 signal change_scene(scene: GlobalEnum.GAME_SCENE)

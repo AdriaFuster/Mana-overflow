@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d08anfeyyys47"
-path="res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"
+path="res://.godot/imported/Wizard.png-9491a00d16e5995b74a1ec1b048ac029.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/wizard.png"
-dest_files=["res://.godot/imported/wizard.png-fd8833f72db2073431dd4b7cbc994c9c.ctex"]
+source_file="res://assets/sprites/background/Wizard.png"
+dest_files=["res://.godot/imported/Wizard.png-9491a00d16e5995b74a1ec1b048ac029.ctex"]
 
 [params]
 

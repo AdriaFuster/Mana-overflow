@@ -6,7 +6,11 @@ class_name Cauldron
 func _ready() -> void:
 	cauldron.pressed.connect(_on_pressed)
 	
-
+func _process(_delta):
+	if is_visible_in_tree():
+		if Input.is_action_just_pressed("cauldron_click"):
+			_on_pressed()
+	
 func _on_pressed() -> void:
 	Stats.add_mana(Stats.mod_cp)
 	GameEvents.cauldron_click.emit()

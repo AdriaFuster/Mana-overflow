@@ -13,7 +13,8 @@ var shop_bought: bool = false
 
 func _ready() -> void:
 	GameEvents.augment_bought.connect(_on_augment_bought)
-	GameEvents.new_upgrade_bought.connect(_on_new_upgrade_bought)
+	GameEvents.new_upgrade_bought.connect(_on_open_shop)
+	GameEvents.upgrade_lvl_up.connect(_on_open_shop)
 	_setup_ui()	
 	update_shop()
 
@@ -70,7 +71,7 @@ func _on_augment_bought(a: Augment) -> void:
 	hide_shop()
 	
 
-func _on_new_upgrade_bought() -> void:
+func _on_open_shop() -> void:
 	shop_bought = false
 	GameEvents.shop_disabled.emit(shop_bought)
 	update_shop()

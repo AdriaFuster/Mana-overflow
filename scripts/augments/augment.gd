@@ -89,10 +89,14 @@ func get_description() -> String:
 	for r_name in description_replacements.keys():
 		var a: ReplacementData = description_replacements[r_name]
 		#only take into account the ones that the augment use
-		if a.variable != null:
+		if a.variable != "":
 			
 			if AugmentEnhanceManager.is_enhancing():
-				d = TextUtils.replace_augment_string_enhancing(r_name,a.variable, a.enhanced_variable, d, self,ENHANCE_COLOR)
+				if a.enhanced_variable != "":
+					d = TextUtils.replace_augment_string_enhancing(r_name,a.variable, a.enhanced_variable, d, self,ENHANCE_COLOR)
+				else:
+					d = TextUtils.replace_augment_string(r_name, a.variable, d, self)
+					
 			else:
 				#if enhanced, we paint the number
 				if a.enhanced:
@@ -108,7 +112,7 @@ func get_extra() -> String:
 		var a: ReplacementData = extra_replacements[r_name]
 		
 		#only take into account the ones that the augment use
-		if a.variable != null:
+		if a.variable != "":
 			#if enhanced, we paint the number
 			if a.enhanced:
 				e = TextUtils.replace_augment_string(r_name, a.enhanced_variable, e, self,ENHANCE_COLOR)

@@ -48,7 +48,7 @@ func _increase_lvl() -> void:
 	if amount%10 == 0:
 		lvl += 1
 		mps = snappedf(MPS_INCREMENT*mps, 0.01)
-	
+		GameEvents.upgrade_lvl_up.emit()
 	
 func upgrade_click() -> void:
 	_increase_amount()
@@ -103,6 +103,7 @@ func _on_tick() -> void:
 	if Comp.greater_equal(Stats.mana,upgrade_unlock_cost):
 		#print("SI PODEEM")
 		locked = false
+		GameEvents.update_upgrade_info.emit(self)
 		
 		if GameTick.tick.is_connected(_on_tick):
 			GameTick.tick.disconnect(_on_tick)

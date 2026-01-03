@@ -11,8 +11,8 @@ func _ready() -> void:
 	_add_upgrades()
 	
 	#add_augment("Growing leaf")
-	add_augment("Mana potion")
-	add_augment("Mana tree")
+	#add_augment("Mana potion")
+	#add_augment("Mana tree")
 	#add_augment("Mighty force")
 	#add_augment("Cauldron dogma")
 	#add_augment("Mana blessing")
@@ -26,7 +26,7 @@ func _ready() -> void:
 	#add_augment("Golden chain")
 	#add_augment("Discount ticket")
 	#add_augment("Recycling machine")
-	#add_augment("Bargain rune")
+	add_augment("Bargain rune")
 
 
 	#GameEvents.calculate_mps.connect(_recalculate_permanent_augments)			
