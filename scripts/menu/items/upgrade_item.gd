@@ -9,6 +9,8 @@ var upgrade: Upgrade
 
 var icon_mat: ShaderMaterial
 
+const LESS_PRICE: Color = Color.WEB_GREEN
+const MORE_PRICE: Color = Color(1, 0.74, 0,66)
 
 func _ready() -> void:
 	button.pressed.connect(_on_pressed)
@@ -55,8 +57,12 @@ func _on_pressed() -> void:
 
 func _on_update_cost(new_cost: float) -> void:
 	cost.text = TextUtils.bold(Big.new(new_cost).sufix())
-	
-	
+	if upgrade.base_cost > upgrade.cost:
+		cost.text = TextUtils.set_color(cost.text,LESS_PRICE) 
+	elif upgrade.base_cost < upgrade.cost:
+		cost.text = TextUtils.set_color(cost.text,MORE_PRICE) 
+		
+
 func _on_update_amount(new_amount: int) -> void:
 	amount.text = TextUtils.bold(str(new_amount))
 	
